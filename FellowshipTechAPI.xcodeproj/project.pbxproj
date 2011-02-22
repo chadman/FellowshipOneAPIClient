@@ -1,0 +1,876 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 45;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		AA747D9F0F9514B9006C5449 /* FellowshipTechAPI_Prefix.pch in Headers */ = {isa = PBXBuildFile; fileRef = AA747D9E0F9514B9006C5449 /* FellowshipTechAPI_Prefix.pch */; };
+		AACBBE4A0F95108600F1A2B1 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AACBBE490F95108600F1A2B1 /* Foundation.framework */; };
+		FD11F15711B815900048C7CF /* NSDate+ageFromDate.h in Headers */ = {isa = PBXBuildFile; fileRef = FD11F15511B815900048C7CF /* NSDate+ageFromDate.h */; };
+		FD11F15811B815900048C7CF /* NSDate+ageFromDate.m in Sources */ = {isa = PBXBuildFile; fileRef = FD11F15611B815900048C7CF /* NSDate+ageFromDate.m */; };
+		FD4FEC01119898C8009CBAAD /* EntityState.h in Headers */ = {isa = PBXBuildFile; fileRef = FD4FEBFE119898C8009CBAAD /* EntityState.h */; };
+		FD4FEC02119898C8009CBAAD /* FTAPIRealm.h in Headers */ = {isa = PBXBuildFile; fileRef = FD4FEBFF119898C8009CBAAD /* FTAPIRealm.h */; };
+		FD4FEC03119898C8009CBAAD /* HTTPMethod.h in Headers */ = {isa = PBXBuildFile; fileRef = FD4FEC00119898C8009CBAAD /* HTTPMethod.h */; };
+		FD4FEC0A119898D3009CBAAD /* FTOAuth.h in Headers */ = {isa = PBXBuildFile; fileRef = FD4FEC04119898D3009CBAAD /* FTOAuth.h */; };
+		FD4FEC0B119898D3009CBAAD /* FTOAuth.m in Sources */ = {isa = PBXBuildFile; fileRef = FD4FEC05119898D3009CBAAD /* FTOAuth.m */; };
+		FD4FEC0C119898D3009CBAAD /* FTOAuthResult.h in Headers */ = {isa = PBXBuildFile; fileRef = FD4FEC06119898D3009CBAAD /* FTOAuthResult.h */; };
+		FD4FEC0D119898D3009CBAAD /* FTOAuthResult.m in Sources */ = {isa = PBXBuildFile; fileRef = FD4FEC07119898D3009CBAAD /* FTOAuthResult.m */; };
+		FD4FEC0E119898D3009CBAAD /* FTUserDefaults.h in Headers */ = {isa = PBXBuildFile; fileRef = FD4FEC08119898D3009CBAAD /* FTUserDefaults.h */; };
+		FD4FEC0F119898D3009CBAAD /* FTUserDefaults.m in Sources */ = {isa = PBXBuildFile; fileRef = FD4FEC09119898D3009CBAAD /* FTUserDefaults.m */; };
+		FD4FEC2C119898E0009CBAAD /* NSMutableURLRequest+Parameters.h in Headers */ = {isa = PBXBuildFile; fileRef = FD4FEC10119898E0009CBAAD /* NSMutableURLRequest+Parameters.h */; };
+		FD4FEC2D119898E0009CBAAD /* NSMutableURLRequest+Parameters.m in Sources */ = {isa = PBXBuildFile; fileRef = FD4FEC11119898E0009CBAAD /* NSMutableURLRequest+Parameters.m */; };
+		FD4FEC2E119898E0009CBAAD /* NSString+URLEncoding.h in Headers */ = {isa = PBXBuildFile; fileRef = FD4FEC12119898E0009CBAAD /* NSString+URLEncoding.h */; };
+		FD4FEC2F119898E0009CBAAD /* NSString+URLEncoding.m in Sources */ = {isa = PBXBuildFile; fileRef = FD4FEC13119898E0009CBAAD /* NSString+URLEncoding.m */; };
+		FD4FEC30119898E0009CBAAD /* NSURL+Base.h in Headers */ = {isa = PBXBuildFile; fileRef = FD4FEC14119898E0009CBAAD /* NSURL+Base.h */; };
+		FD4FEC31119898E0009CBAAD /* NSURL+Base.m in Sources */ = {isa = PBXBuildFile; fileRef = FD4FEC15119898E0009CBAAD /* NSURL+Base.m */; };
+		FD4FEC32119898E0009CBAAD /* OAAsynchronousDataFetcher.h in Headers */ = {isa = PBXBuildFile; fileRef = FD4FEC16119898E0009CBAAD /* OAAsynchronousDataFetcher.h */; };
+		FD4FEC33119898E0009CBAAD /* OAAsynchronousDataFetcher.m in Sources */ = {isa = PBXBuildFile; fileRef = FD4FEC17119898E0009CBAAD /* OAAsynchronousDataFetcher.m */; };
+		FD4FEC34119898E0009CBAAD /* OAConsumer.h in Headers */ = {isa = PBXBuildFile; fileRef = FD4FEC18119898E0009CBAAD /* OAConsumer.h */; };
+		FD4FEC35119898E0009CBAAD /* OAConsumer.m in Sources */ = {isa = PBXBuildFile; fileRef = FD4FEC19119898E0009CBAAD /* OAConsumer.m */; };
+		FD4FEC36119898E0009CBAAD /* OADataFetcher.h in Headers */ = {isa = PBXBuildFile; fileRef = FD4FEC1A119898E0009CBAAD /* OADataFetcher.h */; };
+		FD4FEC37119898E0009CBAAD /* OADataFetcher.m in Sources */ = {isa = PBXBuildFile; fileRef = FD4FEC1B119898E0009CBAAD /* OADataFetcher.m */; };
+		FD4FEC38119898E0009CBAAD /* OAHMAC_SHA1SignatureProvider.h in Headers */ = {isa = PBXBuildFile; fileRef = FD4FEC1C119898E0009CBAAD /* OAHMAC_SHA1SignatureProvider.h */; };
+		FD4FEC39119898E0009CBAAD /* OAHMAC_SHA1SignatureProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = FD4FEC1D119898E0009CBAAD /* OAHMAC_SHA1SignatureProvider.m */; };
+		FD4FEC3A119898E0009CBAAD /* OAMutableURLRequest.h in Headers */ = {isa = PBXBuildFile; fileRef = FD4FEC1E119898E0009CBAAD /* OAMutableURLRequest.h */; };
+		FD4FEC3B119898E0009CBAAD /* OAMutableURLRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = FD4FEC1F119898E0009CBAAD /* OAMutableURLRequest.m */; };
+		FD4FEC3C119898E0009CBAAD /* OAPlaintextSignatureProvider.h in Headers */ = {isa = PBXBuildFile; fileRef = FD4FEC20119898E0009CBAAD /* OAPlaintextSignatureProvider.h */; };
+		FD4FEC3D119898E0009CBAAD /* OAPlaintextSignatureProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = FD4FEC21119898E0009CBAAD /* OAPlaintextSignatureProvider.m */; };
+		FD4FEC3E119898E0009CBAAD /* OARequestParameter.h in Headers */ = {isa = PBXBuildFile; fileRef = FD4FEC22119898E0009CBAAD /* OARequestParameter.h */; };
+		FD4FEC3F119898E0009CBAAD /* OARequestParameter.m in Sources */ = {isa = PBXBuildFile; fileRef = FD4FEC23119898E0009CBAAD /* OARequestParameter.m */; };
+		FD4FEC40119898E0009CBAAD /* OAServiceTicket.h in Headers */ = {isa = PBXBuildFile; fileRef = FD4FEC24119898E0009CBAAD /* OAServiceTicket.h */; };
+		FD4FEC41119898E0009CBAAD /* OAServiceTicket.m in Sources */ = {isa = PBXBuildFile; fileRef = FD4FEC25119898E0009CBAAD /* OAServiceTicket.m */; };
+		FD4FEC42119898E0009CBAAD /* OASignatureProviding.h in Headers */ = {isa = PBXBuildFile; fileRef = FD4FEC26119898E0009CBAAD /* OASignatureProviding.h */; };
+		FD4FEC45119898E0009CBAAD /* OAToken.h in Headers */ = {isa = PBXBuildFile; fileRef = FD4FEC29119898E0009CBAAD /* OAToken.h */; };
+		FD4FEC46119898E0009CBAAD /* OAToken.m in Sources */ = {isa = PBXBuildFile; fileRef = FD4FEC2A119898E0009CBAAD /* OAToken.m */; };
+		FD4FEC47119898E0009CBAAD /* OAuthConsumer.h in Headers */ = {isa = PBXBuildFile; fileRef = FD4FEC2B119898E0009CBAAD /* OAuthConsumer.h */; };
+		FD4FEC55119898F3009CBAAD /* JSON.h in Headers */ = {isa = PBXBuildFile; fileRef = FD4FEC48119898F3009CBAAD /* JSON.h */; };
+		FD4FEC56119898F3009CBAAD /* NSObject+SBJSON.h in Headers */ = {isa = PBXBuildFile; fileRef = FD4FEC49119898F3009CBAAD /* NSObject+SBJSON.h */; };
+		FD4FEC57119898F3009CBAAD /* NSObject+SBJSON.m in Sources */ = {isa = PBXBuildFile; fileRef = FD4FEC4A119898F3009CBAAD /* NSObject+SBJSON.m */; };
+		FD4FEC58119898F3009CBAAD /* NSString+SBJSON.h in Headers */ = {isa = PBXBuildFile; fileRef = FD4FEC4B119898F3009CBAAD /* NSString+SBJSON.h */; };
+		FD4FEC59119898F3009CBAAD /* NSString+SBJSON.m in Sources */ = {isa = PBXBuildFile; fileRef = FD4FEC4C119898F3009CBAAD /* NSString+SBJSON.m */; };
+		FD4FEC5A119898F3009CBAAD /* SBJSON.h in Headers */ = {isa = PBXBuildFile; fileRef = FD4FEC4D119898F3009CBAAD /* SBJSON.h */; };
+		FD4FEC5B119898F3009CBAAD /* SBJSON.m in Sources */ = {isa = PBXBuildFile; fileRef = FD4FEC4E119898F3009CBAAD /* SBJSON.m */; };
+		FD4FEC5C119898F3009CBAAD /* SBJsonBase.h in Headers */ = {isa = PBXBuildFile; fileRef = FD4FEC4F119898F3009CBAAD /* SBJsonBase.h */; };
+		FD4FEC5D119898F3009CBAAD /* SBJsonBase.m in Sources */ = {isa = PBXBuildFile; fileRef = FD4FEC50119898F3009CBAAD /* SBJsonBase.m */; };
+		FD4FEC5E119898F3009CBAAD /* SBJsonParser.h in Headers */ = {isa = PBXBuildFile; fileRef = FD4FEC51119898F3009CBAAD /* SBJsonParser.h */; };
+		FD4FEC5F119898F3009CBAAD /* SBJsonParser.m in Sources */ = {isa = PBXBuildFile; fileRef = FD4FEC52119898F3009CBAAD /* SBJsonParser.m */; };
+		FD4FEC60119898F3009CBAAD /* SBJsonWriter.h in Headers */ = {isa = PBXBuildFile; fileRef = FD4FEC53119898F3009CBAAD /* SBJsonWriter.h */; };
+		FD4FEC61119898F3009CBAAD /* SBJsonWriter.m in Sources */ = {isa = PBXBuildFile; fileRef = FD4FEC54119898F3009CBAAD /* SBJsonWriter.m */; };
+		FD4FEC6811989901009CBAAD /* PagedEntity.h in Headers */ = {isa = PBXBuildFile; fileRef = FD4FEC6411989901009CBAAD /* PagedEntity.h */; };
+		FD4FEC6911989901009CBAAD /* PagedEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = FD4FEC6511989901009CBAAD /* PagedEntity.m */; };
+		FD4FEC7511989982009CBAAD /* FellowshipOneAPIDateUtility.h in Headers */ = {isa = PBXBuildFile; fileRef = FD4FEC7111989982009CBAAD /* FellowshipOneAPIDateUtility.h */; };
+		FD4FEC7611989982009CBAAD /* FellowshipOneAPIDateUtility.m in Sources */ = {isa = PBXBuildFile; fileRef = FD4FEC7211989982009CBAAD /* FellowshipOneAPIDateUtility.m */; };
+		FD4FEC7711989982009CBAAD /* FellowshipOneAPIUtility.h in Headers */ = {isa = PBXBuildFile; fileRef = FD4FEC7311989982009CBAAD /* FellowshipOneAPIUtility.h */; };
+		FD4FEC7811989982009CBAAD /* FellowshipOneAPIUtility.m in Sources */ = {isa = PBXBuildFile; fileRef = FD4FEC7411989982009CBAAD /* FellowshipOneAPIUtility.m */; };
+		FD4FEC8E11989A2A009CBAAD /* Constants.h in Headers */ = {isa = PBXBuildFile; fileRef = FD4FEC8C11989A2A009CBAAD /* Constants.h */; };
+		FD4FEC8F11989A2A009CBAAD /* Constants.m in Sources */ = {isa = PBXBuildFile; fileRef = FD4FEC8D11989A2A009CBAAD /* Constants.m */; };
+		FD4FEC9911989ACC009CBAAD /* Base64Transcoder.c in Sources */ = {isa = PBXBuildFile; fileRef = FD4FEC9311989ACC009CBAAD /* Base64Transcoder.c */; };
+		FD4FEC9A11989ACC009CBAAD /* Base64Transcoder.h in Headers */ = {isa = PBXBuildFile; fileRef = FD4FEC9411989ACC009CBAAD /* Base64Transcoder.h */; };
+		FD4FEC9B11989ACC009CBAAD /* hmac.c in Sources */ = {isa = PBXBuildFile; fileRef = FD4FEC9511989ACC009CBAAD /* hmac.c */; };
+		FD4FEC9C11989ACC009CBAAD /* hmac.h in Headers */ = {isa = PBXBuildFile; fileRef = FD4FEC9611989ACC009CBAAD /* hmac.h */; };
+		FD4FEC9D11989ACC009CBAAD /* sha1.c in Sources */ = {isa = PBXBuildFile; fileRef = FD4FEC9711989ACC009CBAAD /* sha1.c */; };
+		FD4FEC9E11989ACC009CBAAD /* sha1.h in Headers */ = {isa = PBXBuildFile; fileRef = FD4FEC9811989ACC009CBAAD /* sha1.h */; };
+		FD4FECB111989B5B009CBAAD /* Enum.h in Headers */ = {isa = PBXBuildFile; fileRef = FD4FECB011989B5B009CBAAD /* Enum.h */; };
+		FD4FECF01198B11A009CBAAD /* FellowshipOneAPIClient.h in Headers */ = {isa = PBXBuildFile; fileRef = FD4FECEF1198B11A009CBAAD /* FellowshipOneAPIClient.h */; };
+		FD5427A21199B5E800F3CFAF /* ConsoleLog.h in Headers */ = {isa = PBXBuildFile; fileRef = FD5427A01199B5E800F3CFAF /* ConsoleLog.h */; };
+		FD5427A31199B5E800F3CFAF /* ConsoleLog.m in Sources */ = {isa = PBXBuildFile; fileRef = FD5427A11199B5E800F3CFAF /* ConsoleLog.m */; };
+		FD5427B41199B98600F3CFAF /* FellowshipOneAPIClient.m in Sources */ = {isa = PBXBuildFile; fileRef = FD5427B31199B98600F3CFAF /* FellowshipOneAPIClient.m */; };
+		FD6410F511C6854F00756648 /* FTError.h in Headers */ = {isa = PBXBuildFile; fileRef = FD6410F311C6854F00756648 /* FTError.h */; };
+		FD6410F611C6854F00756648 /* FTError.m in Sources */ = {isa = PBXBuildFile; fileRef = FD6410F411C6854F00756648 /* FTError.m */; };
+		FD6787A81309BEDF0062B6DC /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FD6787A71309BEDF0062B6DC /* UIKit.framework */; };
+		FD6787A91309BEDF0062B6DC /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AACBBE490F95108600F1A2B1 /* Foundation.framework */; };
+		FD6787AB1309BEDF0062B6DC /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FD6787AA1309BEDF0062B6DC /* CoreGraphics.framework */; };
+		FD6787B11309BEDF0062B6DC /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = FD6787AF1309BEDF0062B6DC /* InfoPlist.strings */; };
+		FD6787B41309BEDF0062B6DC /* FellowshipOneAPITests.h in Resources */ = {isa = PBXBuildFile; fileRef = FD6787B31309BEDF0062B6DC /* FellowshipOneAPITests.h */; };
+		FD6787B61309BEDF0062B6DC /* FellowshipOneAPITests.m in Sources */ = {isa = PBXBuildFile; fileRef = FD6787B51309BEDF0062B6DC /* FellowshipOneAPITests.m */; };
+		FD89374011D2D83900FCC1D0 /* FTHousehold.h in Headers */ = {isa = PBXBuildFile; fileRef = FD89373611D2D83900FCC1D0 /* FTHousehold.h */; };
+		FD89374111D2D83900FCC1D0 /* FTHousehold.m in Sources */ = {isa = PBXBuildFile; fileRef = FD89373711D2D83900FCC1D0 /* FTHousehold.m */; };
+		FD89374211D2D83900FCC1D0 /* FTHouseholdMemberType.h in Headers */ = {isa = PBXBuildFile; fileRef = FD89373811D2D83900FCC1D0 /* FTHouseholdMemberType.h */; };
+		FD89374311D2D83900FCC1D0 /* FTHouseholdMemberType.m in Sources */ = {isa = PBXBuildFile; fileRef = FD89373911D2D83900FCC1D0 /* FTHouseholdMemberType.m */; };
+		FD89374411D2D83900FCC1D0 /* FTPerson.h in Headers */ = {isa = PBXBuildFile; fileRef = FD89373A11D2D83900FCC1D0 /* FTPerson.h */; };
+		FD89374511D2D83900FCC1D0 /* FTPerson.m in Sources */ = {isa = PBXBuildFile; fileRef = FD89373B11D2D83900FCC1D0 /* FTPerson.m */; };
+		FD89374611D2D83900FCC1D0 /* FTStatus.h in Headers */ = {isa = PBXBuildFile; fileRef = FD89373C11D2D83900FCC1D0 /* FTStatus.h */; };
+		FD89374711D2D83900FCC1D0 /* FTStatus.m in Sources */ = {isa = PBXBuildFile; fileRef = FD89373D11D2D83900FCC1D0 /* FTStatus.m */; };
+		FD89374811D2D83900FCC1D0 /* FTSubStatus.h in Headers */ = {isa = PBXBuildFile; fileRef = FD89373E11D2D83900FCC1D0 /* FTSubStatus.h */; };
+		FD89374911D2D83900FCC1D0 /* FTSubStatus.m in Sources */ = {isa = PBXBuildFile; fileRef = FD89373F11D2D83900FCC1D0 /* FTSubStatus.m */; };
+		FDCB159711F22F2100151714 /* NSObject+serializeToJSON.h in Headers */ = {isa = PBXBuildFile; fileRef = FDCB159511F22F2100151714 /* NSObject+serializeToJSON.h */; };
+		FDCB159811F22F2100151714 /* NSObject+serializeToJSON.m in Sources */ = {isa = PBXBuildFile; fileRef = FDCB159611F22F2100151714 /* NSObject+serializeToJSON.m */; };
+		FDCF632B11F5F0E4004F0178 /* FTParentNamedObject.h in Headers */ = {isa = PBXBuildFile; fileRef = FDCF632711F5F0E4004F0178 /* FTParentNamedObject.h */; };
+		FDCF632C11F5F0E4004F0178 /* FTParentNamedObject.m in Sources */ = {isa = PBXBuildFile; fileRef = FDCF632811F5F0E4004F0178 /* FTParentNamedObject.m */; };
+		FDCF632D11F5F0E4004F0178 /* FTParentObject.h in Headers */ = {isa = PBXBuildFile; fileRef = FDCF632911F5F0E4004F0178 /* FTParentObject.h */; };
+		FDCF632E11F5F0E4004F0178 /* FTParentObject.m in Sources */ = {isa = PBXBuildFile; fileRef = FDCF632A11F5F0E4004F0178 /* FTParentObject.m */; };
+		FDD3DCD211D6A41D0016ADD8 /* FTCommunication.h in Headers */ = {isa = PBXBuildFile; fileRef = FDD3DCD011D6A41D0016ADD8 /* FTCommunication.h */; };
+		FDD3DCD311D6A41D0016ADD8 /* FTCommunication.m in Sources */ = {isa = PBXBuildFile; fileRef = FDD3DCD111D6A41D0016ADD8 /* FTCommunication.m */; };
+		FDDA7DC511D69B61006DDA95 /* FTAddress.h in Headers */ = {isa = PBXBuildFile; fileRef = FDDA7DC311D69B61006DDA95 /* FTAddress.h */; };
+		FDDA7DC611D69B61006DDA95 /* FTAddress.m in Sources */ = {isa = PBXBuildFile; fileRef = FDDA7DC411D69B61006DDA95 /* FTAddress.m */; };
+		FDE5F10311E4F5DF0042363D /* NSObject+serializeToXml.h in Headers */ = {isa = PBXBuildFile; fileRef = FDE5F10111E4F5DF0042363D /* NSObject+serializeToXml.h */; };
+		FDE5F10411E4F5DF0042363D /* NSObject+serializeToXml.m in Sources */ = {isa = PBXBuildFile; fileRef = FDE5F10211E4F5DF0042363D /* NSObject+serializeToXml.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		FD7AA49413140DC20013F862 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0867D690FE84028FC02AAC07 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D2AAC07D0554694100DB518D;
+			remoteInfo = FellowshipTechAPI;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		AA747D9E0F9514B9006C5449 /* FellowshipTechAPI_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FellowshipTechAPI_Prefix.pch; sourceTree = SOURCE_ROOT; };
+		AACBBE490F95108600F1A2B1 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		FD11F15511B815900048C7CF /* NSDate+ageFromDate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSDate+ageFromDate.h"; path = "Class/Categories/NSDate+ageFromDate.h"; sourceTree = "<group>"; };
+		FD11F15611B815900048C7CF /* NSDate+ageFromDate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSDate+ageFromDate.m"; path = "Class/Categories/NSDate+ageFromDate.m"; sourceTree = "<group>"; };
+		FD4FEBFE119898C8009CBAAD /* EntityState.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EntityState.h; path = Class/Enum/EntityState.h; sourceTree = "<group>"; };
+		FD4FEBFF119898C8009CBAAD /* FTAPIRealm.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FTAPIRealm.h; path = Class/Enum/FTAPIRealm.h; sourceTree = "<group>"; };
+		FD4FEC00119898C8009CBAAD /* HTTPMethod.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HTTPMethod.h; path = Class/Enum/HTTPMethod.h; sourceTree = "<group>"; };
+		FD4FEC04119898D3009CBAAD /* FTOAuth.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FTOAuth.h; path = Class/FTOAuth/FTOAuth.h; sourceTree = "<group>"; };
+		FD4FEC05119898D3009CBAAD /* FTOAuth.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FTOAuth.m; path = Class/FTOAuth/FTOAuth.m; sourceTree = "<group>"; };
+		FD4FEC06119898D3009CBAAD /* FTOAuthResult.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FTOAuthResult.h; path = Class/FTOAuth/FTOAuthResult.h; sourceTree = "<group>"; };
+		FD4FEC07119898D3009CBAAD /* FTOAuthResult.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FTOAuthResult.m; path = Class/FTOAuth/FTOAuthResult.m; sourceTree = "<group>"; };
+		FD4FEC08119898D3009CBAAD /* FTUserDefaults.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FTUserDefaults.h; path = Class/FTOAuth/FTUserDefaults.h; sourceTree = "<group>"; };
+		FD4FEC09119898D3009CBAAD /* FTUserDefaults.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FTUserDefaults.m; path = Class/FTOAuth/FTUserDefaults.m; sourceTree = "<group>"; };
+		FD4FEC10119898E0009CBAAD /* NSMutableURLRequest+Parameters.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSMutableURLRequest+Parameters.h"; path = "Class/OAConsumer/NSMutableURLRequest+Parameters.h"; sourceTree = "<group>"; };
+		FD4FEC11119898E0009CBAAD /* NSMutableURLRequest+Parameters.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSMutableURLRequest+Parameters.m"; path = "Class/OAConsumer/NSMutableURLRequest+Parameters.m"; sourceTree = "<group>"; };
+		FD4FEC12119898E0009CBAAD /* NSString+URLEncoding.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSString+URLEncoding.h"; path = "Class/OAConsumer/NSString+URLEncoding.h"; sourceTree = "<group>"; };
+		FD4FEC13119898E0009CBAAD /* NSString+URLEncoding.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSString+URLEncoding.m"; path = "Class/OAConsumer/NSString+URLEncoding.m"; sourceTree = "<group>"; };
+		FD4FEC14119898E0009CBAAD /* NSURL+Base.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSURL+Base.h"; path = "Class/OAConsumer/NSURL+Base.h"; sourceTree = "<group>"; };
+		FD4FEC15119898E0009CBAAD /* NSURL+Base.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSURL+Base.m"; path = "Class/OAConsumer/NSURL+Base.m"; sourceTree = "<group>"; };
+		FD4FEC16119898E0009CBAAD /* OAAsynchronousDataFetcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OAAsynchronousDataFetcher.h; path = Class/OAConsumer/OAAsynchronousDataFetcher.h; sourceTree = "<group>"; };
+		FD4FEC17119898E0009CBAAD /* OAAsynchronousDataFetcher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = OAAsynchronousDataFetcher.m; path = Class/OAConsumer/OAAsynchronousDataFetcher.m; sourceTree = "<group>"; };
+		FD4FEC18119898E0009CBAAD /* OAConsumer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OAConsumer.h; path = Class/OAConsumer/OAConsumer.h; sourceTree = "<group>"; };
+		FD4FEC19119898E0009CBAAD /* OAConsumer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = OAConsumer.m; path = Class/OAConsumer/OAConsumer.m; sourceTree = "<group>"; };
+		FD4FEC1A119898E0009CBAAD /* OADataFetcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OADataFetcher.h; path = Class/OAConsumer/OADataFetcher.h; sourceTree = "<group>"; };
+		FD4FEC1B119898E0009CBAAD /* OADataFetcher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = OADataFetcher.m; path = Class/OAConsumer/OADataFetcher.m; sourceTree = "<group>"; };
+		FD4FEC1C119898E0009CBAAD /* OAHMAC_SHA1SignatureProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OAHMAC_SHA1SignatureProvider.h; path = Class/OAConsumer/OAHMAC_SHA1SignatureProvider.h; sourceTree = "<group>"; };
+		FD4FEC1D119898E0009CBAAD /* OAHMAC_SHA1SignatureProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = OAHMAC_SHA1SignatureProvider.m; path = Class/OAConsumer/OAHMAC_SHA1SignatureProvider.m; sourceTree = "<group>"; };
+		FD4FEC1E119898E0009CBAAD /* OAMutableURLRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OAMutableURLRequest.h; path = Class/OAConsumer/OAMutableURLRequest.h; sourceTree = "<group>"; };
+		FD4FEC1F119898E0009CBAAD /* OAMutableURLRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = OAMutableURLRequest.m; path = Class/OAConsumer/OAMutableURLRequest.m; sourceTree = "<group>"; };
+		FD4FEC20119898E0009CBAAD /* OAPlaintextSignatureProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OAPlaintextSignatureProvider.h; path = Class/OAConsumer/OAPlaintextSignatureProvider.h; sourceTree = "<group>"; };
+		FD4FEC21119898E0009CBAAD /* OAPlaintextSignatureProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = OAPlaintextSignatureProvider.m; path = Class/OAConsumer/OAPlaintextSignatureProvider.m; sourceTree = "<group>"; };
+		FD4FEC22119898E0009CBAAD /* OARequestParameter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OARequestParameter.h; path = Class/OAConsumer/OARequestParameter.h; sourceTree = "<group>"; };
+		FD4FEC23119898E0009CBAAD /* OARequestParameter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = OARequestParameter.m; path = Class/OAConsumer/OARequestParameter.m; sourceTree = "<group>"; };
+		FD4FEC24119898E0009CBAAD /* OAServiceTicket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OAServiceTicket.h; path = Class/OAConsumer/OAServiceTicket.h; sourceTree = "<group>"; };
+		FD4FEC25119898E0009CBAAD /* OAServiceTicket.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = OAServiceTicket.m; path = Class/OAConsumer/OAServiceTicket.m; sourceTree = "<group>"; };
+		FD4FEC26119898E0009CBAAD /* OASignatureProviding.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OASignatureProviding.h; path = Class/OAConsumer/OASignatureProviding.h; sourceTree = "<group>"; };
+		FD4FEC29119898E0009CBAAD /* OAToken.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OAToken.h; path = Class/OAConsumer/OAToken.h; sourceTree = "<group>"; };
+		FD4FEC2A119898E0009CBAAD /* OAToken.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = OAToken.m; path = Class/OAConsumer/OAToken.m; sourceTree = "<group>"; };
+		FD4FEC2B119898E0009CBAAD /* OAuthConsumer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OAuthConsumer.h; path = Class/OAConsumer/OAuthConsumer.h; sourceTree = "<group>"; };
+		FD4FEC48119898F3009CBAAD /* JSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = JSON.h; path = Class/SBJson/JSON.h; sourceTree = "<group>"; };
+		FD4FEC49119898F3009CBAAD /* NSObject+SBJSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSObject+SBJSON.h"; path = "Class/SBJson/NSObject+SBJSON.h"; sourceTree = "<group>"; };
+		FD4FEC4A119898F3009CBAAD /* NSObject+SBJSON.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSObject+SBJSON.m"; path = "Class/SBJson/NSObject+SBJSON.m"; sourceTree = "<group>"; };
+		FD4FEC4B119898F3009CBAAD /* NSString+SBJSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSString+SBJSON.h"; path = "Class/SBJson/NSString+SBJSON.h"; sourceTree = "<group>"; };
+		FD4FEC4C119898F3009CBAAD /* NSString+SBJSON.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSString+SBJSON.m"; path = "Class/SBJson/NSString+SBJSON.m"; sourceTree = "<group>"; };
+		FD4FEC4D119898F3009CBAAD /* SBJSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SBJSON.h; path = Class/SBJson/SBJSON.h; sourceTree = "<group>"; };
+		FD4FEC4E119898F3009CBAAD /* SBJSON.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SBJSON.m; path = Class/SBJson/SBJSON.m; sourceTree = "<group>"; };
+		FD4FEC4F119898F3009CBAAD /* SBJsonBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SBJsonBase.h; path = Class/SBJson/SBJsonBase.h; sourceTree = "<group>"; };
+		FD4FEC50119898F3009CBAAD /* SBJsonBase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SBJsonBase.m; path = Class/SBJson/SBJsonBase.m; sourceTree = "<group>"; };
+		FD4FEC51119898F3009CBAAD /* SBJsonParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SBJsonParser.h; path = Class/SBJson/SBJsonParser.h; sourceTree = "<group>"; };
+		FD4FEC52119898F3009CBAAD /* SBJsonParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SBJsonParser.m; path = Class/SBJson/SBJsonParser.m; sourceTree = "<group>"; };
+		FD4FEC53119898F3009CBAAD /* SBJsonWriter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SBJsonWriter.h; path = Class/SBJson/SBJsonWriter.h; sourceTree = "<group>"; };
+		FD4FEC54119898F3009CBAAD /* SBJsonWriter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SBJsonWriter.m; path = Class/SBJson/SBJsonWriter.m; sourceTree = "<group>"; };
+		FD4FEC6411989901009CBAAD /* PagedEntity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PagedEntity.h; path = Class/Model/PagedEntity.h; sourceTree = "<group>"; };
+		FD4FEC6511989901009CBAAD /* PagedEntity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PagedEntity.m; path = Class/Model/PagedEntity.m; sourceTree = "<group>"; };
+		FD4FEC7111989982009CBAAD /* FellowshipOneAPIDateUtility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FellowshipOneAPIDateUtility.h; path = Class/Shared/FellowshipOneAPIDateUtility.h; sourceTree = "<group>"; };
+		FD4FEC7211989982009CBAAD /* FellowshipOneAPIDateUtility.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FellowshipOneAPIDateUtility.m; path = Class/Shared/FellowshipOneAPIDateUtility.m; sourceTree = "<group>"; };
+		FD4FEC7311989982009CBAAD /* FellowshipOneAPIUtility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FellowshipOneAPIUtility.h; path = Class/Shared/FellowshipOneAPIUtility.h; sourceTree = "<group>"; };
+		FD4FEC7411989982009CBAAD /* FellowshipOneAPIUtility.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FellowshipOneAPIUtility.m; path = Class/Shared/FellowshipOneAPIUtility.m; sourceTree = "<group>"; };
+		FD4FEC8C11989A2A009CBAAD /* Constants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Constants.h; path = Class/Shared/Constants.h; sourceTree = "<group>"; };
+		FD4FEC8D11989A2A009CBAAD /* Constants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Constants.m; path = Class/Shared/Constants.m; sourceTree = "<group>"; };
+		FD4FEC9311989ACC009CBAAD /* Base64Transcoder.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = Base64Transcoder.c; path = Class/Shared/Crypto/Base64Transcoder.c; sourceTree = "<group>"; };
+		FD4FEC9411989ACC009CBAAD /* Base64Transcoder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Base64Transcoder.h; path = Class/Shared/Crypto/Base64Transcoder.h; sourceTree = "<group>"; };
+		FD4FEC9511989ACC009CBAAD /* hmac.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = hmac.c; path = Class/Shared/Crypto/hmac.c; sourceTree = "<group>"; };
+		FD4FEC9611989ACC009CBAAD /* hmac.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = hmac.h; path = Class/Shared/Crypto/hmac.h; sourceTree = "<group>"; };
+		FD4FEC9711989ACC009CBAAD /* sha1.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = sha1.c; path = Class/Shared/Crypto/sha1.c; sourceTree = "<group>"; };
+		FD4FEC9811989ACC009CBAAD /* sha1.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = sha1.h; path = Class/Shared/Crypto/sha1.h; sourceTree = "<group>"; };
+		FD4FECB011989B5B009CBAAD /* Enum.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Enum.h; sourceTree = "<group>"; };
+		FD4FECEF1198B11A009CBAAD /* FellowshipOneAPIClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FellowshipOneAPIClient.h; sourceTree = "<group>"; };
+		FD5426701199AB5700F3CFAF /* FellowshipTechTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "FellowshipTechTests-Info.plist"; sourceTree = "<group>"; };
+		FD5427A01199B5E800F3CFAF /* ConsoleLog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConsoleLog.h; sourceTree = "<group>"; };
+		FD5427A11199B5E800F3CFAF /* ConsoleLog.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConsoleLog.m; sourceTree = "<group>"; };
+		FD5427B31199B98600F3CFAF /* FellowshipOneAPIClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FellowshipOneAPIClient.m; sourceTree = "<group>"; };
+		FD6410F311C6854F00756648 /* FTError.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FTError.h; path = Class/Model/FTError.h; sourceTree = "<group>"; };
+		FD6410F411C6854F00756648 /* FTError.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FTError.m; path = Class/Model/FTError.m; sourceTree = "<group>"; };
+		FD6787A61309BEDF0062B6DC /* FellowshipOneAPITests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FellowshipOneAPITests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
+		FD6787A71309BEDF0062B6DC /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		FD6787AA1309BEDF0062B6DC /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		FD6787AE1309BEDF0062B6DC /* FellowshipOneAPITests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "FellowshipOneAPITests-Info.plist"; sourceTree = "<group>"; };
+		FD6787B01309BEDF0062B6DC /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		FD6787B21309BEDF0062B6DC /* FellowshipOneAPITests-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "FellowshipOneAPITests-Prefix.pch"; sourceTree = "<group>"; };
+		FD6787B31309BEDF0062B6DC /* FellowshipOneAPITests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FellowshipOneAPITests.h; sourceTree = "<group>"; };
+		FD6787B51309BEDF0062B6DC /* FellowshipOneAPITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FellowshipOneAPITests.m; sourceTree = "<group>"; };
+		FD7AA49613140DFA0013F862 /* libFellowshipTechAPI.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libFellowshipTechAPI.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		FD89373611D2D83900FCC1D0 /* FTHousehold.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FTHousehold.h; path = Class/Model/People/FTHousehold.h; sourceTree = "<group>"; };
+		FD89373711D2D83900FCC1D0 /* FTHousehold.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FTHousehold.m; path = Class/Model/People/FTHousehold.m; sourceTree = "<group>"; };
+		FD89373811D2D83900FCC1D0 /* FTHouseholdMemberType.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FTHouseholdMemberType.h; path = Class/Model/People/FTHouseholdMemberType.h; sourceTree = "<group>"; };
+		FD89373911D2D83900FCC1D0 /* FTHouseholdMemberType.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FTHouseholdMemberType.m; path = Class/Model/People/FTHouseholdMemberType.m; sourceTree = "<group>"; };
+		FD89373A11D2D83900FCC1D0 /* FTPerson.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FTPerson.h; path = Class/Model/People/FTPerson.h; sourceTree = "<group>"; };
+		FD89373B11D2D83900FCC1D0 /* FTPerson.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FTPerson.m; path = Class/Model/People/FTPerson.m; sourceTree = "<group>"; };
+		FD89373C11D2D83900FCC1D0 /* FTStatus.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FTStatus.h; path = Class/Model/People/FTStatus.h; sourceTree = "<group>"; };
+		FD89373D11D2D83900FCC1D0 /* FTStatus.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FTStatus.m; path = Class/Model/People/FTStatus.m; sourceTree = "<group>"; };
+		FD89373E11D2D83900FCC1D0 /* FTSubStatus.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FTSubStatus.h; path = Class/Model/People/FTSubStatus.h; sourceTree = "<group>"; };
+		FD89373F11D2D83900FCC1D0 /* FTSubStatus.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FTSubStatus.m; path = Class/Model/People/FTSubStatus.m; sourceTree = "<group>"; };
+		FDCB159511F22F2100151714 /* NSObject+serializeToJSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+serializeToJSON.h"; sourceTree = "<group>"; };
+		FDCB159611F22F2100151714 /* NSObject+serializeToJSON.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+serializeToJSON.m"; sourceTree = "<group>"; };
+		FDCF632711F5F0E4004F0178 /* FTParentNamedObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FTParentNamedObject.h; path = Class/Model/FTParentNamedObject.h; sourceTree = "<group>"; };
+		FDCF632811F5F0E4004F0178 /* FTParentNamedObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FTParentNamedObject.m; path = Class/Model/FTParentNamedObject.m; sourceTree = "<group>"; };
+		FDCF632911F5F0E4004F0178 /* FTParentObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FTParentObject.h; path = Class/Model/FTParentObject.h; sourceTree = "<group>"; };
+		FDCF632A11F5F0E4004F0178 /* FTParentObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FTParentObject.m; path = Class/Model/FTParentObject.m; sourceTree = "<group>"; };
+		FDD3DCD011D6A41D0016ADD8 /* FTCommunication.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FTCommunication.h; path = Class/Model/People/FTCommunication.h; sourceTree = "<group>"; };
+		FDD3DCD111D6A41D0016ADD8 /* FTCommunication.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FTCommunication.m; path = Class/Model/People/FTCommunication.m; sourceTree = "<group>"; };
+		FDDA7DC311D69B61006DDA95 /* FTAddress.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FTAddress.h; path = Class/Model/People/FTAddress.h; sourceTree = "<group>"; };
+		FDDA7DC411D69B61006DDA95 /* FTAddress.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FTAddress.m; path = Class/Model/People/FTAddress.m; sourceTree = "<group>"; };
+		FDE5F10111E4F5DF0042363D /* NSObject+serializeToXml.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+serializeToXml.h"; sourceTree = "<group>"; };
+		FDE5F10211E4F5DF0042363D /* NSObject+serializeToXml.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+serializeToXml.m"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		D2AAC07C0554694100DB518D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AACBBE4A0F95108600F1A2B1 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FD6787A21309BEDF0062B6DC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FD6787A81309BEDF0062B6DC /* UIKit.framework in Frameworks */,
+				FD6787A91309BEDF0062B6DC /* Foundation.framework in Frameworks */,
+				FD6787AB1309BEDF0062B6DC /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		034768DFFF38A50411DB9C8B /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				FD6787A61309BEDF0062B6DC /* FellowshipOneAPITests.octest */,
+				FD7AA49613140DFA0013F862 /* libFellowshipTechAPI.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		0867D691FE84028FC02AAC07 /* FellowshipTechAPI */ = {
+			isa = PBXGroup;
+			children = (
+				08FB77AEFE84172EC02AAC07 /* Classes */,
+				32C88DFF0371C24200C91783 /* Other Sources */,
+				FD6787AC1309BEDF0062B6DC /* FellowshipOneAPITests */,
+				0867D69AFE84028FC02AAC07 /* Frameworks */,
+				034768DFFF38A50411DB9C8B /* Products */,
+				FD5426701199AB5700F3CFAF /* FellowshipTechTests-Info.plist */,
+			);
+			name = FellowshipTechAPI;
+			sourceTree = "<group>";
+		};
+		0867D69AFE84028FC02AAC07 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				AACBBE490F95108600F1A2B1 /* Foundation.framework */,
+				FD6787A71309BEDF0062B6DC /* UIKit.framework */,
+				FD6787AA1309BEDF0062B6DC /* CoreGraphics.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		08FB77AEFE84172EC02AAC07 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				FD4FEC6E11989941009CBAAD /* Shared */,
+				FD4FEBFD119898BA009CBAAD /* Enum */,
+				FD4FEBFC119898B5009CBAAD /* FTOAuth */,
+				FD4FEBFB119898AF009CBAAD /* OAuth */,
+				FD4FEBF9119898A3009CBAAD /* SBJson */,
+				FD4FEBF811989899009CBAAD /* Model */,
+				FD4FECEF1198B11A009CBAAD /* FellowshipOneAPIClient.h */,
+				FD5427B31199B98600F3CFAF /* FellowshipOneAPIClient.m */,
+			);
+			name = Classes;
+			sourceTree = "<group>";
+		};
+		32C88DFF0371C24200C91783 /* Other Sources */ = {
+			isa = PBXGroup;
+			children = (
+				AA747D9E0F9514B9006C5449 /* FellowshipTechAPI_Prefix.pch */,
+			);
+			name = "Other Sources";
+			sourceTree = "<group>";
+		};
+		FD11F14711B8154B0048C7CF /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				FD11F15511B815900048C7CF /* NSDate+ageFromDate.h */,
+				FD11F15611B815900048C7CF /* NSDate+ageFromDate.m */,
+				FDE5F10111E4F5DF0042363D /* NSObject+serializeToXml.h */,
+				FDE5F10211E4F5DF0042363D /* NSObject+serializeToXml.m */,
+				FDCB159511F22F2100151714 /* NSObject+serializeToJSON.h */,
+				FDCB159611F22F2100151714 /* NSObject+serializeToJSON.m */,
+			);
+			name = Categories;
+			sourceTree = "<group>";
+		};
+		FD4FEBF811989899009CBAAD /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				FDDA7DC211D69B46006DDA95 /* Giving */,
+				FDDA7DC011D69B37006DDA95 /* People */,
+				FDCF632711F5F0E4004F0178 /* FTParentNamedObject.h */,
+				FDCF632811F5F0E4004F0178 /* FTParentNamedObject.m */,
+				FDCF632911F5F0E4004F0178 /* FTParentObject.h */,
+				FDCF632A11F5F0E4004F0178 /* FTParentObject.m */,
+				FD4FEC6411989901009CBAAD /* PagedEntity.h */,
+				FD4FEC6511989901009CBAAD /* PagedEntity.m */,
+				FD6410F311C6854F00756648 /* FTError.h */,
+				FD6410F411C6854F00756648 /* FTError.m */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		FD4FEBF9119898A3009CBAAD /* SBJson */ = {
+			isa = PBXGroup;
+			children = (
+				FD4FEC48119898F3009CBAAD /* JSON.h */,
+				FD4FEC49119898F3009CBAAD /* NSObject+SBJSON.h */,
+				FD4FEC4A119898F3009CBAAD /* NSObject+SBJSON.m */,
+				FD4FEC4B119898F3009CBAAD /* NSString+SBJSON.h */,
+				FD4FEC4C119898F3009CBAAD /* NSString+SBJSON.m */,
+				FD4FEC4D119898F3009CBAAD /* SBJSON.h */,
+				FD4FEC4E119898F3009CBAAD /* SBJSON.m */,
+				FD4FEC4F119898F3009CBAAD /* SBJsonBase.h */,
+				FD4FEC50119898F3009CBAAD /* SBJsonBase.m */,
+				FD4FEC51119898F3009CBAAD /* SBJsonParser.h */,
+				FD4FEC52119898F3009CBAAD /* SBJsonParser.m */,
+				FD4FEC53119898F3009CBAAD /* SBJsonWriter.h */,
+				FD4FEC54119898F3009CBAAD /* SBJsonWriter.m */,
+			);
+			name = SBJson;
+			sourceTree = "<group>";
+		};
+		FD4FEBFB119898AF009CBAAD /* OAuth */ = {
+			isa = PBXGroup;
+			children = (
+				FD4FEC10119898E0009CBAAD /* NSMutableURLRequest+Parameters.h */,
+				FD4FEC11119898E0009CBAAD /* NSMutableURLRequest+Parameters.m */,
+				FD4FEC12119898E0009CBAAD /* NSString+URLEncoding.h */,
+				FD4FEC13119898E0009CBAAD /* NSString+URLEncoding.m */,
+				FD4FEC14119898E0009CBAAD /* NSURL+Base.h */,
+				FD4FEC15119898E0009CBAAD /* NSURL+Base.m */,
+				FD4FEC16119898E0009CBAAD /* OAAsynchronousDataFetcher.h */,
+				FD4FEC17119898E0009CBAAD /* OAAsynchronousDataFetcher.m */,
+				FD4FEC18119898E0009CBAAD /* OAConsumer.h */,
+				FD4FEC19119898E0009CBAAD /* OAConsumer.m */,
+				FD4FEC1A119898E0009CBAAD /* OADataFetcher.h */,
+				FD4FEC1B119898E0009CBAAD /* OADataFetcher.m */,
+				FD4FEC1C119898E0009CBAAD /* OAHMAC_SHA1SignatureProvider.h */,
+				FD4FEC1D119898E0009CBAAD /* OAHMAC_SHA1SignatureProvider.m */,
+				FD4FEC1E119898E0009CBAAD /* OAMutableURLRequest.h */,
+				FD4FEC1F119898E0009CBAAD /* OAMutableURLRequest.m */,
+				FD4FEC20119898E0009CBAAD /* OAPlaintextSignatureProvider.h */,
+				FD4FEC21119898E0009CBAAD /* OAPlaintextSignatureProvider.m */,
+				FD4FEC22119898E0009CBAAD /* OARequestParameter.h */,
+				FD4FEC23119898E0009CBAAD /* OARequestParameter.m */,
+				FD4FEC24119898E0009CBAAD /* OAServiceTicket.h */,
+				FD4FEC25119898E0009CBAAD /* OAServiceTicket.m */,
+				FD4FEC26119898E0009CBAAD /* OASignatureProviding.h */,
+				FD4FEC29119898E0009CBAAD /* OAToken.h */,
+				FD4FEC2A119898E0009CBAAD /* OAToken.m */,
+				FD4FEC2B119898E0009CBAAD /* OAuthConsumer.h */,
+			);
+			name = OAuth;
+			sourceTree = "<group>";
+		};
+		FD4FEBFC119898B5009CBAAD /* FTOAuth */ = {
+			isa = PBXGroup;
+			children = (
+				FD4FEC04119898D3009CBAAD /* FTOAuth.h */,
+				FD4FEC05119898D3009CBAAD /* FTOAuth.m */,
+				FD4FEC06119898D3009CBAAD /* FTOAuthResult.h */,
+				FD4FEC07119898D3009CBAAD /* FTOAuthResult.m */,
+				FD4FEC08119898D3009CBAAD /* FTUserDefaults.h */,
+				FD4FEC09119898D3009CBAAD /* FTUserDefaults.m */,
+			);
+			name = FTOAuth;
+			sourceTree = "<group>";
+		};
+		FD4FEBFD119898BA009CBAAD /* Enum */ = {
+			isa = PBXGroup;
+			children = (
+				FD4FEBFE119898C8009CBAAD /* EntityState.h */,
+				FD4FEBFF119898C8009CBAAD /* FTAPIRealm.h */,
+				FD4FEC00119898C8009CBAAD /* HTTPMethod.h */,
+				FD4FECB011989B5B009CBAAD /* Enum.h */,
+			);
+			name = Enum;
+			sourceTree = "<group>";
+		};
+		FD4FEC6E11989941009CBAAD /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				FD11F14711B8154B0048C7CF /* Categories */,
+				FD4FEC9211989AB7009CBAAD /* Crypto */,
+				FD4FEC8C11989A2A009CBAAD /* Constants.h */,
+				FD4FEC8D11989A2A009CBAAD /* Constants.m */,
+				FD4FEC7111989982009CBAAD /* FellowshipOneAPIDateUtility.h */,
+				FD4FEC7211989982009CBAAD /* FellowshipOneAPIDateUtility.m */,
+				FD4FEC7311989982009CBAAD /* FellowshipOneAPIUtility.h */,
+				FD4FEC7411989982009CBAAD /* FellowshipOneAPIUtility.m */,
+				FD5427A01199B5E800F3CFAF /* ConsoleLog.h */,
+				FD5427A11199B5E800F3CFAF /* ConsoleLog.m */,
+			);
+			name = Shared;
+			sourceTree = "<group>";
+		};
+		FD4FEC9211989AB7009CBAAD /* Crypto */ = {
+			isa = PBXGroup;
+			children = (
+				FD4FEC9311989ACC009CBAAD /* Base64Transcoder.c */,
+				FD4FEC9411989ACC009CBAAD /* Base64Transcoder.h */,
+				FD4FEC9511989ACC009CBAAD /* hmac.c */,
+				FD4FEC9611989ACC009CBAAD /* hmac.h */,
+				FD4FEC9711989ACC009CBAAD /* sha1.c */,
+				FD4FEC9811989ACC009CBAAD /* sha1.h */,
+			);
+			name = Crypto;
+			sourceTree = "<group>";
+		};
+		FD6787AC1309BEDF0062B6DC /* FellowshipOneAPITests */ = {
+			isa = PBXGroup;
+			children = (
+				FD6787B31309BEDF0062B6DC /* FellowshipOneAPITests.h */,
+				FD6787B51309BEDF0062B6DC /* FellowshipOneAPITests.m */,
+				FD6787AD1309BEDF0062B6DC /* Supporting Files */,
+			);
+			path = FellowshipOneAPITests;
+			sourceTree = "<group>";
+		};
+		FD6787AD1309BEDF0062B6DC /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				FD6787AE1309BEDF0062B6DC /* FellowshipOneAPITests-Info.plist */,
+				FD6787AF1309BEDF0062B6DC /* InfoPlist.strings */,
+				FD6787B21309BEDF0062B6DC /* FellowshipOneAPITests-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		FDDA7DC011D69B37006DDA95 /* People */ = {
+			isa = PBXGroup;
+			children = (
+				FD89373611D2D83900FCC1D0 /* FTHousehold.h */,
+				FD89373711D2D83900FCC1D0 /* FTHousehold.m */,
+				FD89373811D2D83900FCC1D0 /* FTHouseholdMemberType.h */,
+				FD89373911D2D83900FCC1D0 /* FTHouseholdMemberType.m */,
+				FD89373A11D2D83900FCC1D0 /* FTPerson.h */,
+				FD89373B11D2D83900FCC1D0 /* FTPerson.m */,
+				FD89373C11D2D83900FCC1D0 /* FTStatus.h */,
+				FD89373D11D2D83900FCC1D0 /* FTStatus.m */,
+				FD89373E11D2D83900FCC1D0 /* FTSubStatus.h */,
+				FD89373F11D2D83900FCC1D0 /* FTSubStatus.m */,
+				FDDA7DC311D69B61006DDA95 /* FTAddress.h */,
+				FDDA7DC411D69B61006DDA95 /* FTAddress.m */,
+				FDD3DCD011D6A41D0016ADD8 /* FTCommunication.h */,
+				FDD3DCD111D6A41D0016ADD8 /* FTCommunication.m */,
+			);
+			name = People;
+			sourceTree = "<group>";
+		};
+		FDDA7DC211D69B46006DDA95 /* Giving */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Giving;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		D2AAC07A0554694100DB518D /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AA747D9F0F9514B9006C5449 /* FellowshipTechAPI_Prefix.pch in Headers */,
+				FD4FEC01119898C8009CBAAD /* EntityState.h in Headers */,
+				FD4FEC02119898C8009CBAAD /* FTAPIRealm.h in Headers */,
+				FD4FEC03119898C8009CBAAD /* HTTPMethod.h in Headers */,
+				FD4FEC0A119898D3009CBAAD /* FTOAuth.h in Headers */,
+				FD4FEC0C119898D3009CBAAD /* FTOAuthResult.h in Headers */,
+				FD4FEC0E119898D3009CBAAD /* FTUserDefaults.h in Headers */,
+				FD4FEC2C119898E0009CBAAD /* NSMutableURLRequest+Parameters.h in Headers */,
+				FD4FEC2E119898E0009CBAAD /* NSString+URLEncoding.h in Headers */,
+				FD4FEC30119898E0009CBAAD /* NSURL+Base.h in Headers */,
+				FD4FEC32119898E0009CBAAD /* OAAsynchronousDataFetcher.h in Headers */,
+				FD4FEC34119898E0009CBAAD /* OAConsumer.h in Headers */,
+				FD4FEC36119898E0009CBAAD /* OADataFetcher.h in Headers */,
+				FD4FEC38119898E0009CBAAD /* OAHMAC_SHA1SignatureProvider.h in Headers */,
+				FD4FEC3A119898E0009CBAAD /* OAMutableURLRequest.h in Headers */,
+				FD4FEC3C119898E0009CBAAD /* OAPlaintextSignatureProvider.h in Headers */,
+				FD4FEC3E119898E0009CBAAD /* OARequestParameter.h in Headers */,
+				FD4FEC40119898E0009CBAAD /* OAServiceTicket.h in Headers */,
+				FD4FEC42119898E0009CBAAD /* OASignatureProviding.h in Headers */,
+				FD4FEC45119898E0009CBAAD /* OAToken.h in Headers */,
+				FD4FEC47119898E0009CBAAD /* OAuthConsumer.h in Headers */,
+				FD4FEC55119898F3009CBAAD /* JSON.h in Headers */,
+				FD4FEC56119898F3009CBAAD /* NSObject+SBJSON.h in Headers */,
+				FD4FEC58119898F3009CBAAD /* NSString+SBJSON.h in Headers */,
+				FD4FEC5A119898F3009CBAAD /* SBJSON.h in Headers */,
+				FD4FEC5C119898F3009CBAAD /* SBJsonBase.h in Headers */,
+				FD4FEC5E119898F3009CBAAD /* SBJsonParser.h in Headers */,
+				FD4FEC60119898F3009CBAAD /* SBJsonWriter.h in Headers */,
+				FD4FEC6811989901009CBAAD /* PagedEntity.h in Headers */,
+				FD4FEC7511989982009CBAAD /* FellowshipOneAPIDateUtility.h in Headers */,
+				FD4FEC7711989982009CBAAD /* FellowshipOneAPIUtility.h in Headers */,
+				FD4FEC8E11989A2A009CBAAD /* Constants.h in Headers */,
+				FD4FEC9A11989ACC009CBAAD /* Base64Transcoder.h in Headers */,
+				FD4FEC9C11989ACC009CBAAD /* hmac.h in Headers */,
+				FD4FEC9E11989ACC009CBAAD /* sha1.h in Headers */,
+				FD4FECB111989B5B009CBAAD /* Enum.h in Headers */,
+				FD4FECF01198B11A009CBAAD /* FellowshipOneAPIClient.h in Headers */,
+				FD5427A21199B5E800F3CFAF /* ConsoleLog.h in Headers */,
+				FD11F15711B815900048C7CF /* NSDate+ageFromDate.h in Headers */,
+				FD6410F511C6854F00756648 /* FTError.h in Headers */,
+				FD89374011D2D83900FCC1D0 /* FTHousehold.h in Headers */,
+				FD89374211D2D83900FCC1D0 /* FTHouseholdMemberType.h in Headers */,
+				FD89374411D2D83900FCC1D0 /* FTPerson.h in Headers */,
+				FD89374611D2D83900FCC1D0 /* FTStatus.h in Headers */,
+				FD89374811D2D83900FCC1D0 /* FTSubStatus.h in Headers */,
+				FDDA7DC511D69B61006DDA95 /* FTAddress.h in Headers */,
+				FDD3DCD211D6A41D0016ADD8 /* FTCommunication.h in Headers */,
+				FDE5F10311E4F5DF0042363D /* NSObject+serializeToXml.h in Headers */,
+				FDCB159711F22F2100151714 /* NSObject+serializeToJSON.h in Headers */,
+				FDCF632B11F5F0E4004F0178 /* FTParentNamedObject.h in Headers */,
+				FDCF632D11F5F0E4004F0178 /* FTParentObject.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		D2AAC07D0554694100DB518D /* FellowshipTechAPI */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1DEB921E08733DC00010E9CD /* Build configuration list for PBXNativeTarget "FellowshipTechAPI" */;
+			buildPhases = (
+				D2AAC07A0554694100DB518D /* Headers */,
+				D2AAC07B0554694100DB518D /* Sources */,
+				D2AAC07C0554694100DB518D /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = FellowshipTechAPI;
+			productName = FellowshipTechAPI;
+			productReference = FD7AA49613140DFA0013F862 /* libFellowshipTechAPI.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		FD6787A51309BEDF0062B6DC /* FellowshipOneAPITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FD6787B91309BEDF0062B6DC /* Build configuration list for PBXNativeTarget "FellowshipOneAPITests" */;
+			buildPhases = (
+				FD6787A11309BEDF0062B6DC /* Sources */,
+				FD6787A21309BEDF0062B6DC /* Frameworks */,
+				FD6787A31309BEDF0062B6DC /* Resources */,
+				FD6787A41309BEDF0062B6DC /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				FD7AA49513140DC20013F862 /* PBXTargetDependency */,
+			);
+			name = FellowshipOneAPITests;
+			productName = FellowshipOneAPITests;
+			productReference = FD6787A61309BEDF0062B6DC /* FellowshipOneAPITests.octest */;
+			productType = "com.apple.product-type.bundle";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		0867D690FE84028FC02AAC07 /* Project object */ = {
+			isa = PBXProject;
+			buildConfigurationList = 1DEB922208733DC00010E9CD /* Build configuration list for PBXProject "FellowshipTechAPI" */;
+			compatibilityVersion = "Xcode 3.1";
+			developmentRegion = English;
+			hasScannedForEncodings = 1;
+			knownRegions = (
+				English,
+				Japanese,
+				French,
+				German,
+				en,
+			);
+			mainGroup = 0867D691FE84028FC02AAC07 /* FellowshipTechAPI */;
+			productRefGroup = 034768DFFF38A50411DB9C8B /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				D2AAC07D0554694100DB518D /* FellowshipTechAPI */,
+				FD6787A51309BEDF0062B6DC /* FellowshipOneAPITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		FD6787A31309BEDF0062B6DC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FD6787B11309BEDF0062B6DC /* InfoPlist.strings in Resources */,
+				FD6787B41309BEDF0062B6DC /* FellowshipOneAPITests.h in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		FD6787A41309BEDF0062B6DC /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		D2AAC07B0554694100DB518D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FD4FEC0B119898D3009CBAAD /* FTOAuth.m in Sources */,
+				FD4FEC0D119898D3009CBAAD /* FTOAuthResult.m in Sources */,
+				FD4FEC0F119898D3009CBAAD /* FTUserDefaults.m in Sources */,
+				FD4FEC2D119898E0009CBAAD /* NSMutableURLRequest+Parameters.m in Sources */,
+				FD4FEC2F119898E0009CBAAD /* NSString+URLEncoding.m in Sources */,
+				FD4FEC31119898E0009CBAAD /* NSURL+Base.m in Sources */,
+				FD4FEC33119898E0009CBAAD /* OAAsynchronousDataFetcher.m in Sources */,
+				FD4FEC35119898E0009CBAAD /* OAConsumer.m in Sources */,
+				FD4FEC37119898E0009CBAAD /* OADataFetcher.m in Sources */,
+				FD4FEC39119898E0009CBAAD /* OAHMAC_SHA1SignatureProvider.m in Sources */,
+				FD4FEC3B119898E0009CBAAD /* OAMutableURLRequest.m in Sources */,
+				FD4FEC3D119898E0009CBAAD /* OAPlaintextSignatureProvider.m in Sources */,
+				FD4FEC3F119898E0009CBAAD /* OARequestParameter.m in Sources */,
+				FD4FEC41119898E0009CBAAD /* OAServiceTicket.m in Sources */,
+				FD4FEC46119898E0009CBAAD /* OAToken.m in Sources */,
+				FD4FEC57119898F3009CBAAD /* NSObject+SBJSON.m in Sources */,
+				FD4FEC59119898F3009CBAAD /* NSString+SBJSON.m in Sources */,
+				FD4FEC5B119898F3009CBAAD /* SBJSON.m in Sources */,
+				FD4FEC5D119898F3009CBAAD /* SBJsonBase.m in Sources */,
+				FD4FEC5F119898F3009CBAAD /* SBJsonParser.m in Sources */,
+				FD4FEC61119898F3009CBAAD /* SBJsonWriter.m in Sources */,
+				FD4FEC6911989901009CBAAD /* PagedEntity.m in Sources */,
+				FD4FEC7611989982009CBAAD /* FellowshipOneAPIDateUtility.m in Sources */,
+				FD4FEC7811989982009CBAAD /* FellowshipOneAPIUtility.m in Sources */,
+				FD4FEC8F11989A2A009CBAAD /* Constants.m in Sources */,
+				FD4FEC9911989ACC009CBAAD /* Base64Transcoder.c in Sources */,
+				FD4FEC9B11989ACC009CBAAD /* hmac.c in Sources */,
+				FD4FEC9D11989ACC009CBAAD /* sha1.c in Sources */,
+				FD5427A31199B5E800F3CFAF /* ConsoleLog.m in Sources */,
+				FD5427B41199B98600F3CFAF /* FellowshipOneAPIClient.m in Sources */,
+				FD11F15811B815900048C7CF /* NSDate+ageFromDate.m in Sources */,
+				FD6410F611C6854F00756648 /* FTError.m in Sources */,
+				FD89374111D2D83900FCC1D0 /* FTHousehold.m in Sources */,
+				FD89374311D2D83900FCC1D0 /* FTHouseholdMemberType.m in Sources */,
+				FD89374511D2D83900FCC1D0 /* FTPerson.m in Sources */,
+				FD89374711D2D83900FCC1D0 /* FTStatus.m in Sources */,
+				FD89374911D2D83900FCC1D0 /* FTSubStatus.m in Sources */,
+				FDDA7DC611D69B61006DDA95 /* FTAddress.m in Sources */,
+				FDD3DCD311D6A41D0016ADD8 /* FTCommunication.m in Sources */,
+				FDE5F10411E4F5DF0042363D /* NSObject+serializeToXml.m in Sources */,
+				FDCB159811F22F2100151714 /* NSObject+serializeToJSON.m in Sources */,
+				FDCF632C11F5F0E4004F0178 /* FTParentNamedObject.m in Sources */,
+				FDCF632E11F5F0E4004F0178 /* FTParentObject.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FD6787A11309BEDF0062B6DC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FD6787B61309BEDF0062B6DC /* FellowshipOneAPITests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		FD7AA49513140DC20013F862 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D2AAC07D0554694100DB518D /* FellowshipTechAPI */;
+			targetProxy = FD7AA49413140DC20013F862 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		FD6787AF1309BEDF0062B6DC /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FD6787B01309BEDF0062B6DC /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		1DEB921F08733DC00010E9CD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				COPY_PHASE_STRIP = NO;
+				DSTROOT = /tmp/FellowshipTechAPI.dst;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_FIX_AND_CONTINUE = YES;
+				GCC_MODEL_TUNING = G5;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = FellowshipTechAPI_Prefix.pch;
+				INSTALL_PATH = /usr/local/lib;
+				PRODUCT_NAME = FellowshipTechAPI;
+				SDKROOT = iphoneos4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALID_ARCHS = "armv6 armv7 i386";
+			};
+			name = Debug;
+		};
+		1DEB922008733DC00010E9CD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				DSTROOT = /tmp/FellowshipTechAPI.dst;
+				GCC_MODEL_TUNING = G5;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = FellowshipTechAPI_Prefix.pch;
+				INSTALL_PATH = /usr/local/lib;
+				PRODUCT_NAME = FellowshipTechAPI;
+				SDKROOT = iphoneos4.2;
+			};
+			name = Release;
+		};
+		1DEB922308733DC00010E9CD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				GCC_C_LANGUAGE_STANDARD = c99;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				OTHER_LDFLAGS = "-ObjC";
+				PREBINDING = NO;
+				SDKROOT = iphoneos4.2;
+			};
+			name = Debug;
+		};
+		1DEB922408733DC00010E9CD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				GCC_C_LANGUAGE_STANDARD = c99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				OTHER_LDFLAGS = "-ObjC";
+				PREBINDING = NO;
+				SDKROOT = iphoneos4.2;
+			};
+			name = Release;
+		};
+		FD6787B71309BEDF0062B6DC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(DEVELOPER_LIBRARY_DIR)/Frameworks",
+				);
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "FellowshipOneAPITests/FellowshipOneAPITests-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = DEBUG;
+				GCC_VERSION = com.apple.compilers.llvmgcc42;
+				INFOPLIST_FILE = "FellowshipOneAPITests/FellowshipOneAPITests-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 4.2;
+				OTHER_LDFLAGS = (
+					"-framework",
+					SenTestingKit,
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				TEST_AFTER_BUILD = YES;
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Debug;
+		};
+		FD6787B81309BEDF0062B6DC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(DEVELOPER_LIBRARY_DIR)/Frameworks",
+				);
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "FellowshipOneAPITests/FellowshipOneAPITests-Prefix.pch";
+				GCC_VERSION = com.apple.compilers.llvmgcc42;
+				INFOPLIST_FILE = "FellowshipOneAPITests/FellowshipOneAPITests-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 4.2;
+				OTHER_LDFLAGS = (
+					"-framework",
+					SenTestingKit,
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				TEST_AFTER_BUILD = YES;
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		1DEB921E08733DC00010E9CD /* Build configuration list for PBXNativeTarget "FellowshipTechAPI" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1DEB921F08733DC00010E9CD /* Debug */,
+				1DEB922008733DC00010E9CD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1DEB922208733DC00010E9CD /* Build configuration list for PBXProject "FellowshipTechAPI" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1DEB922308733DC00010E9CD /* Debug */,
+				1DEB922408733DC00010E9CD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FD6787B91309BEDF0062B6DC /* Build configuration list for PBXNativeTarget "FellowshipOneAPITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FD6787B71309BEDF0062B6DC /* Debug */,
+				FD6787B81309BEDF0062B6DC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 0867D690FE84028FC02AAC07 /* Project object */;
+}
