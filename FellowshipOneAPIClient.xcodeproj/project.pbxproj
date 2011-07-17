@@ -1,0 +1,918 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		FD0FB05813D2162900A078AC /* Person.m in Sources */ = {isa = PBXBuildFile; fileRef = FD0FB05713D2162900A078AC /* Person.m */; };
+		FD0FB05913D2169A00A078AC /* FOPerson.h in Resources */ = {isa = PBXBuildFile; fileRef = FD764D1013D07A1600BE0F4F /* FOPerson.h */; };
+		FD0FB05C13D2171600A078AC /* BaseTest.m in Sources */ = {isa = PBXBuildFile; fileRef = FD0FB05B13D2171600A078AC /* BaseTest.m */; };
+		FD0FB05D13D2263B00A078AC /* PagedEntity.h in Resources */ = {isa = PBXBuildFile; fileRef = FD764C4213D074D700BE0F4F /* PagedEntity.h */; };
+		FD0FB05E13D2263E00A078AC /* FOParentNamedObject.h in Resources */ = {isa = PBXBuildFile; fileRef = FD764C3E13D074D700BE0F4F /* FOParentNamedObject.h */; };
+		FD0FB05F13D2264100A078AC /* FOParentObject.h in Resources */ = {isa = PBXBuildFile; fileRef = FD764C4013D074D700BE0F4F /* FOParentObject.h */; };
+		FD47128E13D2500D00FD2C26 /* FOStatus.h in Headers */ = {isa = PBXBuildFile; fileRef = FD47128C13D2500C00FD2C26 /* FOStatus.h */; };
+		FD47128F13D2500D00FD2C26 /* FOStatus.m in Sources */ = {isa = PBXBuildFile; fileRef = FD47128D13D2500C00FD2C26 /* FOStatus.m */; };
+		FD47129313D2507E00FD2C26 /* FOSubStatus.h in Headers */ = {isa = PBXBuildFile; fileRef = FD47129113D2507E00FD2C26 /* FOSubStatus.h */; };
+		FD47129413D2507E00FD2C26 /* FOSubStatus.m in Sources */ = {isa = PBXBuildFile; fileRef = FD47129213D2507E00FD2C26 /* FOSubStatus.m */; };
+		FD47129713D250E600FD2C26 /* FOHouseholdMemberType.h in Headers */ = {isa = PBXBuildFile; fileRef = FD47129513D250E500FD2C26 /* FOHouseholdMemberType.h */; };
+		FD47129813D250E600FD2C26 /* FOHouseholdMemberType.m in Sources */ = {isa = PBXBuildFile; fileRef = FD47129613D250E600FD2C26 /* FOHouseholdMemberType.m */; };
+		FD47129913D2528500FD2C26 /* FOStatus.h in Resources */ = {isa = PBXBuildFile; fileRef = FD47128C13D2500C00FD2C26 /* FOStatus.h */; };
+		FD47129A13D2528900FD2C26 /* FOSubStatus.h in Resources */ = {isa = PBXBuildFile; fileRef = FD47129113D2507E00FD2C26 /* FOSubStatus.h */; };
+		FD47129B13D2529100FD2C26 /* FOAddress.h in Resources */ = {isa = PBXBuildFile; fileRef = FDF555C313D23A4C00ED5317 /* FOAddress.h */; };
+		FD47129E13D252F800FD2C26 /* FOHousehold.h in Headers */ = {isa = PBXBuildFile; fileRef = FD47129C13D252F600FD2C26 /* FOHousehold.h */; };
+		FD47129F13D252F800FD2C26 /* FOHousehold.m in Sources */ = {isa = PBXBuildFile; fileRef = FD47129D13D252F700FD2C26 /* FOHousehold.m */; };
+		FD4712A213D2549100FD2C26 /* FOCommunication.h in Headers */ = {isa = PBXBuildFile; fileRef = FD4712A013D2548F00FD2C26 /* FOCommunication.h */; };
+		FD4712A313D2549100FD2C26 /* FOCommunication.m in Sources */ = {isa = PBXBuildFile; fileRef = FD4712A113D2549000FD2C26 /* FOCommunication.m */; };
+		FD4712A613D2552700FD2C26 /* Communication.m in Sources */ = {isa = PBXBuildFile; fileRef = FD4712A513D2552600FD2C26 /* Communication.m */; };
+		FD4712A713D2556900FD2C26 /* FOHousehold.h in Resources */ = {isa = PBXBuildFile; fileRef = FD47129C13D252F600FD2C26 /* FOHousehold.h */; };
+		FD4712A813D2556D00FD2C26 /* FOCommunication.h in Resources */ = {isa = PBXBuildFile; fileRef = FD4712A013D2548F00FD2C26 /* FOCommunication.h */; };
+		FD4712A913D2556F00FD2C26 /* FOHouseholdMemberType.h in Resources */ = {isa = PBXBuildFile; fileRef = FD47129513D250E500FD2C26 /* FOHouseholdMemberType.h */; };
+		FD764C1513D0721300BE0F4F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FD764C1413D0721300BE0F4F /* Foundation.framework */; };
+		FD764C2013D0721300BE0F4F /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FD764C1F13D0721300BE0F4F /* UIKit.framework */; };
+		FD764C2113D0721300BE0F4F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FD764C1413D0721300BE0F4F /* Foundation.framework */; };
+		FD764C2313D0721300BE0F4F /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FD764C2213D0721300BE0F4F /* CoreGraphics.framework */; };
+		FD764C2613D0721300BE0F4F /* libFellowshipOneAPIClient.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FD764C1113D0721300BE0F4F /* libFellowshipOneAPIClient.a */; };
+		FD764C2C13D0721300BE0F4F /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = FD764C2A13D0721300BE0F4F /* InfoPlist.strings */; };
+		FD764C5313D074D700BE0F4F /* FTError.h in Headers */ = {isa = PBXBuildFile; fileRef = FD764C3C13D074D700BE0F4F /* FTError.h */; };
+		FD764C5413D074D700BE0F4F /* FTError.m in Sources */ = {isa = PBXBuildFile; fileRef = FD764C3D13D074D700BE0F4F /* FTError.m */; };
+		FD764C5513D074D700BE0F4F /* FOParentNamedObject.h in Headers */ = {isa = PBXBuildFile; fileRef = FD764C3E13D074D700BE0F4F /* FOParentNamedObject.h */; };
+		FD764C5613D074D700BE0F4F /* FOParentNamedObject.m in Sources */ = {isa = PBXBuildFile; fileRef = FD764C3F13D074D700BE0F4F /* FOParentNamedObject.m */; };
+		FD764C5713D074D700BE0F4F /* FOParentObject.h in Headers */ = {isa = PBXBuildFile; fileRef = FD764C4013D074D700BE0F4F /* FOParentObject.h */; };
+		FD764C5813D074D700BE0F4F /* FOParentObject.m in Sources */ = {isa = PBXBuildFile; fileRef = FD764C4113D074D700BE0F4F /* FOParentObject.m */; };
+		FD764C5913D074D700BE0F4F /* PagedEntity.h in Headers */ = {isa = PBXBuildFile; fileRef = FD764C4213D074D700BE0F4F /* PagedEntity.h */; };
+		FD764C5A13D074D700BE0F4F /* PagedEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = FD764C4313D074D700BE0F4F /* PagedEntity.m */; };
+		FD764C6D13D0754600BE0F4F /* EntityState.h in Headers */ = {isa = PBXBuildFile; fileRef = FD764C6A13D0754600BE0F4F /* EntityState.h */; };
+		FD764C6E13D0754600BE0F4F /* FTAPIRealm.h in Headers */ = {isa = PBXBuildFile; fileRef = FD764C6B13D0754600BE0F4F /* FTAPIRealm.h */; };
+		FD764C6F13D0754600BE0F4F /* HTTPMethod.h in Headers */ = {isa = PBXBuildFile; fileRef = FD764C6C13D0754600BE0F4F /* HTTPMethod.h */; };
+		FD764C7513D0755A00BE0F4F /* NSDate+ageFromDate.h in Headers */ = {isa = PBXBuildFile; fileRef = FD764C7113D0755A00BE0F4F /* NSDate+ageFromDate.h */; };
+		FD764C7613D0755A00BE0F4F /* NSDate+ageFromDate.m in Sources */ = {isa = PBXBuildFile; fileRef = FD764C7213D0755A00BE0F4F /* NSDate+ageFromDate.m */; };
+		FD764C7713D0755A00BE0F4F /* NSObject+serializeToXml.h in Headers */ = {isa = PBXBuildFile; fileRef = FD764C7313D0755A00BE0F4F /* NSObject+serializeToXml.h */; };
+		FD764C7813D0755A00BE0F4F /* NSObject+serializeToXml.m in Sources */ = {isa = PBXBuildFile; fileRef = FD764C7413D0755A00BE0F4F /* NSObject+serializeToXml.m */; };
+		FD764C8013D0758100BE0F4F /* FTOAuth.h in Headers */ = {isa = PBXBuildFile; fileRef = FD764C7A13D0758100BE0F4F /* FTOAuth.h */; };
+		FD764C8113D0758100BE0F4F /* FTOAuth.m in Sources */ = {isa = PBXBuildFile; fileRef = FD764C7B13D0758100BE0F4F /* FTOAuth.m */; };
+		FD764C8213D0758100BE0F4F /* FTOAuthResult.h in Headers */ = {isa = PBXBuildFile; fileRef = FD764C7C13D0758100BE0F4F /* FTOAuthResult.h */; };
+		FD764C8313D0758100BE0F4F /* FTOAuthResult.m in Sources */ = {isa = PBXBuildFile; fileRef = FD764C7D13D0758100BE0F4F /* FTOAuthResult.m */; };
+		FD764C8413D0758100BE0F4F /* FTUserDefaults.h in Headers */ = {isa = PBXBuildFile; fileRef = FD764C7E13D0758100BE0F4F /* FTUserDefaults.h */; };
+		FD764C8513D0758100BE0F4F /* FTUserDefaults.m in Sources */ = {isa = PBXBuildFile; fileRef = FD764C7F13D0758100BE0F4F /* FTUserDefaults.m */; };
+		FD764CA113D0759A00BE0F4F /* NSMutableURLRequest+Parameters.h in Headers */ = {isa = PBXBuildFile; fileRef = FD764C8713D0759A00BE0F4F /* NSMutableURLRequest+Parameters.h */; };
+		FD764CA213D0759A00BE0F4F /* NSMutableURLRequest+Parameters.m in Sources */ = {isa = PBXBuildFile; fileRef = FD764C8813D0759A00BE0F4F /* NSMutableURLRequest+Parameters.m */; };
+		FD764CA313D0759A00BE0F4F /* NSString+URLEncoding.h in Headers */ = {isa = PBXBuildFile; fileRef = FD764C8913D0759A00BE0F4F /* NSString+URLEncoding.h */; };
+		FD764CA413D0759A00BE0F4F /* NSString+URLEncoding.m in Sources */ = {isa = PBXBuildFile; fileRef = FD764C8A13D0759A00BE0F4F /* NSString+URLEncoding.m */; };
+		FD764CA513D0759A00BE0F4F /* NSURL+Base.h in Headers */ = {isa = PBXBuildFile; fileRef = FD764C8B13D0759A00BE0F4F /* NSURL+Base.h */; };
+		FD764CA613D0759A00BE0F4F /* NSURL+Base.m in Sources */ = {isa = PBXBuildFile; fileRef = FD764C8C13D0759A00BE0F4F /* NSURL+Base.m */; };
+		FD764CA713D0759A00BE0F4F /* OAAsynchronousDataFetcher.h in Headers */ = {isa = PBXBuildFile; fileRef = FD764C8D13D0759A00BE0F4F /* OAAsynchronousDataFetcher.h */; };
+		FD764CA813D0759A00BE0F4F /* OAAsynchronousDataFetcher.m in Sources */ = {isa = PBXBuildFile; fileRef = FD764C8E13D0759A00BE0F4F /* OAAsynchronousDataFetcher.m */; };
+		FD764CA913D0759A00BE0F4F /* OAConsumer.h in Headers */ = {isa = PBXBuildFile; fileRef = FD764C8F13D0759A00BE0F4F /* OAConsumer.h */; };
+		FD764CAA13D0759A00BE0F4F /* OAConsumer.m in Sources */ = {isa = PBXBuildFile; fileRef = FD764C9013D0759A00BE0F4F /* OAConsumer.m */; };
+		FD764CAB13D0759A00BE0F4F /* OADataFetcher.h in Headers */ = {isa = PBXBuildFile; fileRef = FD764C9113D0759A00BE0F4F /* OADataFetcher.h */; };
+		FD764CAC13D0759A00BE0F4F /* OADataFetcher.m in Sources */ = {isa = PBXBuildFile; fileRef = FD764C9213D0759A00BE0F4F /* OADataFetcher.m */; };
+		FD764CAD13D0759A00BE0F4F /* OAHMAC_SHA1SignatureProvider.h in Headers */ = {isa = PBXBuildFile; fileRef = FD764C9313D0759A00BE0F4F /* OAHMAC_SHA1SignatureProvider.h */; };
+		FD764CAE13D0759A00BE0F4F /* OAHMAC_SHA1SignatureProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = FD764C9413D0759A00BE0F4F /* OAHMAC_SHA1SignatureProvider.m */; };
+		FD764CAF13D0759A00BE0F4F /* OAMutableURLRequest.h in Headers */ = {isa = PBXBuildFile; fileRef = FD764C9513D0759A00BE0F4F /* OAMutableURLRequest.h */; };
+		FD764CB013D0759A00BE0F4F /* OAMutableURLRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = FD764C9613D0759A00BE0F4F /* OAMutableURLRequest.m */; };
+		FD764CB113D0759A00BE0F4F /* OAPlaintextSignatureProvider.h in Headers */ = {isa = PBXBuildFile; fileRef = FD764C9713D0759A00BE0F4F /* OAPlaintextSignatureProvider.h */; };
+		FD764CB213D0759A00BE0F4F /* OAPlaintextSignatureProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = FD764C9813D0759A00BE0F4F /* OAPlaintextSignatureProvider.m */; };
+		FD764CB313D0759A00BE0F4F /* OARequestParameter.h in Headers */ = {isa = PBXBuildFile; fileRef = FD764C9913D0759A00BE0F4F /* OARequestParameter.h */; };
+		FD764CB413D0759A00BE0F4F /* OARequestParameter.m in Sources */ = {isa = PBXBuildFile; fileRef = FD764C9A13D0759A00BE0F4F /* OARequestParameter.m */; };
+		FD764CB513D0759A00BE0F4F /* OAServiceTicket.h in Headers */ = {isa = PBXBuildFile; fileRef = FD764C9B13D0759A00BE0F4F /* OAServiceTicket.h */; };
+		FD764CB613D0759A00BE0F4F /* OAServiceTicket.m in Sources */ = {isa = PBXBuildFile; fileRef = FD764C9C13D0759A00BE0F4F /* OAServiceTicket.m */; };
+		FD764CB713D0759A00BE0F4F /* OASignatureProviding.h in Headers */ = {isa = PBXBuildFile; fileRef = FD764C9D13D0759A00BE0F4F /* OASignatureProviding.h */; };
+		FD764CB813D0759A00BE0F4F /* OAToken.h in Headers */ = {isa = PBXBuildFile; fileRef = FD764C9E13D0759A00BE0F4F /* OAToken.h */; };
+		FD764CB913D0759A00BE0F4F /* OAToken.m in Sources */ = {isa = PBXBuildFile; fileRef = FD764C9F13D0759A00BE0F4F /* OAToken.m */; };
+		FD764CBA13D0759A00BE0F4F /* OAuthConsumer.h in Headers */ = {isa = PBXBuildFile; fileRef = FD764CA013D0759A00BE0F4F /* OAuthConsumer.h */; };
+		FD764CCA13D075BE00BE0F4F /* Constants.h in Headers */ = {isa = PBXBuildFile; fileRef = FD764CBD13D075BE00BE0F4F /* Constants.h */; };
+		FD764CCB13D075BE00BE0F4F /* Constants.m in Sources */ = {isa = PBXBuildFile; fileRef = FD764CBE13D075BE00BE0F4F /* Constants.m */; };
+		FD764CCC13D075BE00BE0F4F /* Base64Transcoder.c in Sources */ = {isa = PBXBuildFile; fileRef = FD764CC013D075BE00BE0F4F /* Base64Transcoder.c */; };
+		FD764CCD13D075BE00BE0F4F /* Base64Transcoder.h in Headers */ = {isa = PBXBuildFile; fileRef = FD764CC113D075BE00BE0F4F /* Base64Transcoder.h */; };
+		FD764CCE13D075BE00BE0F4F /* hmac.c in Sources */ = {isa = PBXBuildFile; fileRef = FD764CC213D075BE00BE0F4F /* hmac.c */; };
+		FD764CCF13D075BE00BE0F4F /* hmac.h in Headers */ = {isa = PBXBuildFile; fileRef = FD764CC313D075BE00BE0F4F /* hmac.h */; };
+		FD764CD013D075BE00BE0F4F /* sha1.c in Sources */ = {isa = PBXBuildFile; fileRef = FD764CC413D075BE00BE0F4F /* sha1.c */; };
+		FD764CD113D075BE00BE0F4F /* sha1.h in Headers */ = {isa = PBXBuildFile; fileRef = FD764CC513D075BE00BE0F4F /* sha1.h */; };
+		FD764CD213D075BE00BE0F4F /* FellowshipOneAPIDateUtility.h in Headers */ = {isa = PBXBuildFile; fileRef = FD764CC613D075BE00BE0F4F /* FellowshipOneAPIDateUtility.h */; };
+		FD764CD313D075BE00BE0F4F /* FellowshipOneAPIDateUtility.m in Sources */ = {isa = PBXBuildFile; fileRef = FD764CC713D075BE00BE0F4F /* FellowshipOneAPIDateUtility.m */; };
+		FD764CD413D075BE00BE0F4F /* FellowshipOneAPIUtility.h in Headers */ = {isa = PBXBuildFile; fileRef = FD764CC813D075BE00BE0F4F /* FellowshipOneAPIUtility.h */; };
+		FD764CD513D075BE00BE0F4F /* FellowshipOneAPIUtility.m in Sources */ = {isa = PBXBuildFile; fileRef = FD764CC913D075BE00BE0F4F /* FellowshipOneAPIUtility.m */; };
+		FD764CE313D075C800BE0F4F /* JSON.h in Headers */ = {isa = PBXBuildFile; fileRef = FD764CD613D075C800BE0F4F /* JSON.h */; };
+		FD764CE413D075C800BE0F4F /* NSObject+SBJSON.h in Headers */ = {isa = PBXBuildFile; fileRef = FD764CD713D075C800BE0F4F /* NSObject+SBJSON.h */; };
+		FD764CE513D075C800BE0F4F /* NSObject+SBJSON.m in Sources */ = {isa = PBXBuildFile; fileRef = FD764CD813D075C800BE0F4F /* NSObject+SBJSON.m */; };
+		FD764CE613D075C800BE0F4F /* NSString+SBJSON.h in Headers */ = {isa = PBXBuildFile; fileRef = FD764CD913D075C800BE0F4F /* NSString+SBJSON.h */; };
+		FD764CE713D075C800BE0F4F /* NSString+SBJSON.m in Sources */ = {isa = PBXBuildFile; fileRef = FD764CDA13D075C800BE0F4F /* NSString+SBJSON.m */; };
+		FD764CE813D075C800BE0F4F /* SBJSON.h in Headers */ = {isa = PBXBuildFile; fileRef = FD764CDB13D075C800BE0F4F /* SBJSON.h */; };
+		FD764CE913D075C800BE0F4F /* SBJSON.m in Sources */ = {isa = PBXBuildFile; fileRef = FD764CDC13D075C800BE0F4F /* SBJSON.m */; };
+		FD764CEA13D075C800BE0F4F /* SBJsonBase.h in Headers */ = {isa = PBXBuildFile; fileRef = FD764CDD13D075C800BE0F4F /* SBJsonBase.h */; };
+		FD764CEB13D075C800BE0F4F /* SBJsonBase.m in Sources */ = {isa = PBXBuildFile; fileRef = FD764CDE13D075C800BE0F4F /* SBJsonBase.m */; };
+		FD764CEC13D075C800BE0F4F /* SBJsonParser.h in Headers */ = {isa = PBXBuildFile; fileRef = FD764CDF13D075C800BE0F4F /* SBJsonParser.h */; };
+		FD764CED13D075C800BE0F4F /* SBJsonParser.m in Sources */ = {isa = PBXBuildFile; fileRef = FD764CE013D075C800BE0F4F /* SBJsonParser.m */; };
+		FD764CEE13D075C800BE0F4F /* SBJsonWriter.h in Headers */ = {isa = PBXBuildFile; fileRef = FD764CE113D075C800BE0F4F /* SBJsonWriter.h */; };
+		FD764CEF13D075C800BE0F4F /* SBJsonWriter.m in Sources */ = {isa = PBXBuildFile; fileRef = FD764CE213D075C800BE0F4F /* SBJsonWriter.m */; };
+		FD764CF113D0761900BE0F4F /* Enum.h in Headers */ = {isa = PBXBuildFile; fileRef = FD764CF013D0761900BE0F4F /* Enum.h */; };
+		FD764CF413D0762900BE0F4F /* ConsoleLog.h in Headers */ = {isa = PBXBuildFile; fileRef = FD764CF213D0762900BE0F4F /* ConsoleLog.h */; };
+		FD764CF513D0762900BE0F4F /* ConsoleLog.m in Sources */ = {isa = PBXBuildFile; fileRef = FD764CF313D0762900BE0F4F /* ConsoleLog.m */; };
+		FD764CF813D0765700BE0F4F /* NSObject+serializeToJSON.h in Headers */ = {isa = PBXBuildFile; fileRef = FD764CF613D0765700BE0F4F /* NSObject+serializeToJSON.h */; };
+		FD764CF913D0765700BE0F4F /* NSObject+serializeToJSON.m in Sources */ = {isa = PBXBuildFile; fileRef = FD764CF713D0765700BE0F4F /* NSObject+serializeToJSON.m */; };
+		FD764D0A13D0783200BE0F4F /* WebRequest.h in Headers */ = {isa = PBXBuildFile; fileRef = FD764D0813D0783200BE0F4F /* WebRequest.h */; };
+		FD764D0B13D0783200BE0F4F /* WebRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = FD764D0913D0783200BE0F4F /* WebRequest.m */; };
+		FD764D0E13D078FF00BE0F4F /* FellowshipOneAPIClient.h in Headers */ = {isa = PBXBuildFile; fileRef = FD764D0C13D078FE00BE0F4F /* FellowshipOneAPIClient.h */; };
+		FD764D0F13D078FF00BE0F4F /* FellowshipOneAPIClient.m in Sources */ = {isa = PBXBuildFile; fileRef = FD764D0D13D078FE00BE0F4F /* FellowshipOneAPIClient.m */; };
+		FD764D1213D07A1600BE0F4F /* FOPerson.h in Headers */ = {isa = PBXBuildFile; fileRef = FD764D1013D07A1600BE0F4F /* FOPerson.h */; };
+		FD764D1313D07A1600BE0F4F /* FOPerson.m in Sources */ = {isa = PBXBuildFile; fileRef = FD764D1113D07A1600BE0F4F /* FOPerson.m */; };
+		FD764D2913D07E3B00BE0F4F /* FellowshipOneAPIClient.h in Resources */ = {isa = PBXBuildFile; fileRef = FD764D0C13D078FE00BE0F4F /* FellowshipOneAPIClient.h */; };
+		FD764D3113D0B56400BE0F4F /* FirstParty.m in Sources */ = {isa = PBXBuildFile; fileRef = FD764D3013D0B56400BE0F4F /* FirstParty.m */; };
+		FD764D3313D0B7FF00BE0F4F /* FellowshipOneAPIClient.plist in Resources */ = {isa = PBXBuildFile; fileRef = FD764D2813D07C9900BE0F4F /* FellowshipOneAPIClient.plist */; };
+		FDF555C513D23A4C00ED5317 /* FOAddress.h in Headers */ = {isa = PBXBuildFile; fileRef = FDF555C313D23A4C00ED5317 /* FOAddress.h */; };
+		FDF555C613D23A4C00ED5317 /* FOAddress.m in Sources */ = {isa = PBXBuildFile; fileRef = FDF555C413D23A4C00ED5317 /* FOAddress.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		FD764C2413D0721300BE0F4F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FD764C0813D0721000BE0F4F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = FD764C1013D0721100BE0F4F;
+			remoteInfo = FellowshipOneAPIClient;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		FD0FB05613D2162900A078AC /* Person.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Person.h; path = Model/Person.h; sourceTree = "<group>"; };
+		FD0FB05713D2162900A078AC /* Person.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Person.m; path = Model/Person.m; sourceTree = "<group>"; };
+		FD0FB05A13D2171600A078AC /* BaseTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseTest.h; sourceTree = "<group>"; };
+		FD0FB05B13D2171600A078AC /* BaseTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseTest.m; sourceTree = "<group>"; };
+		FD47128C13D2500C00FD2C26 /* FOStatus.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FOStatus.h; sourceTree = "<group>"; };
+		FD47128D13D2500C00FD2C26 /* FOStatus.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FOStatus.m; sourceTree = "<group>"; };
+		FD47129113D2507E00FD2C26 /* FOSubStatus.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FOSubStatus.h; sourceTree = "<group>"; };
+		FD47129213D2507E00FD2C26 /* FOSubStatus.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FOSubStatus.m; sourceTree = "<group>"; };
+		FD47129513D250E500FD2C26 /* FOHouseholdMemberType.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FOHouseholdMemberType.h; sourceTree = "<group>"; };
+		FD47129613D250E600FD2C26 /* FOHouseholdMemberType.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FOHouseholdMemberType.m; sourceTree = "<group>"; };
+		FD47129C13D252F600FD2C26 /* FOHousehold.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FOHousehold.h; sourceTree = "<group>"; };
+		FD47129D13D252F700FD2C26 /* FOHousehold.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FOHousehold.m; sourceTree = "<group>"; };
+		FD4712A013D2548F00FD2C26 /* FOCommunication.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FOCommunication.h; sourceTree = "<group>"; };
+		FD4712A113D2549000FD2C26 /* FOCommunication.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FOCommunication.m; sourceTree = "<group>"; };
+		FD4712A413D2552600FD2C26 /* Communication.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Communication.h; sourceTree = "<group>"; };
+		FD4712A513D2552600FD2C26 /* Communication.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Communication.m; sourceTree = "<group>"; };
+		FD764C1113D0721300BE0F4F /* libFellowshipOneAPIClient.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libFellowshipOneAPIClient.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		FD764C1413D0721300BE0F4F /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		FD764C1813D0721300BE0F4F /* FellowshipOneAPIClient-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "FellowshipOneAPIClient-Prefix.pch"; sourceTree = "<group>"; };
+		FD764C1E13D0721300BE0F4F /* FellowshipOneAPIClientTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FellowshipOneAPIClientTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
+		FD764C1F13D0721300BE0F4F /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		FD764C2213D0721300BE0F4F /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		FD764C2913D0721300BE0F4F /* FellowshipOneAPIClientTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "FellowshipOneAPIClientTests-Info.plist"; sourceTree = "<group>"; };
+		FD764C2B13D0721300BE0F4F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		FD764C2D13D0721300BE0F4F /* FellowshipOneAPIClientTests-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "FellowshipOneAPIClientTests-Prefix.pch"; sourceTree = "<group>"; };
+		FD764C3C13D074D700BE0F4F /* FTError.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FTError.h; path = Class/Model/FTError.h; sourceTree = "<group>"; };
+		FD764C3D13D074D700BE0F4F /* FTError.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FTError.m; path = Class/Model/FTError.m; sourceTree = "<group>"; };
+		FD764C3E13D074D700BE0F4F /* FOParentNamedObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FOParentNamedObject.h; path = Class/Model/FOParentNamedObject.h; sourceTree = "<group>"; };
+		FD764C3F13D074D700BE0F4F /* FOParentNamedObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FOParentNamedObject.m; path = Class/Model/FOParentNamedObject.m; sourceTree = "<group>"; };
+		FD764C4013D074D700BE0F4F /* FOParentObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FOParentObject.h; path = Class/Model/FOParentObject.h; sourceTree = "<group>"; };
+		FD764C4113D074D700BE0F4F /* FOParentObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FOParentObject.m; path = Class/Model/FOParentObject.m; sourceTree = "<group>"; };
+		FD764C4213D074D700BE0F4F /* PagedEntity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PagedEntity.h; path = Class/Model/PagedEntity.h; sourceTree = "<group>"; };
+		FD764C4313D074D700BE0F4F /* PagedEntity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PagedEntity.m; path = Class/Model/PagedEntity.m; sourceTree = "<group>"; };
+		FD764C6A13D0754600BE0F4F /* EntityState.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EntityState.h; path = Class/Enum/EntityState.h; sourceTree = "<group>"; };
+		FD764C6B13D0754600BE0F4F /* FTAPIRealm.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FTAPIRealm.h; path = Class/Enum/FTAPIRealm.h; sourceTree = "<group>"; };
+		FD764C6C13D0754600BE0F4F /* HTTPMethod.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HTTPMethod.h; path = Class/Enum/HTTPMethod.h; sourceTree = "<group>"; };
+		FD764C7113D0755A00BE0F4F /* NSDate+ageFromDate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSDate+ageFromDate.h"; path = "Class/Categories/NSDate+ageFromDate.h"; sourceTree = "<group>"; };
+		FD764C7213D0755A00BE0F4F /* NSDate+ageFromDate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSDate+ageFromDate.m"; path = "Class/Categories/NSDate+ageFromDate.m"; sourceTree = "<group>"; };
+		FD764C7313D0755A00BE0F4F /* NSObject+serializeToXml.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSObject+serializeToXml.h"; path = "Class/Categories/NSObject+serializeToXml.h"; sourceTree = "<group>"; };
+		FD764C7413D0755A00BE0F4F /* NSObject+serializeToXml.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSObject+serializeToXml.m"; path = "Class/Categories/NSObject+serializeToXml.m"; sourceTree = "<group>"; };
+		FD764C7A13D0758100BE0F4F /* FTOAuth.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FTOAuth.h; path = Class/FTOAuth/FTOAuth.h; sourceTree = "<group>"; };
+		FD764C7B13D0758100BE0F4F /* FTOAuth.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FTOAuth.m; path = Class/FTOAuth/FTOAuth.m; sourceTree = "<group>"; };
+		FD764C7C13D0758100BE0F4F /* FTOAuthResult.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FTOAuthResult.h; path = Class/FTOAuth/FTOAuthResult.h; sourceTree = "<group>"; };
+		FD764C7D13D0758100BE0F4F /* FTOAuthResult.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FTOAuthResult.m; path = Class/FTOAuth/FTOAuthResult.m; sourceTree = "<group>"; };
+		FD764C7E13D0758100BE0F4F /* FTUserDefaults.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FTUserDefaults.h; path = Class/FTOAuth/FTUserDefaults.h; sourceTree = "<group>"; };
+		FD764C7F13D0758100BE0F4F /* FTUserDefaults.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FTUserDefaults.m; path = Class/FTOAuth/FTUserDefaults.m; sourceTree = "<group>"; };
+		FD764C8713D0759A00BE0F4F /* NSMutableURLRequest+Parameters.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSMutableURLRequest+Parameters.h"; path = "Class/OAConsumer/NSMutableURLRequest+Parameters.h"; sourceTree = "<group>"; };
+		FD764C8813D0759A00BE0F4F /* NSMutableURLRequest+Parameters.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSMutableURLRequest+Parameters.m"; path = "Class/OAConsumer/NSMutableURLRequest+Parameters.m"; sourceTree = "<group>"; };
+		FD764C8913D0759A00BE0F4F /* NSString+URLEncoding.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSString+URLEncoding.h"; path = "Class/OAConsumer/NSString+URLEncoding.h"; sourceTree = "<group>"; };
+		FD764C8A13D0759A00BE0F4F /* NSString+URLEncoding.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSString+URLEncoding.m"; path = "Class/OAConsumer/NSString+URLEncoding.m"; sourceTree = "<group>"; };
+		FD764C8B13D0759A00BE0F4F /* NSURL+Base.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSURL+Base.h"; path = "Class/OAConsumer/NSURL+Base.h"; sourceTree = "<group>"; };
+		FD764C8C13D0759A00BE0F4F /* NSURL+Base.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSURL+Base.m"; path = "Class/OAConsumer/NSURL+Base.m"; sourceTree = "<group>"; };
+		FD764C8D13D0759A00BE0F4F /* OAAsynchronousDataFetcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OAAsynchronousDataFetcher.h; path = Class/OAConsumer/OAAsynchronousDataFetcher.h; sourceTree = "<group>"; };
+		FD764C8E13D0759A00BE0F4F /* OAAsynchronousDataFetcher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = OAAsynchronousDataFetcher.m; path = Class/OAConsumer/OAAsynchronousDataFetcher.m; sourceTree = "<group>"; };
+		FD764C8F13D0759A00BE0F4F /* OAConsumer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OAConsumer.h; path = Class/OAConsumer/OAConsumer.h; sourceTree = "<group>"; };
+		FD764C9013D0759A00BE0F4F /* OAConsumer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = OAConsumer.m; path = Class/OAConsumer/OAConsumer.m; sourceTree = "<group>"; };
+		FD764C9113D0759A00BE0F4F /* OADataFetcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OADataFetcher.h; path = Class/OAConsumer/OADataFetcher.h; sourceTree = "<group>"; };
+		FD764C9213D0759A00BE0F4F /* OADataFetcher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = OADataFetcher.m; path = Class/OAConsumer/OADataFetcher.m; sourceTree = "<group>"; };
+		FD764C9313D0759A00BE0F4F /* OAHMAC_SHA1SignatureProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OAHMAC_SHA1SignatureProvider.h; path = Class/OAConsumer/OAHMAC_SHA1SignatureProvider.h; sourceTree = "<group>"; };
+		FD764C9413D0759A00BE0F4F /* OAHMAC_SHA1SignatureProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = OAHMAC_SHA1SignatureProvider.m; path = Class/OAConsumer/OAHMAC_SHA1SignatureProvider.m; sourceTree = "<group>"; };
+		FD764C9513D0759A00BE0F4F /* OAMutableURLRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OAMutableURLRequest.h; path = Class/OAConsumer/OAMutableURLRequest.h; sourceTree = "<group>"; };
+		FD764C9613D0759A00BE0F4F /* OAMutableURLRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = OAMutableURLRequest.m; path = Class/OAConsumer/OAMutableURLRequest.m; sourceTree = "<group>"; };
+		FD764C9713D0759A00BE0F4F /* OAPlaintextSignatureProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OAPlaintextSignatureProvider.h; path = Class/OAConsumer/OAPlaintextSignatureProvider.h; sourceTree = "<group>"; };
+		FD764C9813D0759A00BE0F4F /* OAPlaintextSignatureProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = OAPlaintextSignatureProvider.m; path = Class/OAConsumer/OAPlaintextSignatureProvider.m; sourceTree = "<group>"; };
+		FD764C9913D0759A00BE0F4F /* OARequestParameter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OARequestParameter.h; path = Class/OAConsumer/OARequestParameter.h; sourceTree = "<group>"; };
+		FD764C9A13D0759A00BE0F4F /* OARequestParameter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = OARequestParameter.m; path = Class/OAConsumer/OARequestParameter.m; sourceTree = "<group>"; };
+		FD764C9B13D0759A00BE0F4F /* OAServiceTicket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OAServiceTicket.h; path = Class/OAConsumer/OAServiceTicket.h; sourceTree = "<group>"; };
+		FD764C9C13D0759A00BE0F4F /* OAServiceTicket.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = OAServiceTicket.m; path = Class/OAConsumer/OAServiceTicket.m; sourceTree = "<group>"; };
+		FD764C9D13D0759A00BE0F4F /* OASignatureProviding.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OASignatureProviding.h; path = Class/OAConsumer/OASignatureProviding.h; sourceTree = "<group>"; };
+		FD764C9E13D0759A00BE0F4F /* OAToken.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OAToken.h; path = Class/OAConsumer/OAToken.h; sourceTree = "<group>"; };
+		FD764C9F13D0759A00BE0F4F /* OAToken.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = OAToken.m; path = Class/OAConsumer/OAToken.m; sourceTree = "<group>"; };
+		FD764CA013D0759A00BE0F4F /* OAuthConsumer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OAuthConsumer.h; path = Class/OAConsumer/OAuthConsumer.h; sourceTree = "<group>"; };
+		FD764CBD13D075BE00BE0F4F /* Constants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Constants.h; path = Class/Shared/Constants.h; sourceTree = "<group>"; };
+		FD764CBE13D075BE00BE0F4F /* Constants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Constants.m; path = Class/Shared/Constants.m; sourceTree = "<group>"; };
+		FD764CC013D075BE00BE0F4F /* Base64Transcoder.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = Base64Transcoder.c; sourceTree = "<group>"; };
+		FD764CC113D075BE00BE0F4F /* Base64Transcoder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Base64Transcoder.h; sourceTree = "<group>"; };
+		FD764CC213D075BE00BE0F4F /* hmac.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = hmac.c; sourceTree = "<group>"; };
+		FD764CC313D075BE00BE0F4F /* hmac.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = hmac.h; sourceTree = "<group>"; };
+		FD764CC413D075BE00BE0F4F /* sha1.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = sha1.c; sourceTree = "<group>"; };
+		FD764CC513D075BE00BE0F4F /* sha1.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = sha1.h; sourceTree = "<group>"; };
+		FD764CC613D075BE00BE0F4F /* FellowshipOneAPIDateUtility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FellowshipOneAPIDateUtility.h; path = Class/Shared/FellowshipOneAPIDateUtility.h; sourceTree = "<group>"; };
+		FD764CC713D075BE00BE0F4F /* FellowshipOneAPIDateUtility.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FellowshipOneAPIDateUtility.m; path = Class/Shared/FellowshipOneAPIDateUtility.m; sourceTree = "<group>"; };
+		FD764CC813D075BE00BE0F4F /* FellowshipOneAPIUtility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FellowshipOneAPIUtility.h; path = Class/Shared/FellowshipOneAPIUtility.h; sourceTree = "<group>"; };
+		FD764CC913D075BE00BE0F4F /* FellowshipOneAPIUtility.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FellowshipOneAPIUtility.m; path = Class/Shared/FellowshipOneAPIUtility.m; sourceTree = "<group>"; };
+		FD764CD613D075C800BE0F4F /* JSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = JSON.h; path = Class/SBJson/JSON.h; sourceTree = "<group>"; };
+		FD764CD713D075C800BE0F4F /* NSObject+SBJSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSObject+SBJSON.h"; path = "Class/SBJson/NSObject+SBJSON.h"; sourceTree = "<group>"; };
+		FD764CD813D075C800BE0F4F /* NSObject+SBJSON.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSObject+SBJSON.m"; path = "Class/SBJson/NSObject+SBJSON.m"; sourceTree = "<group>"; };
+		FD764CD913D075C800BE0F4F /* NSString+SBJSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSString+SBJSON.h"; path = "Class/SBJson/NSString+SBJSON.h"; sourceTree = "<group>"; };
+		FD764CDA13D075C800BE0F4F /* NSString+SBJSON.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSString+SBJSON.m"; path = "Class/SBJson/NSString+SBJSON.m"; sourceTree = "<group>"; };
+		FD764CDB13D075C800BE0F4F /* SBJSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SBJSON.h; path = Class/SBJson/SBJSON.h; sourceTree = "<group>"; };
+		FD764CDC13D075C800BE0F4F /* SBJSON.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SBJSON.m; path = Class/SBJson/SBJSON.m; sourceTree = "<group>"; };
+		FD764CDD13D075C800BE0F4F /* SBJsonBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SBJsonBase.h; path = Class/SBJson/SBJsonBase.h; sourceTree = "<group>"; };
+		FD764CDE13D075C800BE0F4F /* SBJsonBase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SBJsonBase.m; path = Class/SBJson/SBJsonBase.m; sourceTree = "<group>"; };
+		FD764CDF13D075C800BE0F4F /* SBJsonParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SBJsonParser.h; path = Class/SBJson/SBJsonParser.h; sourceTree = "<group>"; };
+		FD764CE013D075C800BE0F4F /* SBJsonParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SBJsonParser.m; path = Class/SBJson/SBJsonParser.m; sourceTree = "<group>"; };
+		FD764CE113D075C800BE0F4F /* SBJsonWriter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SBJsonWriter.h; path = Class/SBJson/SBJsonWriter.h; sourceTree = "<group>"; };
+		FD764CE213D075C800BE0F4F /* SBJsonWriter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SBJsonWriter.m; path = Class/SBJson/SBJsonWriter.m; sourceTree = "<group>"; };
+		FD764CF013D0761900BE0F4F /* Enum.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Enum.h; path = Class/Enum/Enum.h; sourceTree = "<group>"; };
+		FD764CF213D0762900BE0F4F /* ConsoleLog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ConsoleLog.h; path = Class/Shared/ConsoleLog.h; sourceTree = "<group>"; };
+		FD764CF313D0762900BE0F4F /* ConsoleLog.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ConsoleLog.m; path = Class/Shared/ConsoleLog.m; sourceTree = "<group>"; };
+		FD764CF613D0765700BE0F4F /* NSObject+serializeToJSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSObject+serializeToJSON.h"; path = "Class/Categories/NSObject+serializeToJSON.h"; sourceTree = "<group>"; };
+		FD764CF713D0765700BE0F4F /* NSObject+serializeToJSON.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSObject+serializeToJSON.m"; path = "Class/Categories/NSObject+serializeToJSON.m"; sourceTree = "<group>"; };
+		FD764D0813D0783200BE0F4F /* WebRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WebRequest.h; path = Class/FTOAuth/WebRequest.h; sourceTree = "<group>"; };
+		FD764D0913D0783200BE0F4F /* WebRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WebRequest.m; path = Class/FTOAuth/WebRequest.m; sourceTree = "<group>"; };
+		FD764D0C13D078FE00BE0F4F /* FellowshipOneAPIClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FellowshipOneAPIClient.h; sourceTree = "<group>"; };
+		FD764D0D13D078FE00BE0F4F /* FellowshipOneAPIClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FellowshipOneAPIClient.m; sourceTree = "<group>"; };
+		FD764D1013D07A1600BE0F4F /* FOPerson.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FOPerson.h; sourceTree = "<group>"; };
+		FD764D1113D07A1600BE0F4F /* FOPerson.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FOPerson.m; sourceTree = "<group>"; };
+		FD764D2813D07C9900BE0F4F /* FellowshipOneAPIClient.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = FellowshipOneAPIClient.plist; path = ../FellowshipOneAPIClient/FellowshipOneAPIClient.plist; sourceTree = "<group>"; };
+		FD764D2F13D0B56400BE0F4F /* FirstParty.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FirstParty.h; path = Authentication/FirstParty.h; sourceTree = "<group>"; };
+		FD764D3013D0B56400BE0F4F /* FirstParty.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FirstParty.m; path = Authentication/FirstParty.m; sourceTree = "<group>"; };
+		FDF555C313D23A4C00ED5317 /* FOAddress.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FOAddress.h; sourceTree = "<group>"; };
+		FDF555C413D23A4C00ED5317 /* FOAddress.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FOAddress.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		FD764C0E13D0721100BE0F4F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FD764C1513D0721300BE0F4F /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FD764C1A13D0721300BE0F4F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FD764C2013D0721300BE0F4F /* UIKit.framework in Frameworks */,
+				FD764C2113D0721300BE0F4F /* Foundation.framework in Frameworks */,
+				FD764C2313D0721300BE0F4F /* CoreGraphics.framework in Frameworks */,
+				FD764C2613D0721300BE0F4F /* libFellowshipOneAPIClient.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		FD0FB05513D215FA00A078AC /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				FD0FB05613D2162900A078AC /* Person.h */,
+				FD0FB05713D2162900A078AC /* Person.m */,
+				FD4712A413D2552600FD2C26 /* Communication.h */,
+				FD4712A513D2552600FD2C26 /* Communication.m */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		FD764C0613D0721000BE0F4F = {
+			isa = PBXGroup;
+			children = (
+				FD764C1613D0721300BE0F4F /* FellowshipOneAPIClient */,
+				FD764C2713D0721300BE0F4F /* FellowshipOneAPIClientTests */,
+				FD764C1313D0721300BE0F4F /* Frameworks */,
+				FD764C1213D0721300BE0F4F /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		FD764C1213D0721300BE0F4F /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				FD764C1113D0721300BE0F4F /* libFellowshipOneAPIClient.a */,
+				FD764C1E13D0721300BE0F4F /* FellowshipOneAPIClientTests.octest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		FD764C1313D0721300BE0F4F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				FD764C1413D0721300BE0F4F /* Foundation.framework */,
+				FD764C1F13D0721300BE0F4F /* UIKit.framework */,
+				FD764C2213D0721300BE0F4F /* CoreGraphics.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		FD764C1613D0721300BE0F4F /* FellowshipOneAPIClient */ = {
+			isa = PBXGroup;
+			children = (
+				FD764D0C13D078FE00BE0F4F /* FellowshipOneAPIClient.h */,
+				FD764D0D13D078FE00BE0F4F /* FellowshipOneAPIClient.m */,
+				FD764CBC13D075B000BE0F4F /* Shared */,
+				FD764CBB13D075A800BE0F4F /* SBJson */,
+				FD764C8613D0758500BE0F4F /* OAConsumer */,
+				FD764C7913D0757200BE0F4F /* FTOAuth */,
+				FD764C3A13D0742400BE0F4F /* Class */,
+				FD764C1713D0721300BE0F4F /* Supporting Files */,
+			);
+			path = FellowshipOneAPIClient;
+			sourceTree = "<group>";
+		};
+		FD764C1713D0721300BE0F4F /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				FD764C1813D0721300BE0F4F /* FellowshipOneAPIClient-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		FD764C2713D0721300BE0F4F /* FellowshipOneAPIClientTests */ = {
+			isa = PBXGroup;
+			children = (
+				FD0FB05513D215FA00A078AC /* Model */,
+				FD764D3213D0B5C500BE0F4F /* Authentication */,
+				FD764C2813D0721300BE0F4F /* Supporting Files */,
+				FD0FB05A13D2171600A078AC /* BaseTest.h */,
+				FD0FB05B13D2171600A078AC /* BaseTest.m */,
+			);
+			path = FellowshipOneAPIClientTests;
+			sourceTree = "<group>";
+		};
+		FD764C2813D0721300BE0F4F /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				FD764D2813D07C9900BE0F4F /* FellowshipOneAPIClient.plist */,
+				FD764C2913D0721300BE0F4F /* FellowshipOneAPIClientTests-Info.plist */,
+				FD764C2A13D0721300BE0F4F /* InfoPlist.strings */,
+				FD764C2D13D0721300BE0F4F /* FellowshipOneAPIClientTests-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		FD764C3A13D0742400BE0F4F /* Class */ = {
+			isa = PBXGroup;
+			children = (
+				FD764C7013D0754A00BE0F4F /* Categories */,
+				FD764C6913D0753A00BE0F4F /* Enum */,
+				FD764C3B13D0744E00BE0F4F /* Model */,
+			);
+			name = Class;
+			sourceTree = "<group>";
+		};
+		FD764C3B13D0744E00BE0F4F /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				FD764C3C13D074D700BE0F4F /* FTError.h */,
+				FD764C3D13D074D700BE0F4F /* FTError.m */,
+				FD764C3E13D074D700BE0F4F /* FOParentNamedObject.h */,
+				FD764C3F13D074D700BE0F4F /* FOParentNamedObject.m */,
+				FD764C4013D074D700BE0F4F /* FOParentObject.h */,
+				FD764C4113D074D700BE0F4F /* FOParentObject.m */,
+				FD764C4213D074D700BE0F4F /* PagedEntity.h */,
+				FD764C4313D074D700BE0F4F /* PagedEntity.m */,
+				FD764C4413D074D700BE0F4F /* People */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		FD764C4413D074D700BE0F4F /* People */ = {
+			isa = PBXGroup;
+			children = (
+				FD764D1013D07A1600BE0F4F /* FOPerson.h */,
+				FD764D1113D07A1600BE0F4F /* FOPerson.m */,
+				FDF555C313D23A4C00ED5317 /* FOAddress.h */,
+				FDF555C413D23A4C00ED5317 /* FOAddress.m */,
+				FD47128C13D2500C00FD2C26 /* FOStatus.h */,
+				FD47128D13D2500C00FD2C26 /* FOStatus.m */,
+				FD47129113D2507E00FD2C26 /* FOSubStatus.h */,
+				FD47129213D2507E00FD2C26 /* FOSubStatus.m */,
+				FD47129513D250E500FD2C26 /* FOHouseholdMemberType.h */,
+				FD47129613D250E600FD2C26 /* FOHouseholdMemberType.m */,
+				FD47129C13D252F600FD2C26 /* FOHousehold.h */,
+				FD47129D13D252F700FD2C26 /* FOHousehold.m */,
+				FD4712A013D2548F00FD2C26 /* FOCommunication.h */,
+				FD4712A113D2549000FD2C26 /* FOCommunication.m */,
+			);
+			name = People;
+			path = Class/Model/People;
+			sourceTree = "<group>";
+		};
+		FD764C6913D0753A00BE0F4F /* Enum */ = {
+			isa = PBXGroup;
+			children = (
+				FD764CF013D0761900BE0F4F /* Enum.h */,
+				FD764C6A13D0754600BE0F4F /* EntityState.h */,
+				FD764C6B13D0754600BE0F4F /* FTAPIRealm.h */,
+				FD764C6C13D0754600BE0F4F /* HTTPMethod.h */,
+			);
+			name = Enum;
+			sourceTree = "<group>";
+		};
+		FD764C7013D0754A00BE0F4F /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				FD764CF613D0765700BE0F4F /* NSObject+serializeToJSON.h */,
+				FD764CF713D0765700BE0F4F /* NSObject+serializeToJSON.m */,
+				FD764C7113D0755A00BE0F4F /* NSDate+ageFromDate.h */,
+				FD764C7213D0755A00BE0F4F /* NSDate+ageFromDate.m */,
+				FD764C7313D0755A00BE0F4F /* NSObject+serializeToXml.h */,
+				FD764C7413D0755A00BE0F4F /* NSObject+serializeToXml.m */,
+			);
+			name = Categories;
+			sourceTree = "<group>";
+		};
+		FD764C7913D0757200BE0F4F /* FTOAuth */ = {
+			isa = PBXGroup;
+			children = (
+				FD764D0813D0783200BE0F4F /* WebRequest.h */,
+				FD764D0913D0783200BE0F4F /* WebRequest.m */,
+				FD764C7A13D0758100BE0F4F /* FTOAuth.h */,
+				FD764C7B13D0758100BE0F4F /* FTOAuth.m */,
+				FD764C7C13D0758100BE0F4F /* FTOAuthResult.h */,
+				FD764C7D13D0758100BE0F4F /* FTOAuthResult.m */,
+				FD764C7E13D0758100BE0F4F /* FTUserDefaults.h */,
+				FD764C7F13D0758100BE0F4F /* FTUserDefaults.m */,
+			);
+			name = FTOAuth;
+			sourceTree = "<group>";
+		};
+		FD764C8613D0758500BE0F4F /* OAConsumer */ = {
+			isa = PBXGroup;
+			children = (
+				FD764C8713D0759A00BE0F4F /* NSMutableURLRequest+Parameters.h */,
+				FD764C8813D0759A00BE0F4F /* NSMutableURLRequest+Parameters.m */,
+				FD764C8913D0759A00BE0F4F /* NSString+URLEncoding.h */,
+				FD764C8A13D0759A00BE0F4F /* NSString+URLEncoding.m */,
+				FD764C8B13D0759A00BE0F4F /* NSURL+Base.h */,
+				FD764C8C13D0759A00BE0F4F /* NSURL+Base.m */,
+				FD764C8D13D0759A00BE0F4F /* OAAsynchronousDataFetcher.h */,
+				FD764C8E13D0759A00BE0F4F /* OAAsynchronousDataFetcher.m */,
+				FD764C8F13D0759A00BE0F4F /* OAConsumer.h */,
+				FD764C9013D0759A00BE0F4F /* OAConsumer.m */,
+				FD764C9113D0759A00BE0F4F /* OADataFetcher.h */,
+				FD764C9213D0759A00BE0F4F /* OADataFetcher.m */,
+				FD764C9313D0759A00BE0F4F /* OAHMAC_SHA1SignatureProvider.h */,
+				FD764C9413D0759A00BE0F4F /* OAHMAC_SHA1SignatureProvider.m */,
+				FD764C9513D0759A00BE0F4F /* OAMutableURLRequest.h */,
+				FD764C9613D0759A00BE0F4F /* OAMutableURLRequest.m */,
+				FD764C9713D0759A00BE0F4F /* OAPlaintextSignatureProvider.h */,
+				FD764C9813D0759A00BE0F4F /* OAPlaintextSignatureProvider.m */,
+				FD764C9913D0759A00BE0F4F /* OARequestParameter.h */,
+				FD764C9A13D0759A00BE0F4F /* OARequestParameter.m */,
+				FD764C9B13D0759A00BE0F4F /* OAServiceTicket.h */,
+				FD764C9C13D0759A00BE0F4F /* OAServiceTicket.m */,
+				FD764C9D13D0759A00BE0F4F /* OASignatureProviding.h */,
+				FD764C9E13D0759A00BE0F4F /* OAToken.h */,
+				FD764C9F13D0759A00BE0F4F /* OAToken.m */,
+				FD764CA013D0759A00BE0F4F /* OAuthConsumer.h */,
+			);
+			name = OAConsumer;
+			sourceTree = "<group>";
+		};
+		FD764CBB13D075A800BE0F4F /* SBJson */ = {
+			isa = PBXGroup;
+			children = (
+				FD764CD613D075C800BE0F4F /* JSON.h */,
+				FD764CD713D075C800BE0F4F /* NSObject+SBJSON.h */,
+				FD764CD813D075C800BE0F4F /* NSObject+SBJSON.m */,
+				FD764CD913D075C800BE0F4F /* NSString+SBJSON.h */,
+				FD764CDA13D075C800BE0F4F /* NSString+SBJSON.m */,
+				FD764CDB13D075C800BE0F4F /* SBJSON.h */,
+				FD764CDC13D075C800BE0F4F /* SBJSON.m */,
+				FD764CDD13D075C800BE0F4F /* SBJsonBase.h */,
+				FD764CDE13D075C800BE0F4F /* SBJsonBase.m */,
+				FD764CDF13D075C800BE0F4F /* SBJsonParser.h */,
+				FD764CE013D075C800BE0F4F /* SBJsonParser.m */,
+				FD764CE113D075C800BE0F4F /* SBJsonWriter.h */,
+				FD764CE213D075C800BE0F4F /* SBJsonWriter.m */,
+			);
+			name = SBJson;
+			sourceTree = "<group>";
+		};
+		FD764CBC13D075B000BE0F4F /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				FD764CF213D0762900BE0F4F /* ConsoleLog.h */,
+				FD764CF313D0762900BE0F4F /* ConsoleLog.m */,
+				FD764CBD13D075BE00BE0F4F /* Constants.h */,
+				FD764CBE13D075BE00BE0F4F /* Constants.m */,
+				FD764CBF13D075BE00BE0F4F /* Crypto */,
+				FD764CC613D075BE00BE0F4F /* FellowshipOneAPIDateUtility.h */,
+				FD764CC713D075BE00BE0F4F /* FellowshipOneAPIDateUtility.m */,
+				FD764CC813D075BE00BE0F4F /* FellowshipOneAPIUtility.h */,
+				FD764CC913D075BE00BE0F4F /* FellowshipOneAPIUtility.m */,
+			);
+			name = Shared;
+			sourceTree = "<group>";
+		};
+		FD764CBF13D075BE00BE0F4F /* Crypto */ = {
+			isa = PBXGroup;
+			children = (
+				FD764CC013D075BE00BE0F4F /* Base64Transcoder.c */,
+				FD764CC113D075BE00BE0F4F /* Base64Transcoder.h */,
+				FD764CC213D075BE00BE0F4F /* hmac.c */,
+				FD764CC313D075BE00BE0F4F /* hmac.h */,
+				FD764CC413D075BE00BE0F4F /* sha1.c */,
+				FD764CC513D075BE00BE0F4F /* sha1.h */,
+			);
+			name = Crypto;
+			path = Class/Shared/Crypto;
+			sourceTree = "<group>";
+		};
+		FD764D3213D0B5C500BE0F4F /* Authentication */ = {
+			isa = PBXGroup;
+			children = (
+				FD764D2F13D0B56400BE0F4F /* FirstParty.h */,
+				FD764D3013D0B56400BE0F4F /* FirstParty.m */,
+			);
+			name = Authentication;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		FD764C0F13D0721100BE0F4F /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FD764C5313D074D700BE0F4F /* FTError.h in Headers */,
+				FD764C5513D074D700BE0F4F /* FOParentNamedObject.h in Headers */,
+				FD764C5713D074D700BE0F4F /* FOParentObject.h in Headers */,
+				FD764C5913D074D700BE0F4F /* PagedEntity.h in Headers */,
+				FD764C6D13D0754600BE0F4F /* EntityState.h in Headers */,
+				FD764C6E13D0754600BE0F4F /* FTAPIRealm.h in Headers */,
+				FD764C6F13D0754600BE0F4F /* HTTPMethod.h in Headers */,
+				FD764C7513D0755A00BE0F4F /* NSDate+ageFromDate.h in Headers */,
+				FD764C7713D0755A00BE0F4F /* NSObject+serializeToXml.h in Headers */,
+				FD764C8013D0758100BE0F4F /* FTOAuth.h in Headers */,
+				FD764C8213D0758100BE0F4F /* FTOAuthResult.h in Headers */,
+				FD764C8413D0758100BE0F4F /* FTUserDefaults.h in Headers */,
+				FD764CA113D0759A00BE0F4F /* NSMutableURLRequest+Parameters.h in Headers */,
+				FD764CA313D0759A00BE0F4F /* NSString+URLEncoding.h in Headers */,
+				FD764CA513D0759A00BE0F4F /* NSURL+Base.h in Headers */,
+				FD764CA713D0759A00BE0F4F /* OAAsynchronousDataFetcher.h in Headers */,
+				FD764CA913D0759A00BE0F4F /* OAConsumer.h in Headers */,
+				FD764CAB13D0759A00BE0F4F /* OADataFetcher.h in Headers */,
+				FD764CAD13D0759A00BE0F4F /* OAHMAC_SHA1SignatureProvider.h in Headers */,
+				FD764CAF13D0759A00BE0F4F /* OAMutableURLRequest.h in Headers */,
+				FD764CB113D0759A00BE0F4F /* OAPlaintextSignatureProvider.h in Headers */,
+				FD764CB313D0759A00BE0F4F /* OARequestParameter.h in Headers */,
+				FD764CB513D0759A00BE0F4F /* OAServiceTicket.h in Headers */,
+				FD764CB713D0759A00BE0F4F /* OASignatureProviding.h in Headers */,
+				FD764CB813D0759A00BE0F4F /* OAToken.h in Headers */,
+				FD764CBA13D0759A00BE0F4F /* OAuthConsumer.h in Headers */,
+				FD764CCA13D075BE00BE0F4F /* Constants.h in Headers */,
+				FD764CCD13D075BE00BE0F4F /* Base64Transcoder.h in Headers */,
+				FD764CCF13D075BE00BE0F4F /* hmac.h in Headers */,
+				FD764CD113D075BE00BE0F4F /* sha1.h in Headers */,
+				FD764CD213D075BE00BE0F4F /* FellowshipOneAPIDateUtility.h in Headers */,
+				FD764CD413D075BE00BE0F4F /* FellowshipOneAPIUtility.h in Headers */,
+				FD764CE313D075C800BE0F4F /* JSON.h in Headers */,
+				FD764CE413D075C800BE0F4F /* NSObject+SBJSON.h in Headers */,
+				FD764CE613D075C800BE0F4F /* NSString+SBJSON.h in Headers */,
+				FD764CE813D075C800BE0F4F /* SBJSON.h in Headers */,
+				FD764CEA13D075C800BE0F4F /* SBJsonBase.h in Headers */,
+				FD764CEC13D075C800BE0F4F /* SBJsonParser.h in Headers */,
+				FD764CEE13D075C800BE0F4F /* SBJsonWriter.h in Headers */,
+				FD764CF113D0761900BE0F4F /* Enum.h in Headers */,
+				FD764CF413D0762900BE0F4F /* ConsoleLog.h in Headers */,
+				FD764CF813D0765700BE0F4F /* NSObject+serializeToJSON.h in Headers */,
+				FD764D0A13D0783200BE0F4F /* WebRequest.h in Headers */,
+				FD764D0E13D078FF00BE0F4F /* FellowshipOneAPIClient.h in Headers */,
+				FD764D1213D07A1600BE0F4F /* FOPerson.h in Headers */,
+				FDF555C513D23A4C00ED5317 /* FOAddress.h in Headers */,
+				FD47128E13D2500D00FD2C26 /* FOStatus.h in Headers */,
+				FD47129313D2507E00FD2C26 /* FOSubStatus.h in Headers */,
+				FD47129713D250E600FD2C26 /* FOHouseholdMemberType.h in Headers */,
+				FD47129E13D252F800FD2C26 /* FOHousehold.h in Headers */,
+				FD4712A213D2549100FD2C26 /* FOCommunication.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		FD764C1013D0721100BE0F4F /* FellowshipOneAPIClient */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FD764C3413D0721300BE0F4F /* Build configuration list for PBXNativeTarget "FellowshipOneAPIClient" */;
+			buildPhases = (
+				FD764C0D13D0721100BE0F4F /* Sources */,
+				FD764C0E13D0721100BE0F4F /* Frameworks */,
+				FD764C0F13D0721100BE0F4F /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = FellowshipOneAPIClient;
+			productName = FellowshipOneAPIClient;
+			productReference = FD764C1113D0721300BE0F4F /* libFellowshipOneAPIClient.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		FD764C1D13D0721300BE0F4F /* FellowshipOneAPIClientTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FD764C3713D0721300BE0F4F /* Build configuration list for PBXNativeTarget "FellowshipOneAPIClientTests" */;
+			buildPhases = (
+				FD764C1913D0721300BE0F4F /* Sources */,
+				FD764C1A13D0721300BE0F4F /* Frameworks */,
+				FD764C1B13D0721300BE0F4F /* Resources */,
+				FD764C1C13D0721300BE0F4F /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				FD764C2513D0721300BE0F4F /* PBXTargetDependency */,
+			);
+			name = FellowshipOneAPIClientTests;
+			productName = FellowshipOneAPIClientTests;
+			productReference = FD764C1E13D0721300BE0F4F /* FellowshipOneAPIClientTests.octest */;
+			productType = "com.apple.product-type.bundle";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		FD764C0813D0721000BE0F4F /* Project object */ = {
+			isa = PBXProject;
+			buildConfigurationList = FD764C0B13D0721000BE0F4F /* Build configuration list for PBXProject "FellowshipOneAPIClient" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = FD764C0613D0721000BE0F4F;
+			productRefGroup = FD764C1213D0721300BE0F4F /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				FD764C1013D0721100BE0F4F /* FellowshipOneAPIClient */,
+				FD764C1D13D0721300BE0F4F /* FellowshipOneAPIClientTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		FD764C1B13D0721300BE0F4F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FD764D2913D07E3B00BE0F4F /* FellowshipOneAPIClient.h in Resources */,
+				FD4712A713D2556900FD2C26 /* FOHousehold.h in Resources */,
+				FD4712A813D2556D00FD2C26 /* FOCommunication.h in Resources */,
+				FD4712A913D2556F00FD2C26 /* FOHouseholdMemberType.h in Resources */,
+				FD47129B13D2529100FD2C26 /* FOAddress.h in Resources */,
+				FD47129913D2528500FD2C26 /* FOStatus.h in Resources */,
+				FD47129A13D2528900FD2C26 /* FOSubStatus.h in Resources */,
+				FD0FB05913D2169A00A078AC /* FOPerson.h in Resources */,
+				FD0FB05D13D2263B00A078AC /* PagedEntity.h in Resources */,
+				FD0FB05E13D2263E00A078AC /* FOParentNamedObject.h in Resources */,
+				FD0FB05F13D2264100A078AC /* FOParentObject.h in Resources */,
+				FD764C2C13D0721300BE0F4F /* InfoPlist.strings in Resources */,
+				FD764D3313D0B7FF00BE0F4F /* FellowshipOneAPIClient.plist in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		FD764C1C13D0721300BE0F4F /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		FD764C0D13D0721100BE0F4F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FD764C5413D074D700BE0F4F /* FTError.m in Sources */,
+				FD764C5613D074D700BE0F4F /* FOParentNamedObject.m in Sources */,
+				FD764C5813D074D700BE0F4F /* FOParentObject.m in Sources */,
+				FD764C5A13D074D700BE0F4F /* PagedEntity.m in Sources */,
+				FD764C7613D0755A00BE0F4F /* NSDate+ageFromDate.m in Sources */,
+				FD764C7813D0755A00BE0F4F /* NSObject+serializeToXml.m in Sources */,
+				FD764C8113D0758100BE0F4F /* FTOAuth.m in Sources */,
+				FD764C8313D0758100BE0F4F /* FTOAuthResult.m in Sources */,
+				FD764C8513D0758100BE0F4F /* FTUserDefaults.m in Sources */,
+				FD764CA213D0759A00BE0F4F /* NSMutableURLRequest+Parameters.m in Sources */,
+				FD764CA413D0759A00BE0F4F /* NSString+URLEncoding.m in Sources */,
+				FD764CA613D0759A00BE0F4F /* NSURL+Base.m in Sources */,
+				FD764CA813D0759A00BE0F4F /* OAAsynchronousDataFetcher.m in Sources */,
+				FD764CAA13D0759A00BE0F4F /* OAConsumer.m in Sources */,
+				FD764CAC13D0759A00BE0F4F /* OADataFetcher.m in Sources */,
+				FD764CAE13D0759A00BE0F4F /* OAHMAC_SHA1SignatureProvider.m in Sources */,
+				FD764CB013D0759A00BE0F4F /* OAMutableURLRequest.m in Sources */,
+				FD764CB213D0759A00BE0F4F /* OAPlaintextSignatureProvider.m in Sources */,
+				FD764CB413D0759A00BE0F4F /* OARequestParameter.m in Sources */,
+				FD764CB613D0759A00BE0F4F /* OAServiceTicket.m in Sources */,
+				FD764CB913D0759A00BE0F4F /* OAToken.m in Sources */,
+				FD764CCB13D075BE00BE0F4F /* Constants.m in Sources */,
+				FD764CCC13D075BE00BE0F4F /* Base64Transcoder.c in Sources */,
+				FD764CCE13D075BE00BE0F4F /* hmac.c in Sources */,
+				FD764CD013D075BE00BE0F4F /* sha1.c in Sources */,
+				FD764CD313D075BE00BE0F4F /* FellowshipOneAPIDateUtility.m in Sources */,
+				FD764CD513D075BE00BE0F4F /* FellowshipOneAPIUtility.m in Sources */,
+				FD764CE513D075C800BE0F4F /* NSObject+SBJSON.m in Sources */,
+				FD764CE713D075C800BE0F4F /* NSString+SBJSON.m in Sources */,
+				FD764CE913D075C800BE0F4F /* SBJSON.m in Sources */,
+				FD764CEB13D075C800BE0F4F /* SBJsonBase.m in Sources */,
+				FD764CED13D075C800BE0F4F /* SBJsonParser.m in Sources */,
+				FD764CEF13D075C800BE0F4F /* SBJsonWriter.m in Sources */,
+				FD764CF513D0762900BE0F4F /* ConsoleLog.m in Sources */,
+				FD764CF913D0765700BE0F4F /* NSObject+serializeToJSON.m in Sources */,
+				FD764D0B13D0783200BE0F4F /* WebRequest.m in Sources */,
+				FD764D0F13D078FF00BE0F4F /* FellowshipOneAPIClient.m in Sources */,
+				FD764D1313D07A1600BE0F4F /* FOPerson.m in Sources */,
+				FDF555C613D23A4C00ED5317 /* FOAddress.m in Sources */,
+				FD47128F13D2500D00FD2C26 /* FOStatus.m in Sources */,
+				FD47129413D2507E00FD2C26 /* FOSubStatus.m in Sources */,
+				FD47129813D250E600FD2C26 /* FOHouseholdMemberType.m in Sources */,
+				FD47129F13D252F800FD2C26 /* FOHousehold.m in Sources */,
+				FD4712A313D2549100FD2C26 /* FOCommunication.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FD764C1913D0721300BE0F4F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FD764D3113D0B56400BE0F4F /* FirstParty.m in Sources */,
+				FD0FB05813D2162900A078AC /* Person.m in Sources */,
+				FD0FB05C13D2171600A078AC /* BaseTest.m in Sources */,
+				FD4712A613D2552700FD2C26 /* Communication.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		FD764C2513D0721300BE0F4F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = FD764C1013D0721100BE0F4F /* FellowshipOneAPIClient */;
+			targetProxy = FD764C2413D0721300BE0F4F /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		FD764C2A13D0721300BE0F4F /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FD764C2B13D0721300BE0F4F /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		FD764C3213D0721300BE0F4F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = DEBUG;
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvmgcc42;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		FD764C3313D0721300BE0F4F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvmgcc42;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				SDKROOT = iphoneos;
+			};
+			name = Release;
+		};
+		FD764C3513D0721300BE0F4F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				DSTROOT = /tmp/FellowshipOneAPIClient.dst;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "FellowshipOneAPIClient/FellowshipOneAPIClient-Prefix.pch";
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		FD764C3613D0721300BE0F4F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				DSTROOT = /tmp/FellowshipOneAPIClient.dst;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "FellowshipOneAPIClient/FellowshipOneAPIClient-Prefix.pch";
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		FD764C3813D0721300BE0F4F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(DEVELOPER_LIBRARY_DIR)/Frameworks",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "FellowshipOneAPIClientTests/FellowshipOneAPIClientTests-Prefix.pch";
+				INFOPLIST_FILE = "FellowshipOneAPIClientTests/FellowshipOneAPIClientTests-Info.plist";
+				OTHER_LDFLAGS = (
+					"-all_load",
+					"-framework",
+					SenTestingKit,
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Debug;
+		};
+		FD764C3913D0721300BE0F4F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(DEVELOPER_LIBRARY_DIR)/Frameworks",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "FellowshipOneAPIClientTests/FellowshipOneAPIClientTests-Prefix.pch";
+				INFOPLIST_FILE = "FellowshipOneAPIClientTests/FellowshipOneAPIClientTests-Info.plist";
+				OTHER_LDFLAGS = (
+					"-all_load",
+					"-framework",
+					SenTestingKit,
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		FD764C0B13D0721000BE0F4F /* Build configuration list for PBXProject "FellowshipOneAPIClient" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FD764C3213D0721300BE0F4F /* Debug */,
+				FD764C3313D0721300BE0F4F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FD764C3413D0721300BE0F4F /* Build configuration list for PBXNativeTarget "FellowshipOneAPIClient" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FD764C3513D0721300BE0F4F /* Debug */,
+				FD764C3613D0721300BE0F4F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FD764C3713D0721300BE0F4F /* Build configuration list for PBXNativeTarget "FellowshipOneAPIClientTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FD764C3813D0721300BE0F4F /* Debug */,
+				FD764C3913D0721300BE0F4F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = FD764C0813D0721000BE0F4F /* Project object */;
+}

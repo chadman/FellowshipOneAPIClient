@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>APIDomain</key>
+	<string>https://%@.fellowshiponeapi.com</string>
+	<key>APIVersionNumber</key>
+	<string>v1</string>
+	<key>ConsumerKey</key>
+	<string>8</string>
+	<key>ConsumerSecret</key>
+	<string>9aeba0af-e27f-4dab-ae4e-b14770c9060b</string>
+</dict>
+</plist>
