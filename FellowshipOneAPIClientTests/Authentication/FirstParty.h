@@ -29,4 +29,6 @@
 
 - (void) testWeblinkAuthentication;
 
+- (void) testChurchCodeIsLowercase;
+
 @end

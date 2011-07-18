@@ -89,6 +89,10 @@
 
 }
 
+- (void) testChurchCodeIsLowercase {
+    [FellowshipOneAPIClient setChurchCode:@"DC"];
+    STAssertTrue([[FellowshipOneAPIClient apiDomainURL] isEqualToString:@"https://dc.fellowshiponeapi.com/v1/"], @"returned domain does not match.");
+}
 
 
 @end

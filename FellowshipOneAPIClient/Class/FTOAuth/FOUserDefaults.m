@@ -41,7 +41,7 @@
 	NSString *returnVal = [userDefaults stringForKey:@"churchCode"];
 	
 	if (returnVal != nil) {
-		return returnVal;
+		return [returnVal lowercaseString];
 	}
 	else {
 		// If the church code is nil in the user defaults, check the plist
@@ -56,7 +56,7 @@
 		}
 	}
 
-	return returnVal;
+	return [returnVal lowercaseString];
 }
 
 - (void)setChurchCode: (NSString*)aValue {

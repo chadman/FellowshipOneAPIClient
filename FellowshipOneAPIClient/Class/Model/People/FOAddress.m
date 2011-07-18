@@ -289,7 +289,7 @@
 + (void) getByPersonID: (NSInteger)personID usingCallback:(void (^)(NSArray *))results {
     
     NSString *addressUrl = [NSString stringWithFormat:@"People/%d/Addresses.json", personID];
-    FTOAuth *oauth = [[[FTOAuth alloc] initWithDelegate:self] autorelease];
+    FTOAuth *oauth = [[FTOAuth alloc] initWithDelegate:self];
     __block NSMutableArray *returnAddresses = [[NSMutableArray alloc] init];
     
     [oauth callFTAPIWithURLSuffix:addressUrl forRealm:FTAPIRealmBase withHTTPMethod:HTTPMethodGET withData:nil usingBlock:^(id block) {
@@ -309,6 +309,7 @@
         }
         results(returnAddresses);
         [returnAddresses release];
+        [oauth release];
     }];
 }
 
@@ -336,7 +337,7 @@
 
 + (void) getByAddressID: (NSInteger) addressID usingCallback:(void (^)(FOAddress *))returnAddress {
     NSString *addressUrl = [NSString stringWithFormat:@"Addresses/%d.json", addressID];
-    FTOAuth *oauth = [[[FTOAuth alloc] initWithDelegate:self] autorelease];
+    FTOAuth *oauth = [[FTOAuth alloc] initWithDelegate:self];
     __block FOAddress *tmpAddress = [[FOAddress alloc] init];
     
     [oauth callFTAPIWithURLSuffix:addressUrl forRealm:FTAPIRealmBase withHTTPMethod:HTTPMethodGET withData:nil usingBlock:^(id block) {
@@ -349,6 +350,7 @@
         }
         returnAddress(tmpAddress);
         [tmpAddress release];
+        [oauth release];
     }];
 }
 
@@ -386,7 +388,7 @@
 
 - (void) saveUsingCallback:(void (^)(FOAddress *))returnAddress {
     
-    FTOAuth *oauth = [[[FTOAuth alloc] initWithDelegate:self] autorelease];
+    FTOAuth *oauth = [[FTOAuth alloc] initWithDelegate:self];
     __block FOAddress *tmpAddress = [[FOAddress alloc] init];
     HTTPMethod method = HTTPMethodPOST;	
 	NSMutableString *urlSuffix = [NSMutableString stringWithFormat:@"Addresses"];
@@ -408,6 +410,7 @@
         }
         returnAddress(tmpAddress);
         [tmpAddress release];
+        [oauth release];
     }];
 }
 

@@ -11,7 +11,25 @@
 #import "ConsoleLog.h"
 #import "FTOAuth.h"
 
+@interface FellowshipOneAPIClient ()
+
+@property (nonatomic, retain) FTOAuth *oauth;
+
+@end
+
 @implementation FellowshipOneAPIClient
+@synthesize oauth;
+
+- (id) init {
+    
+    self = [super init];
+    
+    if (self) {
+        self.oauth = [[FTOAuth alloc] initWithDelegate:self];
+    }
+    
+    return self;
+}
 
 + (NSString *) apiDomainURL {
 
@@ -44,23 +62,16 @@
 }
 
 - (void)fetchRequestToken: (NSString *)churchCode delegate:(id)aDelegate finishSelector:(SEL)aFinishSelector failSelector: (SEL)aFailSelector {
-
-	FTOAuth *ftoauth = [[FTOAuth alloc] initWithDelegate:self];
-	
-	[ftoauth fetchRequestToken:churchCode delegate:aDelegate finishSelector:aFinishSelector failSelector:aFailSelector];
+	[oauth fetchRequestToken:churchCode delegate:aDelegate finishSelector:aFinishSelector failSelector:aFailSelector];
 }
 
 - (void)requestAccessToken: (NSString *)churchCode delegate:(id)aDelegate finishSelector:(SEL)aFinishSelector failSelector: (SEL)aFailSelector {
-	
-	FTOAuth *ftoauth = [[FTOAuth alloc] initWithDelegate:self];
-	[ftoauth requestAccessToken:churchCode delegate:aDelegate finishSelector:aFinishSelector failSelector:aFailSelector];
+	[oauth requestAccessToken:churchCode delegate:aDelegate finishSelector:aFinishSelector failSelector:aFailSelector];
 }
 
 - (void) authenticateUser: (NSString *)userName withPassword: (NSString *)password withChurchCode: (NSString *)churchCode delegate: (id)aDelegate finishSelector: (SEL)aFinishSelector failSelector: (SEL)aFailSelector {	
-	
-	FTOAuth *ftoauth = [[FTOAuth alloc] initWithDelegate:self];
-	
-	[ftoauth authenticateUser:userName 
+
+	[oauth authenticateUser:userName 
 				 withPassword:password
 			   withChurchCode:churchCode 
 					 delegate:aDelegate 
@@ -83,16 +94,17 @@
 
 #if NS_BLOCKS_AVAILABLE
 - (void)authenticatePortalUser: (NSString *)userName password: (NSString *)password usingBlock:(void (^)(id))block NS_AVAILABLE(10_6, 4_0) {
-
-	FTOAuth *ftoauth = [[[FTOAuth alloc] initWithDelegate:self] autorelease];
-    [ftoauth authenticatePortalUser:userName password:password usingBlock:block];
+    [oauth authenticatePortalUser:userName password:password usingBlock:block];
 }
 
 - (void)authenticateWeblinkUser: (NSString *)userName password: (NSString *)password usingBlock:(void (^)(id))block NS_AVAILABLE(10_6, 4_0) {
-    
-	FTOAuth *ftoauth = [[[FTOAuth alloc] initWithDelegate:self] autorelease];
-    [ftoauth authenticateWeblinkUser:userName password:password usingBlock:block];
+    [oauth authenticateWeblinkUser:userName password:password usingBlock:block];
 }
 #endif
+
+- (void) dealloc {
+    [oauth release];
+    [super dealloc];
+}
 
 @end

@@ -301,7 +301,7 @@
 + (void) getByID: (NSInteger)personID usingCallback:(void (^)(FOPerson *))returnedPerson {
     
     NSString *personURL = [NSString stringWithFormat:@"People/%d.json", personID];
-    FTOAuth *oauth = [[[FTOAuth alloc] initWithDelegate:self] autorelease];
+    FTOAuth *oauth = [[FTOAuth alloc] initWithDelegate:self];
     __block FOPerson *tmpPerson = [[FOPerson alloc] init];
  
     [oauth callFTAPIWithURLSuffix:personURL forRealm:FTAPIRealmBase withHTTPMethod:HTTPMethodGET withData:nil usingBlock:^(id block) {
@@ -314,6 +314,7 @@
         }
         returnedPerson(tmpPerson);
         [tmpPerson release];
+        [oauth release];
     }];
 }
 
@@ -364,7 +365,7 @@
 }
 
 + (void) getByUrl: (NSString *)theUrl usingCallback:(void (^)(FOPerson *))returnedPerson {
-    FTOAuth *oauth = [[[FTOAuth alloc] initWithDelegate:self] autorelease];
+    FTOAuth *oauth = [[FTOAuth alloc] initWithDelegate:self];
     __block FOPerson *tmpPerson = [[FOPerson alloc] init];
     
     [oauth callFTAPIWithURL:theUrl withHTTPMethod:HTTPMethodGET withData:nil usingBlock:^(id block) {
@@ -377,6 +378,7 @@
         }
         returnedPerson(tmpPerson);
         [tmpPerson release];
+        [oauth release];
     }];
     
 }
@@ -384,7 +386,7 @@
 + (void) searchForPeople: (NSString *)searchText withSearchIncludes:(NSArray *)includes withPage: (NSInteger)pageNumber usingCallback:(void (^)(FOPagedEntity *))pagedResults {
 	
 	NSMutableString *peopleSearchURL = [NSMutableString stringWithFormat:@"People/Search.json?searchFor=%@&page=%d&recordsperpage=20", searchText, pageNumber];
-	FTOAuth *oauth = [[[FTOAuth alloc] initWithDelegate:self] autorelease];
+	FTOAuth *oauth = [[FTOAuth alloc] initWithDelegate:self];
     
 	// If there are includes, add them to the people search URL
 	if (includes) {
@@ -431,12 +433,13 @@
         pagedResults(resultsEntity);
         [resultsEntity release];
         [tmpResults release];
+        [oauth release];
     }];
 }
 
 + (void)getImageData: (NSInteger)personID withSize:(NSString *)size usingCallback:(void (^)(NSData *))returnedImage {
     NSString *imageURL = [NSString stringWithFormat:@"People/%d/Images.json?Size=%@", personID, size];
-    FTOAuth *oauth = [[[FTOAuth alloc] initWithDelegate:self] autorelease];
+    FTOAuth *oauth = [[FTOAuth alloc] initWithDelegate:self];
     __block NSData *tmpImage = [[NSData alloc] init];
     
     [oauth callFTAPIWithURLSuffix:imageURL forRealm:FTAPIRealmBase withHTTPMethod:HTTPMethodGET withData:nil usingBlock:^(id block) {
@@ -449,6 +452,7 @@
         }
         returnedImage(tmpImage);
         [tmpImage release];
+        [oauth release];
     }];
 }
 

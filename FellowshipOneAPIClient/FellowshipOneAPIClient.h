@@ -53,6 +53,11 @@
 
 @interface FellowshipOneAPIClient : NSObject
 
+{
+@private 
+    id oauth;
+}
+
 // Sets the church code that the fellowshipone api will be working with. It is very important to set this before accessing any api resource
 + (void) setChurchCode: (NSString *)churchCode;
 
