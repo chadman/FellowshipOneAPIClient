@@ -6,10 +6,10 @@
 //  Copyright 2010 __MyCompanyName__. All rights reserved.
 //
 
-#import "FTError.h"
+#import "FOError.h"
 
 
-@implementation FTError
+@implementation FOError
 
 @synthesize errorMessage, statusCode, headerFields;
 

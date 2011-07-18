@@ -51,7 +51,7 @@
 #import <Foundation/Foundation.h>
 
 
-@class PagedEntity;
+@class FOPagedEntity;
 @class FTOAuth;
 @class FTError;
 
@@ -139,7 +139,7 @@ typedef enum {
 
 @optional
 // Implement for when multiple households are returned
-- (void) FTHouseholdsReturned: (PagedEntity *)households;
+- (void) FTHouseholdsReturned: (FOPagedEntity *)households;
 
 
 // Implement for when one household is returned

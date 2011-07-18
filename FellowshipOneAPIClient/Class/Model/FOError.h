@@ -51,7 +51,7 @@
 #import <Foundation/Foundation.h>
 
 
-@interface FTError : NSObject {
+@interface FOError : NSObject {
 	
 	NSString *errorMessage;
 	NSString *statusCode;

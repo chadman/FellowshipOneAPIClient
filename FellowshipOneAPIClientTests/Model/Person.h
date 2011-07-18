@@ -30,4 +30,8 @@
 
 - (void) testGetImage;
 
+- (void) testGetSynchronouslyById;
+
+- (void) testGetSynchronouslyByUrl;
+
 @end

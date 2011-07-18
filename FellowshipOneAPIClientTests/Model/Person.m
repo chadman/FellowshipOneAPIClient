@@ -9,7 +9,7 @@
 #import "Person.h"
 #import "FOPerson.h"
 #import "FellowshipOneAPIClient.h"
-#import "PagedEntity.h"
+#import "FOPagedEntity.h"
 #import "FOAddress.h"
 
 
@@ -57,7 +57,7 @@
     
     // Testing using blocks for authentication
     
-    [FOPerson searchForPeople:@"sm" withSearchIncludes:nil withPage:1 usingCallback:^(PagedEntity *pagedResults) {
+    [FOPerson searchForPeople:@"sm" withSearchIncludes:nil withPage:1 usingCallback:^(FOPagedEntity *pagedResults) {
         STAssertTrue([pagedResults.results count] > 0, @"No results were returned.");
         done = YES;
     }];
@@ -81,7 +81,7 @@
     
     // Testing using blocks for authentication
     
-    [FOPerson searchForPeople:@"asdfasdfaasdf" withSearchIncludes:nil withPage:1 usingCallback:^(PagedEntity *pagedResults) {
+    [FOPerson searchForPeople:@"asdfasdfaasdf" withSearchIncludes:nil withPage:1 usingCallback:^(FOPagedEntity *pagedResults) {
         STAssertTrue([pagedResults.results count] == 0, @"results were returned.");
         done = YES;
     }];
@@ -107,7 +107,7 @@
     NSArray *includes = [[NSArray alloc] initWithObjects:[FOPerson getSearchIncludeString:PeopleSearchIncludeAddresses], nil];
 
     
-    [FOPerson searchForPeople:@"meyer,chad" withSearchIncludes:includes withPage:1 usingCallback:^(PagedEntity *pagedResults) {
+    [FOPerson searchForPeople:@"meyer,chad" withSearchIncludes:includes withPage:1 usingCallback:^(FOPagedEntity *pagedResults) {
         
         // Looks through the results and look for addresses
         for (FOPerson *currentPerson in pagedResults.results) {
@@ -146,7 +146,7 @@
     NSArray *includes = [[NSArray alloc] initWithObjects:[FOPerson getSearchIncludeString:PeopleSearchIncludeCommunications], nil];
     
     
-    [FOPerson searchForPeople:@"meyer,chad" withSearchIncludes:includes withPage:1 usingCallback:^(PagedEntity *pagedResults) {
+    [FOPerson searchForPeople:@"meyer,chad" withSearchIncludes:includes withPage:1 usingCallback:^(FOPagedEntity *pagedResults) {
         
         // Looks through the results and look for addresses
         for (FOPerson *currentPerson in pagedResults.results) {
@@ -232,6 +232,45 @@
             STFail(@"Did not complete testGetImage");
         }
     }
+}
+
+- (void) testGetSynchronouslyById {
+    FOPerson *person = [FOPerson getByID:8266692];
+    
+    STAssertNotNil(person, @"person not returned.");
+}
+
+- (void)testGetSynchronouslyByUrl {
+    
+    __block BOOL done= NO;
+    int count = 0;
+    
+    [FellowshipOneAPIClient removeOAuthTicket];
+    
+    // Testing using blocks for authentication
+    FellowshipOneAPIClient *client = [[FellowshipOneAPIClient alloc] init];
+    
+    [client authenticatePortalUser:@"tcoulson" password:@"FT.Admin1" usingBlock:^(id block) {
+        
+        FOPerson *person = [FOPerson getByUrl:[NSString stringWithFormat:@"%@%@", [FellowshipOneAPIClient loggedUserURL], @".json"]];
+        STAssertNotNil(person, @"retrieve by url not populated.");
+        done = YES;
+    }];
+    
+    while (!done) {
+        
+        if (count < 20) {
+            count++;
+            [self runLoop];
+        }
+        else {
+            done = YES;
+            STFail(@"Did not complete testGetImage");
+        }
+    }
+    
+    [client release];
+    
 }
 
 @end

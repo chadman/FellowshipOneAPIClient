@@ -53,7 +53,7 @@
 
 @class FTError;
 @class FTOAuth;
-@class PagedEntity;
+@class FOPagedEntity;
 @class FOParentObject;
 @class FOParentNamedObject;
 
@@ -81,8 +81,7 @@
 	NSDate *createdDate;
 	NSDate *lastUpdatedDate;
 	FOParentNamedObject *addressType;
-    
-@private FTOAuth *oauth;
+
 @private NSDictionary *_serializationMapper;
 }
 
@@ -119,8 +118,28 @@
 /* Convienence property for formatting the address into the typical USPS format */
 @property (nonatomic, readonly) NSString *formattedAddress;
 
+/* Gets all the communications associated with a specific person id -- Thie method is performed synchronously -- */
++ (NSArray *) getByPersonID: (NSInteger) personID;
+
+/* Gets a specific address by the address ID -- this method is performed synchronously */
++ (FOAddress *) getByAddressID: (NSInteger) addressID;
+
+/* Gets all the communications associated with a specific person id -- Thie method is performed asynchronously -- */
++ (void) getByPersonID: (NSInteger)personID usingCallback:(void (^)(NSArray *))results;
+
+/* Gets a specific address by the address ID -- this method is performed asynchronously */
++ (void) getByAddressID: (NSInteger) addressID usingCallback:(void (^)(FOAddress *))returnAddress;
+
+/* Calls the API to save the current address. If there is an ID attached to the address, the method assumes an update, if no id exists, the method assumes create */
+- (void) save;
+
+/* Calls the API to save the current address. If there is an ID attached to the address, the method assumes an update, if no id exists, the method assumes create */
+- (void) saveUsingCallback:(void (^)(FOAddress *))returnAddress;
+
 /* populates an FTAddress object from a NSDictionary */
 + (FOAddress *)populateFromDictionary: (NSDictionary *)dict;
+
+
 
 @end
 

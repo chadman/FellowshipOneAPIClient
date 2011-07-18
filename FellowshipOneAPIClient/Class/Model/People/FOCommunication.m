@@ -142,7 +142,7 @@
 	
 	if (ftOAuthResult.isSucceed) {
 		
-		NSDictionary *topLevel = [ftOAuthResult.returnData objectForKey:@"address"];
+		NSDictionary *topLevel = [ftOAuthResult.returnData objectForKey:@"communication"];
 		
 		if (![topLevel isEqual:[NSNull null]]) {		
 			returnCommunication = [FOCommunication populateFromDictionary:topLevel];

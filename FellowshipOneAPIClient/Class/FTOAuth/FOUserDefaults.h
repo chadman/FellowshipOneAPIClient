@@ -7,7 +7,7 @@
 //
 
 
-@interface FTUserDefaults : NSObject {
+@interface FOUserDefaults : NSObject {
 
 	NSString		*churchCode;
 	NSString		*acessToken;
@@ -20,7 +20,7 @@
 @property (readwrite, retain) NSString *accessTokenSecret;
 @property (readwrite, retain) NSString *loggedUserURI;
 
-+ (FTUserDefaults *)sharedInstance; 
++ (FOUserDefaults *)sharedInstance; 
 + (void)killAllFTDefaults;
 
 @end

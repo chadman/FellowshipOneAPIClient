@@ -6,20 +6,20 @@
 //  Copyright 2009 Fellowship Tech. All rights reserved.
 //
 
-#import "FTUserDefaults.h"
+#import "FOUserDefaults.h"
 #import "Constants.h"
 #import "FellowshipOneAPIUtility.h"
 #import "ConsoleLog.h"
 #import "Constants.h"
 
-@implementation FTUserDefaults
+@implementation FOUserDefaults
 
-+ (FTUserDefaults *)sharedInstance {
-	static FTUserDefaults *sharedInstance;
++ (FOUserDefaults *)sharedInstance {
+	static FOUserDefaults *sharedInstance;
 	
 	@synchronized(self) {
 		if (!sharedInstance) {
-			sharedInstance = [[FTUserDefaults alloc] init];
+			sharedInstance = [[FOUserDefaults alloc] init];
 		}
 	}
 	
@@ -45,11 +45,11 @@
 	}
 	else {
 		// If the church code is nil in the user defaults, check the plist
-		returnVal = [FellowshipOneAPIUtility getValueFromPList:kApiPlistName withListKey:@"ChurchCode"];
+		returnVal = [FellowshipOneAPIUtility getValueFromPList:kFellowshipOneAPIClientApiPlistName withListKey:@"ChurchCode"];
 		
 		if (!returnVal) {
 			returnVal = @"";
-			[ConsoleLog LogMessage:[NSString stringWithFormat:@"churchCode was not found in the %@", kApiPlistName]];
+			[ConsoleLog LogMessage:[NSString stringWithFormat:@"churchCode was not found in the %@", kFellowshipOneAPIClientApiPlistName]];
 		}
 		else {
 			[self setChurchCode:returnVal];

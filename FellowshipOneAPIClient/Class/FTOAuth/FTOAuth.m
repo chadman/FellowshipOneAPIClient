@@ -7,7 +7,7 @@
 //
 
 #import "FTOAuth.h"
-#import "FTUserDefaults.h"
+#import "FOUserDefaults.h"
 #import "JSON.h"
 #import "FellowshipOneAPIUtility.h"
 #import "OAuthConsumer.h"
@@ -121,7 +121,7 @@ int encode(unsigned s_len, char *src, unsigned d_len, char *dst);
 	didFailSelector = aFailSelector;
 	
 	// set the church code for future use
-	[[FTUserDefaults sharedInstance] setChurchCode:churchCode];
+	[[FOUserDefaults sharedInstance] setChurchCode:churchCode];
 
 	// Create an OAConsumer object
 	OAConsumer *oaConsumer = [[OAConsumer alloc] 
@@ -156,7 +156,7 @@ int encode(unsigned s_len, char *src, unsigned d_len, char *dst);
 	
 	// Set the body to be the encoded username and password
 	[request setHTTPBody: [encodedUserCreds dataUsingEncoding:NSASCIIStringEncoding allowLossyConversion:YES]];
-	[request setValue:@"application/xml" forHTTPHeaderField:@"Content-Type"]; 
+	[request setValue:@"application/json" forHTTPHeaderField:@"Content-Type"]; 
 	
 
 	if (self.fetcher) {
@@ -193,8 +193,8 @@ int encode(unsigned s_len, char *src, unsigned d_len, char *dst);
 	
 	// Create an OAToken to pass to the methods
 	OAToken *oaToken = [[OAToken alloc]
-						initWithKey:[[FTUserDefaults sharedInstance] accessToken] 
-						secret:[[FTUserDefaults sharedInstance] accessTokenSecret]];
+						initWithKey:[[FOUserDefaults sharedInstance] accessToken] 
+						secret:[[FOUserDefaults sharedInstance] accessTokenSecret]];
 	
 	// Authenticating the user in this scenario will require having the acess token url, get it now
 	NSURL *accessTokenURL = [self fetchFTAPIURL:@"Tokens/AccessToken" forRealm:FTAPIRealmBase];
@@ -207,7 +207,7 @@ int encode(unsigned s_len, char *src, unsigned d_len, char *dst);
 														  signatureProvider:nil];
 	
 	[request setHTTPMethod:[self getHTTPMethodString:HTTPMethodPOST]];
-	[request setValue:@"application/xml" forHTTPHeaderField:@"Content-Type"];
+	[request setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
 	
 	if (self.fetcher) {
 		[self.fetcher release];
@@ -240,7 +240,7 @@ int encode(unsigned s_len, char *src, unsigned d_len, char *dst);
 	didFailSelector = aFailSelector;
 	
 	// Set the church code and save it
-	[[FTUserDefaults sharedInstance] setChurchCode:churchCode];
+	[[FOUserDefaults sharedInstance] setChurchCode:churchCode];
 	
 	// Create an OAConsumer object
 	OAConsumer *oaConsumer = [[OAConsumer alloc] 
@@ -259,7 +259,7 @@ int encode(unsigned s_len, char *src, unsigned d_len, char *dst);
 	[request setHTTPMethod:@"POST"];
 	
 	// Set the body to be the encoded username and password
-	[request setValue:@"application/xml" forHTTPHeaderField:@"Content-Type"]; 
+	[request setValue:@"application/json" forHTTPHeaderField:@"Content-Type"]; 
 	
 	// Fetch the data associated with the request	
 	self.fetcher = [[OAAsynchronousDataFetcher alloc] initWithRequest:request 
@@ -316,8 +316,8 @@ int encode(unsigned s_len, char *src, unsigned d_len, char *dst);
 	
 	// Create an OAToken to pass to the methods
 	OAToken *oaToken = [[OAToken alloc]
-						initWithKey:[[FTUserDefaults sharedInstance] accessToken] 
-						secret:[[FTUserDefaults sharedInstance] accessTokenSecret]];
+						initWithKey:[[FOUserDefaults sharedInstance] accessToken] 
+						secret:[[FOUserDefaults sharedInstance] accessTokenSecret]];
 	
 	
 	OAMutableURLRequest *request = [[OAMutableURLRequest alloc] initWithURL:url
@@ -329,7 +329,7 @@ int encode(unsigned s_len, char *src, unsigned d_len, char *dst);
 	[oaConsumer release];
 	
 	[request setHTTPMethod:[self getHTTPMethodString:method]];
-	[request setValue:@"application/xml" forHTTPHeaderField:@"Content-Type"];
+	[request setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
 	
 	if (![data isKindOfClass:[NSNull class]]) {
 		[request setHTTPBody:data];
@@ -365,7 +365,7 @@ int encode(unsigned s_len, char *src, unsigned d_len, char *dst);
 	// access token and access token secret are needed for any request to the api. If these two things do not exist,
 	// send something to the console explaining the need and return
 	
-	if ([[FTUserDefaults sharedInstance] accessToken] && [[FTUserDefaults sharedInstance] accessTokenSecret] && [[FTUserDefaults sharedInstance] churchCode]) {
+	if ([[FOUserDefaults sharedInstance] accessToken] && [[FOUserDefaults sharedInstance] accessTokenSecret] && [[FOUserDefaults sharedInstance] churchCode]) {
 	
 		// Create an OAConsumer object
 		OAConsumer *oaConsumer = [[[OAConsumer alloc] 
@@ -374,8 +374,8 @@ int encode(unsigned s_len, char *src, unsigned d_len, char *dst);
 		
 		// Create an OAToken to pass to the methods
 		OAToken *oaToken = [[OAToken alloc]
-							initWithKey:[[FTUserDefaults sharedInstance] accessToken] 
-							secret:[[FTUserDefaults sharedInstance] accessTokenSecret]];
+							initWithKey:[[FOUserDefaults sharedInstance] accessToken] 
+							secret:[[FOUserDefaults sharedInstance] accessTokenSecret]];
 		
 		
 		OAMutableURLRequest *request = [[OAMutableURLRequest alloc] initWithURL:url
@@ -385,7 +385,7 @@ int encode(unsigned s_len, char *src, unsigned d_len, char *dst);
 															  signatureProvider:nil];
 		
 		[request setHTTPMethod:[self getHTTPMethodString:method]];
-		[request setValue:@"application/xml" forHTTPHeaderField:@"Content-Type"];
+		[request setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
 		
 		if (![data isKindOfClass:[NSNull class]]) {
 			[request setHTTPBody:data];
@@ -491,7 +491,7 @@ int encode(unsigned s_len, char *src, unsigned d_len, char *dst);
 	
 	// Set the body to be the encoded username and password
 	[request setHTTPBody: [encodedUserCreds dataUsingEncoding:NSASCIIStringEncoding allowLossyConversion:YES]];
-	[request setValue:@"application/xml" forHTTPHeaderField:@"Content-Type"]; 
+	[request setValue:@"application/json" forHTTPHeaderField:@"Content-Type"]; 
 	
     
 	if (self.fetcher) {
@@ -517,7 +517,7 @@ int encode(unsigned s_len, char *src, unsigned d_len, char *dst);
     // access token and access token secret are needed for any request to the api. If these two things do not exist,
 	// send something to the console explaining the need and return
 	
-	if ([[FTUserDefaults sharedInstance] accessToken] && [[FTUserDefaults sharedInstance] accessTokenSecret] && [[FTUserDefaults sharedInstance] churchCode]) {
+	if ([[FOUserDefaults sharedInstance] accessToken] && [[FOUserDefaults sharedInstance] accessTokenSecret] && [[FOUserDefaults sharedInstance] churchCode]) {
         
 		// Create an OAConsumer object
 		OAConsumer *oaConsumer = [[[OAConsumer alloc] 
@@ -526,8 +526,8 @@ int encode(unsigned s_len, char *src, unsigned d_len, char *dst);
 		
 		// Create an OAToken to pass to the methods
 		OAToken *oaToken = [[OAToken alloc]
-							initWithKey:[[FTUserDefaults sharedInstance] accessToken] 
-							secret:[[FTUserDefaults sharedInstance] accessTokenSecret]];
+							initWithKey:[[FOUserDefaults sharedInstance] accessToken] 
+							secret:[[FOUserDefaults sharedInstance] accessTokenSecret]];
 		
 		
 		OAMutableURLRequest *request = [[OAMutableURLRequest alloc] initWithURL:url
@@ -537,7 +537,7 @@ int encode(unsigned s_len, char *src, unsigned d_len, char *dst);
 															  signatureProvider:nil];
 		
 		[request setHTTPMethod:[self getHTTPMethodString:method]];
-		[request setValue:@"application/xml" forHTTPHeaderField:@"Content-Type"];
+		[request setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
 		
 		if (![data isKindOfClass:[NSNull class]]) {
 			[request setHTTPBody:data];
@@ -585,17 +585,12 @@ int encode(unsigned s_len, char *src, unsigned d_len, char *dst);
 		
 		if (![contentType isEqualToString:@"image/jpeg"]) {
 			// Create new SBJSON parser object
-			SBJSON *parser = [[SBJSON alloc] init];
+			FellowshipOneAPIClientSBJSON *parser = [[FellowshipOneAPIClientSBJSON alloc] init];
 			
 			NSString *responseBody = [[[NSString alloc] initWithData:data
 							encoding:NSUTF8StringEncoding] autorelease];
-			
-			// parse the JSON response into an object
-			// {person:{}} -- Returns as an NSDictionary 
-			NSDictionary *jsonData = [responseBody JSONValue];
-			
-			self.ftOAuthResult.returnData = jsonData;
-			NSLog(@"HTTP OAuthResult Return Data: %@", self.ftOAuthResult.returnData);
+
+			self.ftOAuthResult.returnData = [responseBody JSONValue];
 			
 			[parser release];
 		}
@@ -718,9 +713,9 @@ int encode(unsigned s_len, char *src, unsigned d_len, char *dst);
 		OAToken *accessTokenResponse = [[OAToken alloc] initWithHTTPResponseBody:responseBody];
 	
 		// Assign the OAToken values to the NSUserDefaults
-		[[FTUserDefaults sharedInstance] setAccessToken: [accessTokenResponse key]];
-		[[FTUserDefaults sharedInstance] setAccessTokenSecret:[accessTokenResponse secret]];
-		[[FTUserDefaults sharedInstance] setLoggedUserURI:[responseHeaderDictionary valueForKey:@"Content-Location"]];
+		[[FOUserDefaults sharedInstance] setAccessToken: [accessTokenResponse key]];
+		[[FOUserDefaults sharedInstance] setAccessTokenSecret:[accessTokenResponse secret]];
+		[[FOUserDefaults sharedInstance] setLoggedUserURI:[responseHeaderDictionary valueForKey:@"Content-Location"]];
 
 		oauthResult.returnData = responseHeaderDictionary;
 		
@@ -786,29 +781,29 @@ int encode(unsigned s_len, char *src, unsigned d_len, char *dst);
 #pragma mark Properties -
 // Return the consumer key from a plist
 - (NSString *) consumerKey {
-	return [FellowshipOneAPIUtility getValueFromPList:kApiPlistName withListKey:@"ConsumerKey"];	
+	return [FellowshipOneAPIUtility getValueFromPList:kFellowshipOneAPIClientApiPlistName withListKey:@"ConsumerKey"];	
 }
 
 // Return the consumer secret from a plist
 - (NSString *) consumerSecret {
-	return [FellowshipOneAPIUtility getValueFromPList:kApiPlistName withListKey:@"ConsumerSecret"];	
+	return [FellowshipOneAPIUtility getValueFromPList:kFellowshipOneAPIClientApiPlistName withListKey:@"ConsumerSecret"];	
 }
 
 - (NSString *) apiVersionNumber {
-	return [FellowshipOneAPIUtility getValueFromPList:kApiPlistName withListKey:@"APIVersionNumber"];	
+	return [FellowshipOneAPIUtility getValueFromPList:kFellowshipOneAPIClientApiPlistName withListKey:@"APIVersionNumber"];	
 }
 
 - (NSString *) ftMinistryBaseURL {
 	
 	// Since this has become a library, the urls should be the same
 	
-	return [FellowshipOneAPIUtility getValueFromPList:kApiPlistName withListKey:@"BaseMinistryURL"];	
+	return [FellowshipOneAPIUtility getValueFromPList:kFellowshipOneAPIClientApiPlistName withListKey:@"BaseMinistryURL"];	
 }
 
 - (NSString *)APIURIForRealm: (FTAPIRealm)realm {
 	
 	// The parameters are as followed churchCode, API domain, realm, version
-	NSMutableString *urlString = [NSMutableString stringWithFormat:[FellowshipOneAPIUtility getValueFromPList:kApiPlistName withListKey:@"APIDomain"], [[FTUserDefaults sharedInstance] churchCode]];
+	NSMutableString *urlString = [NSMutableString stringWithFormat:[FellowshipOneAPIUtility getValueFromPList:kFellowshipOneAPIClientApiPlistName withListKey:@"APIDomain"], [[FOUserDefaults sharedInstance] churchCode]];
 	[urlString appendFormat:@"%@", [self getAPIRealmString:realm]];
 	[urlString appendFormat:@"%@/", [self apiVersionNumber]];
 	

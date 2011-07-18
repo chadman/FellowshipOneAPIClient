@@ -7,7 +7,7 @@
 //
 
 #import "FellowshipOneAPIClient.h"
-#import "FTUserDefaults.h"
+#import "FOUserDefaults.h"
 #import "ConsoleLog.h"
 #import "FTOAuth.h"
 
@@ -24,17 +24,21 @@
 	return tmpURL;
 }
 
++ (NSString *) loggedUserURL {
+    return [[FOUserDefaults sharedInstance] loggedUserURI];
+}
+
 + (void) setChurchCode: (NSString *)churchCode {
     
-    [[FTUserDefaults sharedInstance] setChurchCode:churchCode];
+    [[FOUserDefaults sharedInstance] setChurchCode:churchCode];
 }
 
 // Sets the access token and access token secret for future requests for the current session
 + (void)createOAuthTicket: (NSString *)accessToken withSecret: (NSString *)accessTokenSecret forChurchCode: (NSString *)churchCode {
 
-	[[FTUserDefaults sharedInstance] setAccessToken:accessToken];
-	[[FTUserDefaults sharedInstance] setAccessTokenSecret:accessTokenSecret];
-	[[FTUserDefaults sharedInstance] setChurchCode:churchCode];
+	[[FOUserDefaults sharedInstance] setAccessToken:accessToken];
+	[[FOUserDefaults sharedInstance] setAccessTokenSecret:accessTokenSecret];
+	[[FOUserDefaults sharedInstance] setChurchCode:churchCode];
 	
 	[ConsoleLog LogMessage:@"OAuth Ticket successfully created."];
 }
@@ -66,7 +70,7 @@
 
 + (BOOL) hasAccessToken {
 
-	if ([[FTUserDefaults sharedInstance] accessToken] && [[FTUserDefaults sharedInstance] accessTokenSecret]) {
+	if ([[FOUserDefaults sharedInstance] accessToken] && [[FOUserDefaults sharedInstance] accessTokenSecret]) {
 		return YES;
 	}
 	
@@ -74,7 +78,7 @@
 }
 
 + (void) removeOAuthTicket {
-	[FTUserDefaults killAllFTDefaults];
+	[FOUserDefaults killAllFTDefaults];
 }
 
 #if NS_BLOCKS_AVAILABLE

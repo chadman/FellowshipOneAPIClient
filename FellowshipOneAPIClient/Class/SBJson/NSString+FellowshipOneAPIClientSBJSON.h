@@ -29,46 +29,17 @@
 
 #import <Foundation/Foundation.h>
 
-extern NSString * SBJSONErrorDomain;
-
-
-enum {
-    EUNSUPPORTED = 1,
-    EPARSENUM,
-    EPARSE,
-    EFRAGMENT,
-    ECTRL,
-    EUNICODE,
-    EDEPTH,
-    EESCAPE,
-    ETRAILCOMMA,
-    ETRAILGARBAGE,
-    EEOF,
-    EINPUT
-};
-
 /**
- @brief common base class for parsing & writing
-
- This class contains the common error-handling code.
- */
-@interface SBJsonBase : NSObject {
-    NSMutableArray *errorTrace;
-}
-
-/**
- @brief Return an error trace, or nil if there was no errors.
+ @brief Adds JSON parsing methods to NSString
  
- Note that this method returns the trace of the last method that failed.
- You need to check the return value of the call you're making to figure out
- if the call actually failed, before you know call this method.
- */
- @property(copy,readonly) NSArray* errorTrace;
+This is a category on NSString that adds methods for parsing the target string.
+*/
+@interface NSString (NSString_FellowshipOneAPIClientSBJSON)
 
-/// @internal for use in subclasses to add errors to the stack trace
-- (void)addErrorWithCode:(NSUInteger)code description:(NSString*)str;
+/// Returns the object represented in the receiver, or nil on error. 
+- (id)JSONFragmentValue;
 
-/// @internal for use in subclasess to clear the error before a new parsing attempt
-- (void)clearErrorTrace;
+/// Returns the dictionary or array represented in the receiver, or nil on error.
+- (id)JSONValue;
 
 @end

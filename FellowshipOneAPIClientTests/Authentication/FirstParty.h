@@ -25,6 +25,8 @@
 
 - (void) testPortalAuthentication;
 
+- (void) testAuthenticationLoggedUserURL;
+
 - (void) testWeblinkAuthentication;
 
 @end

@@ -90,7 +90,7 @@
 	
 	
 	// The prefix for all class names that needs to be stripped
-	NSString *objectNamePrefix = [NSString stringWithString:@"FT"];
+	NSString *objectNamePrefix = [NSString stringWithString:@"FO"];
 	
 	NSMutableString *className = [NSMutableString stringWithFormat:@"%@", [self class]];
 	

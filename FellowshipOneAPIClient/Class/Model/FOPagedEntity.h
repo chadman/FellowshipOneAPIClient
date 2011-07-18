@@ -52,7 +52,7 @@
 #import <Foundation/Foundation.h>
 
 
-@interface PagedEntity : NSObject {
+@interface FOPagedEntity : NSObject {
 	
 	int currentCount;
 	int pageNumber;

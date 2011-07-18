@@ -52,6 +52,24 @@
     [client release];
 }
 
+- (void) testAuthenticationLoggedUserURL {
+    __block BOOL done= NO;
+    
+    // Testing using blocks for authentication
+    FellowshipOneAPIClient *client = [[FellowshipOneAPIClient alloc] init];
+    
+    [client authenticatePortalUser:@"tcoulson" password:@"FT.Admin1" usingBlock:^(id block) {
+        STAssertNotNil([FellowshipOneAPIClient loggedUserURL], @"logged user url is not populated.");
+        done = YES;
+    }];
+    
+    while (!done) {
+        [self runLoop];
+    }
+    
+    [client release];
+}
+
 - (void) testWeblinkAuthentication {
     __block BOOL done= NO;
     

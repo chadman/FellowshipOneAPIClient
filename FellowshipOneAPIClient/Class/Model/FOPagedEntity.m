@@ -6,10 +6,10 @@
 //  Copyright 2010 __MyCompanyName__. All rights reserved.
 //
 
-#import "PagedEntity.h"
+#import "FOPagedEntity.h"
 
 
-@implementation PagedEntity
+@implementation FOPagedEntity
 
 @synthesize currentCount;
 @synthesize pageNumber;

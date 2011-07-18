@@ -27,37 +27,49 @@
  OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
-#import "NSString+SBJSON.h"
-#import "SBJsonParser.h"
+#import <Foundation/Foundation.h>
+#import "FellowshipOneAPIClientSBJsonParser.h"
+#import "FellowshipOneAPIClientSBJsonWriter.h"
 
-static const SBJsonParser *jsonParser;
+/**
+ @brief Facade for SBJsonWriter/SBJsonParser.
 
-@implementation NSString (NSString_SBJSON)
+ This class exists for backwards compatibility with previous releases. It simply forwards requests to SBJsonWriter and SBJsonParser.
+ */
+@interface FellowshipOneAPIClientSBJSON : FellowshipOneAPIClientSBJsonBase <FellowshipOneAPIClientSBJsonParserOptions, FellowshipOneAPIClientSBJsonWriterOptions> {
 
-- (id)JSONFragmentValue
-{
-	if (!jsonParser)
-		jsonParser = [SBJsonParser new];
-    
-    id repr = [jsonParser objectWithString:self allowScalar:YES];
-    if (repr)
-        return repr;
-    
-    NSLog(@"-JSONFragmentValue failed. Error trace is: %@", [jsonParser errorTrace]);
-    return nil;
+@private    
+    FellowshipOneAPIClientSBJsonParser *jsonParser;
+    FellowshipOneAPIClientSBJsonWriter *jsonWriter;
 }
 
-- (id)JSONValue
-{
-	if (!jsonParser)
-		jsonParser = [SBJsonParser new];
-    
-    id repr = [jsonParser objectWithString:self allowScalar:NO];
-    if (repr)
-        return repr;
-    
-    NSLog(@"-JSONValue failed. Error trace is: %@", [jsonParser errorTrace]);
-    return nil;
-}
+
+/// Return the fragment represented by the given string
+- (id)fragmentWithString:(NSString*)jsonrep
+                   error:(NSError**)error;
+
+/// Return the object represented by the given string
+- (id)objectWithString:(NSString*)jsonrep
+                 error:(NSError**)error;
+
+/// Parse the string and return the represented object (or scalar)
+- (id)objectWithString:(id)value
+           allowScalar:(BOOL)x
+    			 error:(NSError**)error;
+
+
+/// Return JSON representation of an array  or dictionary
+- (NSString*)stringWithObject:(id)value
+                        error:(NSError**)error;
+
+/// Return JSON representation of any legal JSON value
+- (NSString*)stringWithFragment:(id)value
+                          error:(NSError**)error;
+
+/// Return JSON representation (or fragment) for the given object
+- (NSString*)stringWithObject:(id)value
+                  allowScalar:(BOOL)x
+    					error:(NSError**)error;
+
 
 @end

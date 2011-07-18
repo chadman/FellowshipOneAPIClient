@@ -41,7 +41,7 @@
 - (NSString *) serializeToXml {
 	
 	// The prefix for all class names that needs to be stripped
-	NSString *objectNamePrefix = [NSString stringWithString:@"FT"];
+	NSString *objectNamePrefix = [NSString stringWithString:@"FO"];
 	
 	NSMutableString *className = [NSMutableString stringWithFormat:@"%@", [self class]];
 	
@@ -84,7 +84,7 @@
 			NSString *propertyType = [NSString stringWithUTF8String:propType];
 			
 			// If the property type is FTParentObject, need to get the children nodes
-			if ([propertyType isEqualToString:@"FTParentObject"]) {
+			if ([propertyType isEqualToString:@"FOParentObject"]) {
 				
 				[xmlReturnString appendString:[[self valueForKey:propertyName] serializeToXml]];
 			}
@@ -92,9 +92,6 @@
 			
 				// Determine if the property is excluded, if not, put it in the xml list
 				if (![self propertyIsExcluded:propertyName]) {
-					
-					
-					
 					[xmlReturnString appendFormat:@"<%@>%@</%@>", propertyName, [self valueForKey:propertyName], propertyName];
 				}
 			}

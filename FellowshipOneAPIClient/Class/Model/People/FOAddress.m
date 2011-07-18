@@ -17,13 +17,7 @@
 #import "NSObject+serializeToJSON.h"
 #import "FOParentObject.h"
 #import "FOParentNamedObject.h"
-#import "PagedEntity.h"
-
-@interface FOAddress ()
-
-@property (nonatomic, retain) FTOAuth *oauth;
-
-@end
+#import "FOPagedEntity.h"
 
 
 @interface FOAddress (PRIVATE)
@@ -45,8 +39,6 @@
 @synthesize household;
 @synthesize person;
 @synthesize carrierRoute, deliveryPoint, addressDate, addressVerifiedDate, lastVerificationAttemptDate, createdDate;
-@synthesize oauth;
-
 
 - (NSDictionary *)serializationMapper {
 	
@@ -268,59 +260,61 @@
 #pragma mark -
 #pragma mark Find
 
-/*
-- (void) getByPersonID: (NSInteger) personID {
++ (NSArray *) getByPersonID: (NSInteger) personID {
 	
-	NSString *urlSuffix = [NSString stringWithFormat:@"People/%d/Addresses.json", personID];
-	
-	// There is a possibility when calling this method that the oauth object has not been initialized. If it hasn't init it here
-	if (!oauth) {
-		self.oauth = [[FTOAuth alloc] initWithDelegate:self];
-	}
-	
-	[oauth callFTAPIWithURLSuffix:urlSuffix forRealm:FTAPIRealmBase withHTTPMethod:HTTPMethodGET withData:nil];
-}
-
-+ (NSArray *)getByPersonIDSynchronously: (NSInteger) personID {
-    
-	NSMutableArray *addresses = [[[NSMutableArray alloc] init] autorelease];
-	NSString *urlSuffix = [NSString stringWithFormat:@"People/%d/Addresses.json", personID];
+	NSMutableArray *returnedAddresses = [[[NSMutableArray alloc] init] autorelease];
+	NSString *theUrl = [NSString stringWithFormat:@"People/%d/Addresses.json", personID];
 	
 	FTOAuth *oauth = [[FTOAuth alloc] initWithDelegate:self];
-	FTOAuthResult *ftOAuthResult = [oauth callSyncFTAPIWithURLSuffix:urlSuffix forRealm:FTAPIRealmBase withHTTPMethod:HTTPMethodGET withData:nil];
+	FTOAuthResult *results = [oauth callSyncFTAPIWithURLSuffix:theUrl forRealm:FTAPIRealmBase withHTTPMethod:HTTPMethodGET withData:nil];
 	
-	if (ftOAuthResult.isSucceed) {
+	if (results.isSucceed) {
 		
-		NSDictionary *topLevel = [ftOAuthResult.returnData objectForKey:@"addresses"];
-		
-		if (![topLevel isEqual:[NSNull null]]) {		
-			NSArray *results = [topLevel objectForKey:@"address"];
+		NSDictionary *topLevel = [results.returnData objectForKey:@"addresses"];
+		if (![topLevel isEqual:[NSNull null]]) {	
+			NSArray *addresses = [topLevel objectForKey:@"address"];
 			
-			for (NSDictionary *result in results) {
-				[addresses addObject:[FTAddress populateFromDictionary:result]];
+			for (NSDictionary *currentAddress in addresses) {
+				[returnedAddresses addObject:[FOAddress populateFromDictionary:currentAddress]];
 			}
 		}
 	}
+	
+	[results release];
 	[oauth release];
 	
-	return addresses;
+	return returnedAddresses;
 }
 
-- (void) getByAddressID: (NSInteger) addressID {
-	
-	NSString *urlSuffix = [NSString stringWithFormat:@"Addresses/%d.json", addressID];
-	
-	// There is a possibility when calling this method that the oauth object has not been initialized. If it hasn't init it here
-	if (!oauth) {
-		self.oauth = [[FTOAuth alloc] initWithDelegate:self];
-	}
-	
-	[oauth callFTAPIWithURLSuffix:urlSuffix forRealm:FTAPIRealmBase withHTTPMethod:HTTPMethodGET withData:nil];
++ (void) getByPersonID: (NSInteger)personID usingCallback:(void (^)(NSArray *))results {
+    
+    NSString *addressUrl = [NSString stringWithFormat:@"People/%d/Addresses.json", personID];
+    FTOAuth *oauth = [[[FTOAuth alloc] initWithDelegate:self] autorelease];
+    __block NSMutableArray *returnAddresses = [[NSMutableArray alloc] init];
+    
+    [oauth callFTAPIWithURLSuffix:addressUrl forRealm:FTAPIRealmBase withHTTPMethod:HTTPMethodGET withData:nil usingBlock:^(id block) {
+        
+        if ([block isKindOfClass:[FTOAuthResult class]]) {
+            FTOAuthResult *result = (FTOAuthResult *)block;
+            if (result.isSucceed) {
+                NSDictionary *topLevel = [result.returnData objectForKey:@"addresses"];
+                if (![topLevel isEqual:[NSNull null]]) {	
+                    NSArray *addresses = [topLevel objectForKey:@"address"];
+                    
+                    for (NSDictionary *currentAddress in addresses) {
+                        [returnAddresses addObject:[FOAddress populateFromDictionary:currentAddress]];
+                    }
+                }
+            }
+        }
+        results(returnAddresses);
+        [returnAddresses release];
+    }];
 }
 
-+ (FTAddress *) getByAddressIDSynchronously: (NSInteger) addressID {
++ (FOAddress *) getByAddressID: (NSInteger) addressID {
 	
-	FTAddress *returnAddress = [[[FTAddress alloc] init] autorelease];
+	FOAddress *returnAddress = [[[FOAddress alloc] init] autorelease];
 	NSString *urlSuffix = [NSString stringWithFormat:@"Addresses/%d.json", addressID];
 	
 	FTOAuth *oauth = [[FTOAuth alloc] initWithDelegate:self];
@@ -331,23 +325,36 @@
 		NSDictionary *topLevel = [ftOAuthResult.returnData objectForKey:@"address"];
 		
 		if (![topLevel isEqual:[NSNull null]]) {		
-			returnAddress = [FTAddress populateFromDictionary:topLevel];
+			returnAddress = [FOAddress populateFromDictionary:topLevel];
 		}
 	}
-	[oauth release];
 	
-	return returnAddress;
-	
+    [oauth release];
+    [ftOAuthResult release];
+	return returnAddress;	
+}
+
++ (void) getByAddressID: (NSInteger) addressID usingCallback:(void (^)(FOAddress *))returnAddress {
+    NSString *addressUrl = [NSString stringWithFormat:@"Addresses/%d.json", addressID];
+    FTOAuth *oauth = [[[FTOAuth alloc] initWithDelegate:self] autorelease];
+    __block FOAddress *tmpAddress = [[FOAddress alloc] init];
+    
+    [oauth callFTAPIWithURLSuffix:addressUrl forRealm:FTAPIRealmBase withHTTPMethod:HTTPMethodGET withData:nil usingBlock:^(id block) {
+        
+        if ([block isKindOfClass:[FTOAuthResult class]]) {
+            FTOAuthResult *result = (FTOAuthResult *)block;
+            if (result.isSucceed) {
+                tmpAddress = [[FOAddress alloc] initWithDictionary:[result.returnData objectForKey:@"address"]];
+            }
+        }
+        returnAddress(tmpAddress);
+        [tmpAddress release];
+    }];
 }
 
 - (void) save {
-	
+	FTOAuth *oauth = [[FTOAuth alloc] initWithDelegate:self];
 	HTTPMethod method = HTTPMethodPOST;
-	
-	// There is a possibility when calling this method that the oauth object has not been initialized. If it hasn't init it here
-	if (!oauth) {
-		self.oauth = [[FTOAuth alloc] initWithDelegate:self];
-	}
 	
 	NSMutableString *urlSuffix = [NSMutableString stringWithFormat:@"Addresses"];
 	
@@ -357,31 +364,7 @@
 	}
 	
 	[urlSuffix appendString:@".json"];
-	
-	[oauth callFTAPIWithURLSuffix:urlSuffix forRealm:FTAPIRealmBase withHTTPMethod:method withData:[[self serializeToJSON] dataUsingEncoding:NSUTF8StringEncoding]];
-}
 
-- (void) saveSynchronously {
-	
-	HTTPMethod method = HTTPMethodPOST;
-	
-	// There is a possibility when calling this method that the oauth object has not been initialized. If it hasn't init it here
-	if (!oauth) {
-		self.oauth = [[FTOAuth alloc] initWithDelegate:self];
-	}
-	
-	NSMutableString *urlSuffix = [NSMutableString stringWithFormat:@"Addresses"];
-	
-	if (myId > 0) {
-		[urlSuffix appendFormat:@"/%d", myId];
-		method = HTTPMethodPUT;
-	}
-	
-	[urlSuffix appendString:@".json"];
-	
-	if (!oauth) {
-		oauth = [[FTOAuth alloc] initWithDelegate:self];
-	}
 	
 	FTOAuthResult *ftOAuthResult = [oauth callSyncFTAPIWithURLSuffix:urlSuffix 
 															forRealm:FTAPIRealmBase 
@@ -396,8 +379,38 @@
 			[self initWithDictionary:topLevel];
 		}
 	}
+    
+    [ftOAuthResult release];
+    [oauth release];
 }
-*/
+
+- (void) saveUsingCallback:(void (^)(FOAddress *))returnAddress {
+    
+    FTOAuth *oauth = [[[FTOAuth alloc] initWithDelegate:self] autorelease];
+    __block FOAddress *tmpAddress = [[FOAddress alloc] init];
+    HTTPMethod method = HTTPMethodPOST;	
+	NSMutableString *urlSuffix = [NSMutableString stringWithFormat:@"Addresses"];
+	
+	if (myId > 0) {
+		[urlSuffix appendFormat:@"/%d", myId];
+		method = HTTPMethodPUT;
+	}
+	
+	[urlSuffix appendString:@".json"];
+    
+    [oauth callFTAPIWithURLSuffix:urlSuffix forRealm:FTAPIRealmBase withHTTPMethod:method withData:[[self serializeToJSON] dataUsingEncoding:NSUTF8StringEncoding] usingBlock:^(id block) {
+        
+        if ([block isKindOfClass:[FTOAuthResult class]]) {
+            FTOAuthResult *result = (FTOAuthResult *)block;
+            if (result.isSucceed) {
+                tmpAddress = [[FOAddress alloc] initWithDictionary:[result.returnData objectForKey:@"address"]];
+            }
+        }
+        returnAddress(tmpAddress);
+        [tmpAddress release];
+    }];
+}
+
 #pragma mark -
 #pragma mark NSCoding Methods
 
@@ -457,83 +470,6 @@
 	[coder encodeObject:addressType forKey:@"addressType"];
 }
 
-#pragma mark -
-#pragma mark FTOAuth methods
-#pragma mark -
-/*
-- (void) ftOauth: (FTOAuth *)ftOAuth didComplete: (FTOAuthResult *) result {
-	if (result.isSucceed) {
-		
-		if (result.returnData != nil) {
-			
-			NSMutableArray *searchResults = [[[NSMutableArray alloc] init] autorelease];
-			NSDictionary *topLevel = [result.returnData objectForKey:@"results"];
-			NSArray *results;
-			
-			if (topLevel) {
-				results = [topLevel objectForKey:@"address"];
-			}
-			else {
-				results = [result.returnData objectForKey:@"address"];
-			}
-			
-			PagedEntity *resultEntity;
-			
-			if (results) {
-				// If the results is an array then there are multiple results
-				if ([results isKindOfClass:[NSArray class]]) {
-					
-					// Create the paged entity
-					resultEntity = [[PagedEntity alloc] init];
-					
-					resultEntity.currentCount = [FellowshipOneAPIUtility convertToInt:[topLevel objectForKey:@"@count"]];
-					resultEntity.pageNumber = [FellowshipOneAPIUtility convertToInt:[topLevel objectForKey:@"@pageNumber"]];
-					resultEntity.totalRecords = [FellowshipOneAPIUtility convertToInt:[topLevel objectForKey:@"@totalRecords"]];
-					resultEntity.additionalPages = [FellowshipOneAPIUtility convertToInt:[topLevel objectForKey:@"@additionalPages"]];
-					
-					for (NSDictionary *result in results) {
-						[searchResults addObject:[FTAddress populateFromDictionary:result]];
-					}
-					
-					resultEntity.results = searchResults;
-					
-					if ([self.delegate respondsToSelector:@selector(FTAddressesReturned:)]) {
-						[[self delegate] FTAddressesReturned:resultEntity];
-					}
-					else {
-						[ConsoleLog LogMessage:@"FTAddressesReturned delegate method not implemented."];
-					}
-					
-					[resultEntity release];
-				}
-				else {
-					if ([self.delegate respondsToSelector:@selector(FTAddressReturned:)]) {
-						[[self delegate] FTAddressReturned:[FTAddress populateFromDictionary: (NSDictionary *)results]];
-					}
-					else {
-						[ConsoleLog LogMessage:@"FTAddressReturned delegate method not implemented."];
-					}
-				}
-			}
-			else {
-				if ([self.delegate respondsToSelector:@selector(FTAddressesReturned:)]) {
-					[[self delegate] FTAddressesReturned:nil];
-				}
-				else {
-					[ConsoleLog LogMessage:@"FTAddressesReturned delegate method not implemented."];
-				}
-			}
-		}
-		else {
-			[[self delegate] FTAddressFail:nil];
-		}
-	}
-	else {
-		[[self delegate] FTAddressFail:nil];
-	}
-	
-}
-*/
 #pragma mark -
 #pragma mark Cleanup
 

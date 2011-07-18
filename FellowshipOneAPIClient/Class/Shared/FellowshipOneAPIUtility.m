@@ -21,7 +21,7 @@
 
 + (NSString *)getFTAPIValueFromPList: (NSString *)pListKey {
 	
-	NSDictionary *plistDictionary = [self getPList:kApiPlistName];
+	NSDictionary *plistDictionary = [self getPList:kFellowshipOneAPIClientApiPlistName];
 	
 	if (plistDictionary != nil) {
 		return [plistDictionary objectForKey: pListKey];
@@ -41,7 +41,7 @@
 		returnVal = [plistDictionary objectForKey: pListKey];
 		
 		if (returnVal == nil) {
-			[ConsoleLog LogMessage:[NSString stringWithFormat:@"the key %@ was not found in the %@", pListKey, kApiPlistName]];
+			[ConsoleLog LogMessage:[NSString stringWithFormat:@"the key %@ was not found in the %@", pListKey, kFellowshipOneAPIClientApiPlistName]];
 		}
 	}
 
@@ -57,7 +57,7 @@
 	plistDictionary = [NSDictionary dictionaryWithContentsOfFile:finalPath];
 	
 	if ([plistDictionary count] <= 0) {
-		[ConsoleLog LogMessage:[NSString stringWithFormat:@"Could not find the %@. Make sure it exists with the appropriate keys.", kApiPlistName]];
+		[ConsoleLog LogMessage:[NSString stringWithFormat:@"Could not find the %@. Make sure it exists with the appropriate keys.", kFellowshipOneAPIClientApiPlistName]];
 	}
 	
 	return plistDictionary;

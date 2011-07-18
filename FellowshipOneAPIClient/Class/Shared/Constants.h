@@ -10,22 +10,10 @@
 // Search
 #define RECORDS_PER_PAGE 20
 // UserDefaults Constants
-extern NSString * const kPeopleUserDefaultsKey;
-extern NSString * const kLoggedUserDefaultsKey;
-extern NSString * const kActiveCheckinDefaultsKey;
-extern NSString * const kActivityDefaultsKey;
-extern NSString * const kCurrentCheckinIndividualKey;
-// People segments
-extern NSInteger const kPeopleSearchSegmentIndex;
-extern NSInteger const kPeopleRecentSegmentIndex;
-// People table views
-extern NSInteger const kPeopleSearchTableTag;
-extern NSInteger const kPeopleRecentTableTag;
-// HouseholdMemberType
-extern NSInteger const kHouseholdMemberTypeVisitor;
+extern NSString * const kFellowshipOneAPIClientLoggedUserDefaultsKey;
 
-// Consumer Key
-extern NSString * const consumerKey;
+// HouseholdMemberType
+extern NSInteger const kFellowshipOneAPIClientHouseholdMemberTypeVisitor;
 
 // plist name
-extern NSString * const kApiPlistName;
+extern NSString * const kFellowshipOneAPIClientApiPlistName;

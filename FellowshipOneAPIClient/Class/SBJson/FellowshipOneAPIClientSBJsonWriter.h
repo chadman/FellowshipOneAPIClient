@@ -28,14 +28,14 @@
  */
 
 #import <Foundation/Foundation.h>
-#import "SBJsonBase.h"
+#import "FellowshipOneAPIClientSBJsonBase.h"
 
 /**
  @brief Options for the writer class.
  
  This exists so the SBJSON facade can implement the options in the writer without having to re-declare them.
  */
-@protocol SBJsonWriterOptions
+@protocol FellowshipOneAPIClientSBJsonWriterOptions
 
 /**
  @brief Whether we are generating human-readable (multiline) JSON.
@@ -80,7 +80,7 @@
  way you would expect.
  
  */
-@interface SBJsonWriter : SBJsonBase <SBJsonWriterOptions> {
+@interface FellowshipOneAPIClientSBJsonWriter : FellowshipOneAPIClientSBJsonBase <FellowshipOneAPIClientSBJsonWriterOptions> {
 
 @private
     BOOL sortKeys, humanReadable;

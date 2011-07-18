@@ -27,9 +27,9 @@
  OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
-#import "SBJsonWriter.h"
+#import "FellowshipOneAPIClientSBJsonWriter.h"
 
-@interface SBJsonWriter ()
+@interface FellowshipOneAPIClientSBJsonWriter ()
 
 - (BOOL)appendValue:(id)fragment into:(NSMutableString*)json;
 - (BOOL)appendArray:(NSArray*)fragment into:(NSMutableString*)json;
@@ -40,7 +40,7 @@
 
 @end
 
-@implementation SBJsonWriter
+@implementation FellowshipOneAPIClientSBJsonWriter
 
 @synthesize sortKeys;
 @synthesize humanReadable;

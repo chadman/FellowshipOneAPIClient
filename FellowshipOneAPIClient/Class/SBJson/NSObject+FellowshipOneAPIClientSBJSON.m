@@ -27,16 +27,16 @@
  OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
-#import "NSObject+SBJSON.h"
-#import "SBJsonWriter.h"
+#import "NSObject+FellowshipOneAPIClientSBJSON.h"
+#import "FellowshipOneAPIClientSBJsonWriter.h"
 
-static const SBJsonWriter *jsonWriter;
+static const FellowshipOneAPIClientSBJsonWriter *jsonWriter;
 
-@implementation NSObject (NSObject_SBJSON)
+@implementation NSObject (NSObject_FellowshipOneAPIClientSBJSON)
 
 - (NSString *)JSONFragment {
 	if (!jsonWriter)
-		jsonWriter = [SBJsonWriter new];
+		jsonWriter = [FellowshipOneAPIClientSBJsonWriter new];
 	
     NSString *json = [jsonWriter stringWithObject:self allowScalar:YES];
     if (json)
@@ -48,7 +48,7 @@ static const SBJsonWriter *jsonWriter;
 
 - (NSString *)JSONRepresentation {
 	if (!jsonWriter)
-		jsonWriter = [SBJsonWriter new];
+		jsonWriter = [FellowshipOneAPIClientSBJsonWriter new];
     
     NSString *json = [jsonWriter stringWithObject:self allowScalar:NO];
     if (json)

@@ -59,6 +59,9 @@
 // Returns the base url to the F1 API
 + (NSString *) apiDomainURL;
 
+// Once an access token is successfully requested, the url of the logged in person will be populated
++ (NSString *) loggedUserURL;
+
 /* Sets the access token and access token secret for future requests for the current session. It also ties the church code for all future calls 
    to the API This is useful for when the developer acquires an access token and secret through another means outside this library 
    @accessToken: The access token to be saved to the library

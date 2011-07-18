@@ -61,7 +61,7 @@ typedef enum {
 @class FTOAuth;
 @class FOHouseholdMemberType;
 @class FOStatus;
-@class PagedEntity;
+@class FOPagedEntity;
 @class FTOAuthResult;
 @class FTError;
 
@@ -141,11 +141,19 @@ typedef enum {
 // @returnedPerson :: The person that is returned in the callback
 + (void) getByUrl: (NSString *)theUrl usingCallback:(void (^)(FOPerson *))returnedPerson;
 
+// Returns an FOPerson object scynchronously
+// @personID :: The ID of the person to be returned
++ (FOPerson *) getByID: (NSInteger)personID;
+
+// Returns an FOPerson object scynchronously
+// @theUrl :: The url for the person that is being looked for
++ (FOPerson *) getByUrl: (NSString *)theUrl;
+
 // Search the F1 database for individual this will return 20 individuals at a time -- This method is performed asynchronously --
 // searchText: The text to search by
 // includes: an array of things to include in the search results :: See PeopleSearchInclude enum
 // pageNumber: the page number the search is for
-+ (void) searchForPeople: (NSString *)searchText withSearchIncludes:(NSArray *)includes withPage: (NSInteger)pageNumber usingCallback:(void (^)(PagedEntity *))pagedResults;
++ (void) searchForPeople: (NSString *)searchText withSearchIncludes:(NSArray *)includes withPage: (NSInteger)pageNumber usingCallback:(void (^)(FOPagedEntity *))pagedResults;
 
 // Returns a portait image from the F1API specified by the size S, M, or L are the options. -- This method is called asynchronously --
 // @personID :: The ID of the person that the image is for

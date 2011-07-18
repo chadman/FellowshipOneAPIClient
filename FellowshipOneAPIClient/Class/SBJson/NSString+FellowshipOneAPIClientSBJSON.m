@@ -1,5 +1,5 @@
 /*
- Copyright (C) 2009 Stig Brautaset. All rights reserved.
+ Copyright (C) 2007-2009 Stig Brautaset. All rights reserved.
  
  Redistribution and use in source and binary forms, with or without
  modification, are permitted provided that the following conditions are met:
@@ -27,40 +27,37 @@
  OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
-#import <Foundation/Foundation.h>
+#import "NSString+FellowshipOneAPIClientSBJSON.h"
+#import "FellowshipOneAPIClientSBJsonParser.h"
 
+static const FellowshipOneAPIClientSBJsonParser *jsonParser;
 
-/**
- @brief Adds JSON generation to Foundation classes
- 
- This is a category on NSObject that adds methods for returning JSON representations
- of standard objects to the objects themselves. This means you can call the
- -JSONRepresentation method on an NSArray object and it'll do what you want.
- */
-@interface NSObject (NSObject_SBJSON)
+@implementation NSString (NSString_FellowshipOneAPIClientSBJSON)
 
-/**
- @brief Returns a string containing the receiver encoded as a JSON fragment.
+- (id)JSONFragmentValue
+{
+	if (!jsonParser)
+		jsonParser = [FellowshipOneAPIClientSBJsonParser new];
+    
+    id repr = [jsonParser objectWithString:self allowScalar:YES];
+    if (repr)
+        return repr;
+    
+    NSLog(@"-JSONFragmentValue failed. Error trace is: %@", [jsonParser errorTrace]);
+    return nil;
+}
 
- This method is added as a category on NSObject but is only actually
- supported for the following objects:
- @li NSDictionary
- @li NSArray
- @li NSString
- @li NSNumber (also used for booleans)
- @li NSNull 
- */
-- (NSString *)JSONFragment;
-
-/**
- @brief Returns a string containing the receiver encoded in JSON.
-
- This method is added as a category on NSObject but is only actually
- supported for the following objects:
- @li NSDictionary
- @li NSArray
- */
-- (NSString *)JSONRepresentation;
+- (id)JSONValue
+{
+	if (!jsonParser)
+		jsonParser = [FellowshipOneAPIClientSBJsonParser new];
+    
+    id repr = [jsonParser objectWithString:self allowScalar:NO];
+    if (repr)
+        return repr;
+    
+    NSLog(@"-JSONValue failed. Error trace is: %@", [jsonParser errorTrace]);
+    return nil;
+}
 
 @end
-

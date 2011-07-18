@@ -15,9 +15,8 @@
 #import "FTOAuthResult.h"
 #import "FTOAuth.h"
 #import "NSDate+ageFromDate.h"
-#import "PagedEntity.h"
+#import "FOPagedEntity.h"
 #import "ConsoleLog.h"
-#import "PagedEntity.h"
 #import "FOAddress.h"
 #import "FOCommunication.h"
 
@@ -318,6 +317,52 @@
     }];
 }
 
+
++ (FOPerson *) getByID: (NSInteger)personID {
+    
+    FOPerson *returnPerson = [[[FOPerson alloc] init] autorelease];
+	NSString *urlSuffix = [NSString stringWithFormat:@"People/%d.json", personID];
+	
+	FTOAuth *oauth = [[FTOAuth alloc] initWithDelegate:self];
+	FTOAuthResult *ftOAuthResult = [oauth callSyncFTAPIWithURLSuffix:urlSuffix forRealm:FTAPIRealmBase withHTTPMethod:HTTPMethodGET withData:nil];
+	
+	if (ftOAuthResult.isSucceed) {
+		
+		NSDictionary *topLevel = [ftOAuthResult.returnData objectForKey:@"person"];
+		
+		if (![topLevel isEqual:[NSNull null]]) {		
+			returnPerson = [FOPerson populateFromDictionary:topLevel];
+		}
+	}
+	
+	[ftOAuthResult release];
+	[oauth release];
+	
+	return returnPerson;    
+}
+
++ (FOPerson *) getByUrl: (NSString *)theUrl {
+    FOPerson *returnPerson = [[[FOPerson alloc] init] autorelease];
+	
+	FTOAuth *oauth = [[FTOAuth alloc] initWithDelegate:self];
+	FTOAuthResult *ftOAuthResult = [oauth callSyncFTAPIWithURL:[NSURL URLWithString:theUrl] forRealm:FTAPIRealmBase withHTTPMethod:HTTPMethodGET withData:nil];
+	
+	if (ftOAuthResult.isSucceed) {
+		
+		NSDictionary *topLevel = [ftOAuthResult.returnData objectForKey:@"person"];
+		
+		if (![topLevel isEqual:[NSNull null]]) {		
+			returnPerson = [FOPerson populateFromDictionary:topLevel];
+		}
+	}
+	
+	[ftOAuthResult release];
+	[oauth release];
+	
+	return returnPerson;   
+    
+}
+
 + (void) getByUrl: (NSString *)theUrl usingCallback:(void (^)(FOPerson *))returnedPerson {
     FTOAuth *oauth = [[[FTOAuth alloc] initWithDelegate:self] autorelease];
     __block FOPerson *tmpPerson = [[FOPerson alloc] init];
@@ -336,7 +381,7 @@
     
 }
 
-+ (void) searchForPeople: (NSString *)searchText withSearchIncludes:(NSArray *)includes withPage: (NSInteger)pageNumber usingCallback:(void (^)(PagedEntity *))pagedResults {
++ (void) searchForPeople: (NSString *)searchText withSearchIncludes:(NSArray *)includes withPage: (NSInteger)pageNumber usingCallback:(void (^)(FOPagedEntity *))pagedResults {
 	
 	NSMutableString *peopleSearchURL = [NSMutableString stringWithFormat:@"People/Search.json?searchFor=%@&page=%d&recordsperpage=20", searchText, pageNumber];
 	FTOAuth *oauth = [[[FTOAuth alloc] initWithDelegate:self] autorelease];
@@ -361,7 +406,7 @@
     
     [oauth callFTAPIWithURLSuffix:peopleSearchURL forRealm:FTAPIRealmBase withHTTPMethod:HTTPMethodGET withData:nil usingBlock:^(id block) {
         
-        PagedEntity *resultsEntity = [[PagedEntity alloc] init];
+        FOPagedEntity *resultsEntity = [[FOPagedEntity alloc] init];
         NSMutableArray *tmpResults = [[NSMutableArray alloc] initWithObjects:nil];
         
         if ([block isKindOfClass:[FTOAuthResult class]]) {
@@ -428,6 +473,8 @@
 	[householdMemberType release];
 	[status release];
 	[rawImage release];
+    [addresses release];
+    [communications release];
     [super dealloc];
 }
 
@@ -462,6 +509,7 @@
 		self.status = [coder decodeObjectForKey:@"status"];
 		self.rawImage = [coder decodeObjectForKey:@"rawImage"];
         self.addresses = [coder decodeObjectForKey:@"addresses"];
+        self.communications = [coder decodeObjectForKey:@"communications"];
 	}
     
 	return self;
@@ -490,6 +538,7 @@
 	[coder encodeObject:status forKey:@"status"];
 	[coder encodeObject:rawImage forKey:@"rawImage"];
     [coder encodeObject:addresses forKey:@"addresses"];
+    [coder encodeObject:communications forKey:@"communications"];
 }
 
 @end

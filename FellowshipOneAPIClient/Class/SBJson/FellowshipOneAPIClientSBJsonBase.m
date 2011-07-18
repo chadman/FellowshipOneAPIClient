@@ -27,19 +27,44 @@
  OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
-#import <Foundation/Foundation.h>
+#import "FellowshipOneAPIClientSBJsonBase.h"
+NSString * FellowshipOneAPIClientSBJSONErrorDomain = @"org.brautaset.JSON.ErrorDomain";
 
-/**
- @brief Adds JSON parsing methods to NSString
- 
-This is a category on NSString that adds methods for parsing the target string.
-*/
-@interface NSString (NSString_SBJSON)
 
-/// Returns the object represented in the receiver, or nil on error. 
-- (id)JSONFragmentValue;
+@implementation FellowshipOneAPIClientSBJsonBase
 
-/// Returns the dictionary or array represented in the receiver, or nil on error.
-- (id)JSONValue;
+@synthesize errorTrace;
+
+- (void)dealloc {
+    [errorTrace release];
+    [super dealloc];
+}
+
+- (void)addErrorWithCode:(NSUInteger)code description:(NSString*)str {
+    NSDictionary *userInfo;
+    if (!errorTrace) {
+        errorTrace = [NSMutableArray new];
+        userInfo = [NSDictionary dictionaryWithObject:str forKey:NSLocalizedDescriptionKey];
+        
+    } else {
+        userInfo = [NSDictionary dictionaryWithObjectsAndKeys:
+                    str, NSLocalizedDescriptionKey,
+                    [errorTrace lastObject], NSUnderlyingErrorKey,
+                    nil];
+    }
+    
+    NSError *error = [NSError errorWithDomain:FellowshipOneAPIClientSBJSONErrorDomain code:code userInfo:userInfo];
+
+    [self willChangeValueForKey:@"errorTrace"];
+    [errorTrace addObject:error];
+    [self didChangeValueForKey:@"errorTrace"];
+}
+
+- (void)clearErrorTrace {
+    [self willChangeValueForKey:@"errorTrace"];
+    [errorTrace release];
+    errorTrace = nil;
+    [self didChangeValueForKey:@"errorTrace"];
+}
 
 @end

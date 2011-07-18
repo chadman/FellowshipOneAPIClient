@@ -10,7 +10,7 @@
 #import "Constants.h"
 #import "FTOAuth.h"
 #import "FellowshipOneAPIUtility.h"
-#import "PagedEntity.h"
+#import "FOPagedEntity.h"
 #import "FOPerson.h"
 #import "FOHouseholdMemberType.h"
 #import "ConsoleLog.h"
@@ -165,7 +165,7 @@
 	
     
 	for (FOPerson *person in self.allMembers) {
-		if (person.householdMemberType.myId != kHouseholdMemberTypeVisitor) {
+		if (person.householdMemberType.myId != kFellowshipOneAPIClientHouseholdMemberTypeVisitor) {
 			[people addObject:person];
 		}
 	}
@@ -178,7 +178,7 @@
 	
     
 	for (FOPerson *person in self.allMembers) {
-		if (person.householdMemberType.myId == kHouseholdMemberTypeVisitor) {
+		if (person.householdMemberType.myId == kFellowshipOneAPIClientHouseholdMemberTypeVisitor) {
 			[people addObject:person];
 		}
 	}
@@ -289,14 +289,14 @@
 				results = [result.returnData objectForKey:@"household"];
 			}
 			
-			PagedEntity *resultEntity;
+			FOPagedEntity *resultEntity;
             
 			if (results) {
 				// If the results is an array then there are multiple results
 				if ([results isKindOfClass:[NSArray class]]) {
 					
 					// Create the paged entity
-					resultEntity = [[PagedEntity alloc] init];
+					resultEntity = [[FOPagedEntity alloc] init];
 					
 					resultEntity.currentCount = [FellowshipOneAPIUtility convertToInt:[topLevel objectForKey:@"@count"]];
 					resultEntity.pageNumber = [FellowshipOneAPIUtility convertToInt:[topLevel objectForKey:@"@pageNumber"]];

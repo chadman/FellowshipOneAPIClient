@@ -27,9 +27,9 @@
  OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
-#import "SBJsonParser.h"
+#import "FellowshipOneAPIClientSBJsonParser.h"
 
-@interface SBJsonParser ()
+@interface FellowshipOneAPIClientSBJsonParser ()
 
 - (BOOL)scanValue:(NSObject **)o;
 
@@ -54,7 +54,7 @@
 #define skipDigits(c) while (isdigit(*c)) c++
 
 
-@implementation SBJsonParser
+@implementation FellowshipOneAPIClientSBJsonParser
 @synthesize maxDepth;
 
 static char ctrl[0x22];

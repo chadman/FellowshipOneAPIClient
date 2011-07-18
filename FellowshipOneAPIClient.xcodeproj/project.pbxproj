@@ -10,9 +10,10 @@
 		FD0FB05813D2162900A078AC /* Person.m in Sources */ = {isa = PBXBuildFile; fileRef = FD0FB05713D2162900A078AC /* Person.m */; };
 		FD0FB05913D2169A00A078AC /* FOPerson.h in Resources */ = {isa = PBXBuildFile; fileRef = FD764D1013D07A1600BE0F4F /* FOPerson.h */; };
 		FD0FB05C13D2171600A078AC /* BaseTest.m in Sources */ = {isa = PBXBuildFile; fileRef = FD0FB05B13D2171600A078AC /* BaseTest.m */; };
-		FD0FB05D13D2263B00A078AC /* PagedEntity.h in Resources */ = {isa = PBXBuildFile; fileRef = FD764C4213D074D700BE0F4F /* PagedEntity.h */; };
+		FD0FB05D13D2263B00A078AC /* FOPagedEntity.h in Resources */ = {isa = PBXBuildFile; fileRef = FD764C4213D074D700BE0F4F /* FOPagedEntity.h */; };
 		FD0FB05E13D2263E00A078AC /* FOParentNamedObject.h in Resources */ = {isa = PBXBuildFile; fileRef = FD764C3E13D074D700BE0F4F /* FOParentNamedObject.h */; };
 		FD0FB05F13D2264100A078AC /* FOParentObject.h in Resources */ = {isa = PBXBuildFile; fileRef = FD764C4013D074D700BE0F4F /* FOParentObject.h */; };
+		FD30FA7613D342D00050C0FB /* Address.m in Sources */ = {isa = PBXBuildFile; fileRef = FD30FA7513D342D00050C0FB /* Address.m */; };
 		FD47128E13D2500D00FD2C26 /* FOStatus.h in Headers */ = {isa = PBXBuildFile; fileRef = FD47128C13D2500C00FD2C26 /* FOStatus.h */; };
 		FD47128F13D2500D00FD2C26 /* FOStatus.m in Sources */ = {isa = PBXBuildFile; fileRef = FD47128D13D2500C00FD2C26 /* FOStatus.m */; };
 		FD47129313D2507E00FD2C26 /* FOSubStatus.h in Headers */ = {isa = PBXBuildFile; fileRef = FD47129113D2507E00FD2C26 /* FOSubStatus.h */; };
@@ -36,14 +37,14 @@
 		FD764C2313D0721300BE0F4F /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FD764C2213D0721300BE0F4F /* CoreGraphics.framework */; };
 		FD764C2613D0721300BE0F4F /* libFellowshipOneAPIClient.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FD764C1113D0721300BE0F4F /* libFellowshipOneAPIClient.a */; };
 		FD764C2C13D0721300BE0F4F /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = FD764C2A13D0721300BE0F4F /* InfoPlist.strings */; };
-		FD764C5313D074D700BE0F4F /* FTError.h in Headers */ = {isa = PBXBuildFile; fileRef = FD764C3C13D074D700BE0F4F /* FTError.h */; };
-		FD764C5413D074D700BE0F4F /* FTError.m in Sources */ = {isa = PBXBuildFile; fileRef = FD764C3D13D074D700BE0F4F /* FTError.m */; };
+		FD764C5313D074D700BE0F4F /* FOError.h in Headers */ = {isa = PBXBuildFile; fileRef = FD764C3C13D074D700BE0F4F /* FOError.h */; };
+		FD764C5413D074D700BE0F4F /* FOError.m in Sources */ = {isa = PBXBuildFile; fileRef = FD764C3D13D074D700BE0F4F /* FOError.m */; };
 		FD764C5513D074D700BE0F4F /* FOParentNamedObject.h in Headers */ = {isa = PBXBuildFile; fileRef = FD764C3E13D074D700BE0F4F /* FOParentNamedObject.h */; };
 		FD764C5613D074D700BE0F4F /* FOParentNamedObject.m in Sources */ = {isa = PBXBuildFile; fileRef = FD764C3F13D074D700BE0F4F /* FOParentNamedObject.m */; };
 		FD764C5713D074D700BE0F4F /* FOParentObject.h in Headers */ = {isa = PBXBuildFile; fileRef = FD764C4013D074D700BE0F4F /* FOParentObject.h */; };
 		FD764C5813D074D700BE0F4F /* FOParentObject.m in Sources */ = {isa = PBXBuildFile; fileRef = FD764C4113D074D700BE0F4F /* FOParentObject.m */; };
-		FD764C5913D074D700BE0F4F /* PagedEntity.h in Headers */ = {isa = PBXBuildFile; fileRef = FD764C4213D074D700BE0F4F /* PagedEntity.h */; };
-		FD764C5A13D074D700BE0F4F /* PagedEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = FD764C4313D074D700BE0F4F /* PagedEntity.m */; };
+		FD764C5913D074D700BE0F4F /* FOPagedEntity.h in Headers */ = {isa = PBXBuildFile; fileRef = FD764C4213D074D700BE0F4F /* FOPagedEntity.h */; };
+		FD764C5A13D074D700BE0F4F /* FOPagedEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = FD764C4313D074D700BE0F4F /* FOPagedEntity.m */; };
 		FD764C6D13D0754600BE0F4F /* EntityState.h in Headers */ = {isa = PBXBuildFile; fileRef = FD764C6A13D0754600BE0F4F /* EntityState.h */; };
 		FD764C6E13D0754600BE0F4F /* FTAPIRealm.h in Headers */ = {isa = PBXBuildFile; fileRef = FD764C6B13D0754600BE0F4F /* FTAPIRealm.h */; };
 		FD764C6F13D0754600BE0F4F /* HTTPMethod.h in Headers */ = {isa = PBXBuildFile; fileRef = FD764C6C13D0754600BE0F4F /* HTTPMethod.h */; };
@@ -55,8 +56,8 @@
 		FD764C8113D0758100BE0F4F /* FTOAuth.m in Sources */ = {isa = PBXBuildFile; fileRef = FD764C7B13D0758100BE0F4F /* FTOAuth.m */; };
 		FD764C8213D0758100BE0F4F /* FTOAuthResult.h in Headers */ = {isa = PBXBuildFile; fileRef = FD764C7C13D0758100BE0F4F /* FTOAuthResult.h */; };
 		FD764C8313D0758100BE0F4F /* FTOAuthResult.m in Sources */ = {isa = PBXBuildFile; fileRef = FD764C7D13D0758100BE0F4F /* FTOAuthResult.m */; };
-		FD764C8413D0758100BE0F4F /* FTUserDefaults.h in Headers */ = {isa = PBXBuildFile; fileRef = FD764C7E13D0758100BE0F4F /* FTUserDefaults.h */; };
-		FD764C8513D0758100BE0F4F /* FTUserDefaults.m in Sources */ = {isa = PBXBuildFile; fileRef = FD764C7F13D0758100BE0F4F /* FTUserDefaults.m */; };
+		FD764C8413D0758100BE0F4F /* FOUserDefaults.h in Headers */ = {isa = PBXBuildFile; fileRef = FD764C7E13D0758100BE0F4F /* FOUserDefaults.h */; };
+		FD764C8513D0758100BE0F4F /* FOUserDefaults.m in Sources */ = {isa = PBXBuildFile; fileRef = FD764C7F13D0758100BE0F4F /* FOUserDefaults.m */; };
 		FD764CA113D0759A00BE0F4F /* NSMutableURLRequest+Parameters.h in Headers */ = {isa = PBXBuildFile; fileRef = FD764C8713D0759A00BE0F4F /* NSMutableURLRequest+Parameters.h */; };
 		FD764CA213D0759A00BE0F4F /* NSMutableURLRequest+Parameters.m in Sources */ = {isa = PBXBuildFile; fileRef = FD764C8813D0759A00BE0F4F /* NSMutableURLRequest+Parameters.m */; };
 		FD764CA313D0759A00BE0F4F /* NSString+URLEncoding.h in Headers */ = {isa = PBXBuildFile; fileRef = FD764C8913D0759A00BE0F4F /* NSString+URLEncoding.h */; };
@@ -96,18 +97,18 @@
 		FD764CD413D075BE00BE0F4F /* FellowshipOneAPIUtility.h in Headers */ = {isa = PBXBuildFile; fileRef = FD764CC813D075BE00BE0F4F /* FellowshipOneAPIUtility.h */; };
 		FD764CD513D075BE00BE0F4F /* FellowshipOneAPIUtility.m in Sources */ = {isa = PBXBuildFile; fileRef = FD764CC913D075BE00BE0F4F /* FellowshipOneAPIUtility.m */; };
 		FD764CE313D075C800BE0F4F /* JSON.h in Headers */ = {isa = PBXBuildFile; fileRef = FD764CD613D075C800BE0F4F /* JSON.h */; };
-		FD764CE413D075C800BE0F4F /* NSObject+SBJSON.h in Headers */ = {isa = PBXBuildFile; fileRef = FD764CD713D075C800BE0F4F /* NSObject+SBJSON.h */; };
-		FD764CE513D075C800BE0F4F /* NSObject+SBJSON.m in Sources */ = {isa = PBXBuildFile; fileRef = FD764CD813D075C800BE0F4F /* NSObject+SBJSON.m */; };
-		FD764CE613D075C800BE0F4F /* NSString+SBJSON.h in Headers */ = {isa = PBXBuildFile; fileRef = FD764CD913D075C800BE0F4F /* NSString+SBJSON.h */; };
-		FD764CE713D075C800BE0F4F /* NSString+SBJSON.m in Sources */ = {isa = PBXBuildFile; fileRef = FD764CDA13D075C800BE0F4F /* NSString+SBJSON.m */; };
-		FD764CE813D075C800BE0F4F /* SBJSON.h in Headers */ = {isa = PBXBuildFile; fileRef = FD764CDB13D075C800BE0F4F /* SBJSON.h */; };
-		FD764CE913D075C800BE0F4F /* SBJSON.m in Sources */ = {isa = PBXBuildFile; fileRef = FD764CDC13D075C800BE0F4F /* SBJSON.m */; };
-		FD764CEA13D075C800BE0F4F /* SBJsonBase.h in Headers */ = {isa = PBXBuildFile; fileRef = FD764CDD13D075C800BE0F4F /* SBJsonBase.h */; };
-		FD764CEB13D075C800BE0F4F /* SBJsonBase.m in Sources */ = {isa = PBXBuildFile; fileRef = FD764CDE13D075C800BE0F4F /* SBJsonBase.m */; };
-		FD764CEC13D075C800BE0F4F /* SBJsonParser.h in Headers */ = {isa = PBXBuildFile; fileRef = FD764CDF13D075C800BE0F4F /* SBJsonParser.h */; };
-		FD764CED13D075C800BE0F4F /* SBJsonParser.m in Sources */ = {isa = PBXBuildFile; fileRef = FD764CE013D075C800BE0F4F /* SBJsonParser.m */; };
-		FD764CEE13D075C800BE0F4F /* SBJsonWriter.h in Headers */ = {isa = PBXBuildFile; fileRef = FD764CE113D075C800BE0F4F /* SBJsonWriter.h */; };
-		FD764CEF13D075C800BE0F4F /* SBJsonWriter.m in Sources */ = {isa = PBXBuildFile; fileRef = FD764CE213D075C800BE0F4F /* SBJsonWriter.m */; };
+		FD764CE413D075C800BE0F4F /* NSObject+FellowshipOneAPIClientSBJSON.h in Headers */ = {isa = PBXBuildFile; fileRef = FD764CD713D075C800BE0F4F /* NSObject+FellowshipOneAPIClientSBJSON.h */; };
+		FD764CE513D075C800BE0F4F /* NSObject+FellowshipOneAPIClientSBJSON.m in Sources */ = {isa = PBXBuildFile; fileRef = FD764CD813D075C800BE0F4F /* NSObject+FellowshipOneAPIClientSBJSON.m */; };
+		FD764CE613D075C800BE0F4F /* NSString+FellowshipOneAPIClientSBJSON.h in Headers */ = {isa = PBXBuildFile; fileRef = FD764CD913D075C800BE0F4F /* NSString+FellowshipOneAPIClientSBJSON.h */; };
+		FD764CE713D075C800BE0F4F /* NSString+FellowshipOneAPIClientSBJSON.m in Sources */ = {isa = PBXBuildFile; fileRef = FD764CDA13D075C800BE0F4F /* NSString+FellowshipOneAPIClientSBJSON.m */; };
+		FD764CE813D075C800BE0F4F /* FellowshipOneAPIClientSBJSON.h in Headers */ = {isa = PBXBuildFile; fileRef = FD764CDB13D075C800BE0F4F /* FellowshipOneAPIClientSBJSON.h */; };
+		FD764CE913D075C800BE0F4F /* FellowshipOneAPIClientSBJSON.m in Sources */ = {isa = PBXBuildFile; fileRef = FD764CDC13D075C800BE0F4F /* FellowshipOneAPIClientSBJSON.m */; };
+		FD764CEA13D075C800BE0F4F /* FellowshipOneAPIClientSBJsonBase.h in Headers */ = {isa = PBXBuildFile; fileRef = FD764CDD13D075C800BE0F4F /* FellowshipOneAPIClientSBJsonBase.h */; };
+		FD764CEB13D075C800BE0F4F /* FellowshipOneAPIClientSBJsonBase.m in Sources */ = {isa = PBXBuildFile; fileRef = FD764CDE13D075C800BE0F4F /* FellowshipOneAPIClientSBJsonBase.m */; };
+		FD764CEC13D075C800BE0F4F /* FellowshipOneAPIClientSBJsonParser.h in Headers */ = {isa = PBXBuildFile; fileRef = FD764CDF13D075C800BE0F4F /* FellowshipOneAPIClientSBJsonParser.h */; };
+		FD764CED13D075C800BE0F4F /* FellowshipOneAPIClientSBJsonParser.m in Sources */ = {isa = PBXBuildFile; fileRef = FD764CE013D075C800BE0F4F /* FellowshipOneAPIClientSBJsonParser.m */; };
+		FD764CEE13D075C800BE0F4F /* FellowshipOneAPIClientSBJsonWriter.h in Headers */ = {isa = PBXBuildFile; fileRef = FD764CE113D075C800BE0F4F /* FellowshipOneAPIClientSBJsonWriter.h */; };
+		FD764CEF13D075C800BE0F4F /* FellowshipOneAPIClientSBJsonWriter.m in Sources */ = {isa = PBXBuildFile; fileRef = FD764CE213D075C800BE0F4F /* FellowshipOneAPIClientSBJsonWriter.m */; };
 		FD764CF113D0761900BE0F4F /* Enum.h in Headers */ = {isa = PBXBuildFile; fileRef = FD764CF013D0761900BE0F4F /* Enum.h */; };
 		FD764CF413D0762900BE0F4F /* ConsoleLog.h in Headers */ = {isa = PBXBuildFile; fileRef = FD764CF213D0762900BE0F4F /* ConsoleLog.h */; };
 		FD764CF513D0762900BE0F4F /* ConsoleLog.m in Sources */ = {isa = PBXBuildFile; fileRef = FD764CF313D0762900BE0F4F /* ConsoleLog.m */; };
@@ -141,6 +142,8 @@
 		FD0FB05713D2162900A078AC /* Person.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Person.m; path = Model/Person.m; sourceTree = "<group>"; };
 		FD0FB05A13D2171600A078AC /* BaseTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseTest.h; sourceTree = "<group>"; };
 		FD0FB05B13D2171600A078AC /* BaseTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseTest.m; sourceTree = "<group>"; };
+		FD30FA7413D342D00050C0FB /* Address.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Address.h; sourceTree = "<group>"; };
+		FD30FA7513D342D00050C0FB /* Address.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Address.m; sourceTree = "<group>"; };
 		FD47128C13D2500C00FD2C26 /* FOStatus.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FOStatus.h; sourceTree = "<group>"; };
 		FD47128D13D2500C00FD2C26 /* FOStatus.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FOStatus.m; sourceTree = "<group>"; };
 		FD47129113D2507E00FD2C26 /* FOSubStatus.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FOSubStatus.h; sourceTree = "<group>"; };
@@ -162,14 +165,14 @@
 		FD764C2913D0721300BE0F4F /* FellowshipOneAPIClientTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "FellowshipOneAPIClientTests-Info.plist"; sourceTree = "<group>"; };
 		FD764C2B13D0721300BE0F4F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		FD764C2D13D0721300BE0F4F /* FellowshipOneAPIClientTests-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "FellowshipOneAPIClientTests-Prefix.pch"; sourceTree = "<group>"; };
-		FD764C3C13D074D700BE0F4F /* FTError.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FTError.h; path = Class/Model/FTError.h; sourceTree = "<group>"; };
-		FD764C3D13D074D700BE0F4F /* FTError.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FTError.m; path = Class/Model/FTError.m; sourceTree = "<group>"; };
+		FD764C3C13D074D700BE0F4F /* FOError.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FOError.h; path = Class/Model/FOError.h; sourceTree = "<group>"; };
+		FD764C3D13D074D700BE0F4F /* FOError.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FOError.m; path = Class/Model/FOError.m; sourceTree = "<group>"; };
 		FD764C3E13D074D700BE0F4F /* FOParentNamedObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FOParentNamedObject.h; path = Class/Model/FOParentNamedObject.h; sourceTree = "<group>"; };
 		FD764C3F13D074D700BE0F4F /* FOParentNamedObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FOParentNamedObject.m; path = Class/Model/FOParentNamedObject.m; sourceTree = "<group>"; };
 		FD764C4013D074D700BE0F4F /* FOParentObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FOParentObject.h; path = Class/Model/FOParentObject.h; sourceTree = "<group>"; };
 		FD764C4113D074D700BE0F4F /* FOParentObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FOParentObject.m; path = Class/Model/FOParentObject.m; sourceTree = "<group>"; };
-		FD764C4213D074D700BE0F4F /* PagedEntity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PagedEntity.h; path = Class/Model/PagedEntity.h; sourceTree = "<group>"; };
-		FD764C4313D074D700BE0F4F /* PagedEntity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PagedEntity.m; path = Class/Model/PagedEntity.m; sourceTree = "<group>"; };
+		FD764C4213D074D700BE0F4F /* FOPagedEntity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FOPagedEntity.h; path = Class/Model/FOPagedEntity.h; sourceTree = "<group>"; };
+		FD764C4313D074D700BE0F4F /* FOPagedEntity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FOPagedEntity.m; path = Class/Model/FOPagedEntity.m; sourceTree = "<group>"; };
 		FD764C6A13D0754600BE0F4F /* EntityState.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EntityState.h; path = Class/Enum/EntityState.h; sourceTree = "<group>"; };
 		FD764C6B13D0754600BE0F4F /* FTAPIRealm.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FTAPIRealm.h; path = Class/Enum/FTAPIRealm.h; sourceTree = "<group>"; };
 		FD764C6C13D0754600BE0F4F /* HTTPMethod.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HTTPMethod.h; path = Class/Enum/HTTPMethod.h; sourceTree = "<group>"; };
@@ -181,8 +184,8 @@
 		FD764C7B13D0758100BE0F4F /* FTOAuth.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FTOAuth.m; path = Class/FTOAuth/FTOAuth.m; sourceTree = "<group>"; };
 		FD764C7C13D0758100BE0F4F /* FTOAuthResult.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FTOAuthResult.h; path = Class/FTOAuth/FTOAuthResult.h; sourceTree = "<group>"; };
 		FD764C7D13D0758100BE0F4F /* FTOAuthResult.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FTOAuthResult.m; path = Class/FTOAuth/FTOAuthResult.m; sourceTree = "<group>"; };
-		FD764C7E13D0758100BE0F4F /* FTUserDefaults.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FTUserDefaults.h; path = Class/FTOAuth/FTUserDefaults.h; sourceTree = "<group>"; };
-		FD764C7F13D0758100BE0F4F /* FTUserDefaults.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FTUserDefaults.m; path = Class/FTOAuth/FTUserDefaults.m; sourceTree = "<group>"; };
+		FD764C7E13D0758100BE0F4F /* FOUserDefaults.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FOUserDefaults.h; path = Class/FTOAuth/FOUserDefaults.h; sourceTree = "<group>"; };
+		FD764C7F13D0758100BE0F4F /* FOUserDefaults.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FOUserDefaults.m; path = Class/FTOAuth/FOUserDefaults.m; sourceTree = "<group>"; };
 		FD764C8713D0759A00BE0F4F /* NSMutableURLRequest+Parameters.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSMutableURLRequest+Parameters.h"; path = "Class/OAConsumer/NSMutableURLRequest+Parameters.h"; sourceTree = "<group>"; };
 		FD764C8813D0759A00BE0F4F /* NSMutableURLRequest+Parameters.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSMutableURLRequest+Parameters.m"; path = "Class/OAConsumer/NSMutableURLRequest+Parameters.m"; sourceTree = "<group>"; };
 		FD764C8913D0759A00BE0F4F /* NSString+URLEncoding.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSString+URLEncoding.h"; path = "Class/OAConsumer/NSString+URLEncoding.h"; sourceTree = "<group>"; };
@@ -222,18 +225,18 @@
 		FD764CC813D075BE00BE0F4F /* FellowshipOneAPIUtility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FellowshipOneAPIUtility.h; path = Class/Shared/FellowshipOneAPIUtility.h; sourceTree = "<group>"; };
 		FD764CC913D075BE00BE0F4F /* FellowshipOneAPIUtility.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FellowshipOneAPIUtility.m; path = Class/Shared/FellowshipOneAPIUtility.m; sourceTree = "<group>"; };
 		FD764CD613D075C800BE0F4F /* JSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = JSON.h; path = Class/SBJson/JSON.h; sourceTree = "<group>"; };
-		FD764CD713D075C800BE0F4F /* NSObject+SBJSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSObject+SBJSON.h"; path = "Class/SBJson/NSObject+SBJSON.h"; sourceTree = "<group>"; };
-		FD764CD813D075C800BE0F4F /* NSObject+SBJSON.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSObject+SBJSON.m"; path = "Class/SBJson/NSObject+SBJSON.m"; sourceTree = "<group>"; };
-		FD764CD913D075C800BE0F4F /* NSString+SBJSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSString+SBJSON.h"; path = "Class/SBJson/NSString+SBJSON.h"; sourceTree = "<group>"; };
-		FD764CDA13D075C800BE0F4F /* NSString+SBJSON.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSString+SBJSON.m"; path = "Class/SBJson/NSString+SBJSON.m"; sourceTree = "<group>"; };
-		FD764CDB13D075C800BE0F4F /* SBJSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SBJSON.h; path = Class/SBJson/SBJSON.h; sourceTree = "<group>"; };
-		FD764CDC13D075C800BE0F4F /* SBJSON.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SBJSON.m; path = Class/SBJson/SBJSON.m; sourceTree = "<group>"; };
-		FD764CDD13D075C800BE0F4F /* SBJsonBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SBJsonBase.h; path = Class/SBJson/SBJsonBase.h; sourceTree = "<group>"; };
-		FD764CDE13D075C800BE0F4F /* SBJsonBase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SBJsonBase.m; path = Class/SBJson/SBJsonBase.m; sourceTree = "<group>"; };
-		FD764CDF13D075C800BE0F4F /* SBJsonParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SBJsonParser.h; path = Class/SBJson/SBJsonParser.h; sourceTree = "<group>"; };
-		FD764CE013D075C800BE0F4F /* SBJsonParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SBJsonParser.m; path = Class/SBJson/SBJsonParser.m; sourceTree = "<group>"; };
-		FD764CE113D075C800BE0F4F /* SBJsonWriter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SBJsonWriter.h; path = Class/SBJson/SBJsonWriter.h; sourceTree = "<group>"; };
-		FD764CE213D075C800BE0F4F /* SBJsonWriter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SBJsonWriter.m; path = Class/SBJson/SBJsonWriter.m; sourceTree = "<group>"; };
+		FD764CD713D075C800BE0F4F /* NSObject+FellowshipOneAPIClientSBJSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSObject+FellowshipOneAPIClientSBJSON.h"; path = "Class/SBJson/NSObject+FellowshipOneAPIClientSBJSON.h"; sourceTree = "<group>"; };
+		FD764CD813D075C800BE0F4F /* NSObject+FellowshipOneAPIClientSBJSON.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSObject+FellowshipOneAPIClientSBJSON.m"; path = "Class/SBJson/NSObject+FellowshipOneAPIClientSBJSON.m"; sourceTree = "<group>"; };
+		FD764CD913D075C800BE0F4F /* NSString+FellowshipOneAPIClientSBJSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSString+FellowshipOneAPIClientSBJSON.h"; path = "Class/SBJson/NSString+FellowshipOneAPIClientSBJSON.h"; sourceTree = "<group>"; };
+		FD764CDA13D075C800BE0F4F /* NSString+FellowshipOneAPIClientSBJSON.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSString+FellowshipOneAPIClientSBJSON.m"; path = "Class/SBJson/NSString+FellowshipOneAPIClientSBJSON.m"; sourceTree = "<group>"; };
+		FD764CDB13D075C800BE0F4F /* FellowshipOneAPIClientSBJSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FellowshipOneAPIClientSBJSON.h; path = Class/SBJson/FellowshipOneAPIClientSBJSON.h; sourceTree = "<group>"; };
+		FD764CDC13D075C800BE0F4F /* FellowshipOneAPIClientSBJSON.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FellowshipOneAPIClientSBJSON.m; path = Class/SBJson/FellowshipOneAPIClientSBJSON.m; sourceTree = "<group>"; };
+		FD764CDD13D075C800BE0F4F /* FellowshipOneAPIClientSBJsonBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FellowshipOneAPIClientSBJsonBase.h; path = Class/SBJson/FellowshipOneAPIClientSBJsonBase.h; sourceTree = "<group>"; };
+		FD764CDE13D075C800BE0F4F /* FellowshipOneAPIClientSBJsonBase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FellowshipOneAPIClientSBJsonBase.m; path = Class/SBJson/FellowshipOneAPIClientSBJsonBase.m; sourceTree = "<group>"; };
+		FD764CDF13D075C800BE0F4F /* FellowshipOneAPIClientSBJsonParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FellowshipOneAPIClientSBJsonParser.h; path = Class/SBJson/FellowshipOneAPIClientSBJsonParser.h; sourceTree = "<group>"; };
+		FD764CE013D075C800BE0F4F /* FellowshipOneAPIClientSBJsonParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FellowshipOneAPIClientSBJsonParser.m; path = Class/SBJson/FellowshipOneAPIClientSBJsonParser.m; sourceTree = "<group>"; };
+		FD764CE113D075C800BE0F4F /* FellowshipOneAPIClientSBJsonWriter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FellowshipOneAPIClientSBJsonWriter.h; path = Class/SBJson/FellowshipOneAPIClientSBJsonWriter.h; sourceTree = "<group>"; };
+		FD764CE213D075C800BE0F4F /* FellowshipOneAPIClientSBJsonWriter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FellowshipOneAPIClientSBJsonWriter.m; path = Class/SBJson/FellowshipOneAPIClientSBJsonWriter.m; sourceTree = "<group>"; };
 		FD764CF013D0761900BE0F4F /* Enum.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Enum.h; path = Class/Enum/Enum.h; sourceTree = "<group>"; };
 		FD764CF213D0762900BE0F4F /* ConsoleLog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ConsoleLog.h; path = Class/Shared/ConsoleLog.h; sourceTree = "<group>"; };
 		FD764CF313D0762900BE0F4F /* ConsoleLog.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ConsoleLog.m; path = Class/Shared/ConsoleLog.m; sourceTree = "<group>"; };
@@ -282,6 +285,8 @@
 				FD0FB05713D2162900A078AC /* Person.m */,
 				FD4712A413D2552600FD2C26 /* Communication.h */,
 				FD4712A513D2552600FD2C26 /* Communication.m */,
+				FD30FA7413D342D00050C0FB /* Address.h */,
+				FD30FA7513D342D00050C0FB /* Address.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -374,14 +379,14 @@
 		FD764C3B13D0744E00BE0F4F /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				FD764C3C13D074D700BE0F4F /* FTError.h */,
-				FD764C3D13D074D700BE0F4F /* FTError.m */,
+				FD764C3C13D074D700BE0F4F /* FOError.h */,
+				FD764C3D13D074D700BE0F4F /* FOError.m */,
 				FD764C3E13D074D700BE0F4F /* FOParentNamedObject.h */,
 				FD764C3F13D074D700BE0F4F /* FOParentNamedObject.m */,
 				FD764C4013D074D700BE0F4F /* FOParentObject.h */,
 				FD764C4113D074D700BE0F4F /* FOParentObject.m */,
-				FD764C4213D074D700BE0F4F /* PagedEntity.h */,
-				FD764C4313D074D700BE0F4F /* PagedEntity.m */,
+				FD764C4213D074D700BE0F4F /* FOPagedEntity.h */,
+				FD764C4313D074D700BE0F4F /* FOPagedEntity.m */,
 				FD764C4413D074D700BE0F4F /* People */,
 			);
 			name = Model;
@@ -442,8 +447,8 @@
 				FD764C7B13D0758100BE0F4F /* FTOAuth.m */,
 				FD764C7C13D0758100BE0F4F /* FTOAuthResult.h */,
 				FD764C7D13D0758100BE0F4F /* FTOAuthResult.m */,
-				FD764C7E13D0758100BE0F4F /* FTUserDefaults.h */,
-				FD764C7F13D0758100BE0F4F /* FTUserDefaults.m */,
+				FD764C7E13D0758100BE0F4F /* FOUserDefaults.h */,
+				FD764C7F13D0758100BE0F4F /* FOUserDefaults.m */,
 			);
 			name = FTOAuth;
 			sourceTree = "<group>";
@@ -485,18 +490,18 @@
 			isa = PBXGroup;
 			children = (
 				FD764CD613D075C800BE0F4F /* JSON.h */,
-				FD764CD713D075C800BE0F4F /* NSObject+SBJSON.h */,
-				FD764CD813D075C800BE0F4F /* NSObject+SBJSON.m */,
-				FD764CD913D075C800BE0F4F /* NSString+SBJSON.h */,
-				FD764CDA13D075C800BE0F4F /* NSString+SBJSON.m */,
-				FD764CDB13D075C800BE0F4F /* SBJSON.h */,
-				FD764CDC13D075C800BE0F4F /* SBJSON.m */,
-				FD764CDD13D075C800BE0F4F /* SBJsonBase.h */,
-				FD764CDE13D075C800BE0F4F /* SBJsonBase.m */,
-				FD764CDF13D075C800BE0F4F /* SBJsonParser.h */,
-				FD764CE013D075C800BE0F4F /* SBJsonParser.m */,
-				FD764CE113D075C800BE0F4F /* SBJsonWriter.h */,
-				FD764CE213D075C800BE0F4F /* SBJsonWriter.m */,
+				FD764CD713D075C800BE0F4F /* NSObject+FellowshipOneAPIClientSBJSON.h */,
+				FD764CD813D075C800BE0F4F /* NSObject+FellowshipOneAPIClientSBJSON.m */,
+				FD764CD913D075C800BE0F4F /* NSString+FellowshipOneAPIClientSBJSON.h */,
+				FD764CDA13D075C800BE0F4F /* NSString+FellowshipOneAPIClientSBJSON.m */,
+				FD764CDB13D075C800BE0F4F /* FellowshipOneAPIClientSBJSON.h */,
+				FD764CDC13D075C800BE0F4F /* FellowshipOneAPIClientSBJSON.m */,
+				FD764CDD13D075C800BE0F4F /* FellowshipOneAPIClientSBJsonBase.h */,
+				FD764CDE13D075C800BE0F4F /* FellowshipOneAPIClientSBJsonBase.m */,
+				FD764CDF13D075C800BE0F4F /* FellowshipOneAPIClientSBJsonParser.h */,
+				FD764CE013D075C800BE0F4F /* FellowshipOneAPIClientSBJsonParser.m */,
+				FD764CE113D075C800BE0F4F /* FellowshipOneAPIClientSBJsonWriter.h */,
+				FD764CE213D075C800BE0F4F /* FellowshipOneAPIClientSBJsonWriter.m */,
 			);
 			name = SBJson;
 			sourceTree = "<group>";
@@ -547,10 +552,10 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FD764C5313D074D700BE0F4F /* FTError.h in Headers */,
+				FD764C5313D074D700BE0F4F /* FOError.h in Headers */,
 				FD764C5513D074D700BE0F4F /* FOParentNamedObject.h in Headers */,
 				FD764C5713D074D700BE0F4F /* FOParentObject.h in Headers */,
-				FD764C5913D074D700BE0F4F /* PagedEntity.h in Headers */,
+				FD764C5913D074D700BE0F4F /* FOPagedEntity.h in Headers */,
 				FD764C6D13D0754600BE0F4F /* EntityState.h in Headers */,
 				FD764C6E13D0754600BE0F4F /* FTAPIRealm.h in Headers */,
 				FD764C6F13D0754600BE0F4F /* HTTPMethod.h in Headers */,
@@ -558,7 +563,7 @@
 				FD764C7713D0755A00BE0F4F /* NSObject+serializeToXml.h in Headers */,
 				FD764C8013D0758100BE0F4F /* FTOAuth.h in Headers */,
 				FD764C8213D0758100BE0F4F /* FTOAuthResult.h in Headers */,
-				FD764C8413D0758100BE0F4F /* FTUserDefaults.h in Headers */,
+				FD764C8413D0758100BE0F4F /* FOUserDefaults.h in Headers */,
 				FD764CA113D0759A00BE0F4F /* NSMutableURLRequest+Parameters.h in Headers */,
 				FD764CA313D0759A00BE0F4F /* NSString+URLEncoding.h in Headers */,
 				FD764CA513D0759A00BE0F4F /* NSURL+Base.h in Headers */,
@@ -580,12 +585,12 @@
 				FD764CD213D075BE00BE0F4F /* FellowshipOneAPIDateUtility.h in Headers */,
 				FD764CD413D075BE00BE0F4F /* FellowshipOneAPIUtility.h in Headers */,
 				FD764CE313D075C800BE0F4F /* JSON.h in Headers */,
-				FD764CE413D075C800BE0F4F /* NSObject+SBJSON.h in Headers */,
-				FD764CE613D075C800BE0F4F /* NSString+SBJSON.h in Headers */,
-				FD764CE813D075C800BE0F4F /* SBJSON.h in Headers */,
-				FD764CEA13D075C800BE0F4F /* SBJsonBase.h in Headers */,
-				FD764CEC13D075C800BE0F4F /* SBJsonParser.h in Headers */,
-				FD764CEE13D075C800BE0F4F /* SBJsonWriter.h in Headers */,
+				FD764CE413D075C800BE0F4F /* NSObject+FellowshipOneAPIClientSBJSON.h in Headers */,
+				FD764CE613D075C800BE0F4F /* NSString+FellowshipOneAPIClientSBJSON.h in Headers */,
+				FD764CE813D075C800BE0F4F /* FellowshipOneAPIClientSBJSON.h in Headers */,
+				FD764CEA13D075C800BE0F4F /* FellowshipOneAPIClientSBJsonBase.h in Headers */,
+				FD764CEC13D075C800BE0F4F /* FellowshipOneAPIClientSBJsonParser.h in Headers */,
+				FD764CEE13D075C800BE0F4F /* FellowshipOneAPIClientSBJsonWriter.h in Headers */,
 				FD764CF113D0761900BE0F4F /* Enum.h in Headers */,
 				FD764CF413D0762900BE0F4F /* ConsoleLog.h in Headers */,
 				FD764CF813D0765700BE0F4F /* NSObject+serializeToJSON.h in Headers */,
@@ -676,7 +681,7 @@
 				FD47129913D2528500FD2C26 /* FOStatus.h in Resources */,
 				FD47129A13D2528900FD2C26 /* FOSubStatus.h in Resources */,
 				FD0FB05913D2169A00A078AC /* FOPerson.h in Resources */,
-				FD0FB05D13D2263B00A078AC /* PagedEntity.h in Resources */,
+				FD0FB05D13D2263B00A078AC /* FOPagedEntity.h in Resources */,
 				FD0FB05E13D2263E00A078AC /* FOParentNamedObject.h in Resources */,
 				FD0FB05F13D2264100A078AC /* FOParentObject.h in Resources */,
 				FD764C2C13D0721300BE0F4F /* InfoPlist.strings in Resources */,
@@ -707,15 +712,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FD764C5413D074D700BE0F4F /* FTError.m in Sources */,
+				FD764C5413D074D700BE0F4F /* FOError.m in Sources */,
 				FD764C5613D074D700BE0F4F /* FOParentNamedObject.m in Sources */,
 				FD764C5813D074D700BE0F4F /* FOParentObject.m in Sources */,
-				FD764C5A13D074D700BE0F4F /* PagedEntity.m in Sources */,
+				FD764C5A13D074D700BE0F4F /* FOPagedEntity.m in Sources */,
 				FD764C7613D0755A00BE0F4F /* NSDate+ageFromDate.m in Sources */,
 				FD764C7813D0755A00BE0F4F /* NSObject+serializeToXml.m in Sources */,
 				FD764C8113D0758100BE0F4F /* FTOAuth.m in Sources */,
 				FD764C8313D0758100BE0F4F /* FTOAuthResult.m in Sources */,
-				FD764C8513D0758100BE0F4F /* FTUserDefaults.m in Sources */,
+				FD764C8513D0758100BE0F4F /* FOUserDefaults.m in Sources */,
 				FD764CA213D0759A00BE0F4F /* NSMutableURLRequest+Parameters.m in Sources */,
 				FD764CA413D0759A00BE0F4F /* NSString+URLEncoding.m in Sources */,
 				FD764CA613D0759A00BE0F4F /* NSURL+Base.m in Sources */,
@@ -734,12 +739,12 @@
 				FD764CD013D075BE00BE0F4F /* sha1.c in Sources */,
 				FD764CD313D075BE00BE0F4F /* FellowshipOneAPIDateUtility.m in Sources */,
 				FD764CD513D075BE00BE0F4F /* FellowshipOneAPIUtility.m in Sources */,
-				FD764CE513D075C800BE0F4F /* NSObject+SBJSON.m in Sources */,
-				FD764CE713D075C800BE0F4F /* NSString+SBJSON.m in Sources */,
-				FD764CE913D075C800BE0F4F /* SBJSON.m in Sources */,
-				FD764CEB13D075C800BE0F4F /* SBJsonBase.m in Sources */,
-				FD764CED13D075C800BE0F4F /* SBJsonParser.m in Sources */,
-				FD764CEF13D075C800BE0F4F /* SBJsonWriter.m in Sources */,
+				FD764CE513D075C800BE0F4F /* NSObject+FellowshipOneAPIClientSBJSON.m in Sources */,
+				FD764CE713D075C800BE0F4F /* NSString+FellowshipOneAPIClientSBJSON.m in Sources */,
+				FD764CE913D075C800BE0F4F /* FellowshipOneAPIClientSBJSON.m in Sources */,
+				FD764CEB13D075C800BE0F4F /* FellowshipOneAPIClientSBJsonBase.m in Sources */,
+				FD764CED13D075C800BE0F4F /* FellowshipOneAPIClientSBJsonParser.m in Sources */,
+				FD764CEF13D075C800BE0F4F /* FellowshipOneAPIClientSBJsonWriter.m in Sources */,
 				FD764CF513D0762900BE0F4F /* ConsoleLog.m in Sources */,
 				FD764CF913D0765700BE0F4F /* NSObject+serializeToJSON.m in Sources */,
 				FD764D0B13D0783200BE0F4F /* WebRequest.m in Sources */,
@@ -762,6 +767,7 @@
 				FD0FB05813D2162900A078AC /* Person.m in Sources */,
 				FD0FB05C13D2171600A078AC /* BaseTest.m in Sources */,
 				FD4712A613D2552700FD2C26 /* Communication.m in Sources */,
+				FD30FA7613D342D00050C0FB /* Address.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
