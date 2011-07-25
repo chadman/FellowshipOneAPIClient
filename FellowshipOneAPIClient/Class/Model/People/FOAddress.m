@@ -147,14 +147,6 @@
 		self.comment = nil;
 	}
 	
-	NSString *tempLastUpdatedDate = [dict objectForKey:@"lastUpdatedDate"];
-	if ([tempLastUpdatedDate isEqual:[NSNull null]]) {
-		self.lastUpdatedDate = nil;
-	}
-	else {
-		self.lastUpdatedDate = [FellowshipOneAPIDateUtility dateFromString:tempLastUpdatedDate];
-	}
-	
 	self.carrierRoute = [dict objectForKey:@"carrierRoute"];
 	self.deliveryPoint = [dict objectForKey:@"deliveryPoint"];
 	self.addressDate = [FellowshipOneAPIUtility convertToFullNSDate:[dict objectForKey:@"addressDate"]];
@@ -313,7 +305,7 @@
     }];
 }
 
-+ (FOAddress *) getByAddressID: (NSInteger) addressID {
++ (FOAddress *) getByID: (NSInteger) addressID {
 	
 	FOAddress *returnAddress = [[[FOAddress alloc] init] autorelease];
 	NSString *urlSuffix = [NSString stringWithFormat:@"Addresses/%d.json", addressID];
@@ -335,7 +327,7 @@
 	return returnAddress;	
 }
 
-+ (void) getByAddressID: (NSInteger) addressID usingCallback:(void (^)(FOAddress *))returnAddress {
++ (void) getByID: (NSInteger) addressID usingCallback:(void (^)(FOAddress *))returnAddress {
     NSString *addressUrl = [NSString stringWithFormat:@"Addresses/%d.json", addressID];
     FTOAuth *oauth = [[FTOAuth alloc] initWithDelegate:self];
     __block FOAddress *tmpAddress = [[FOAddress alloc] init];

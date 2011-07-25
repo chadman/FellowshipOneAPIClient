@@ -1,19 +1,19 @@
 //
-//  Address.m
+//  Household.m
 //  FellowshipOneAPIClient
 //
-//  Created by Chad Meyer on 7/17/11.
+//  Created by Chad Meyer on 7/21/11.
 //  Copyright 2011 __MyCompanyName__. All rights reserved.
 //
 
-#import "Address.h"
-#import "FOAddress.h"
-#import "FOParentObject.h"
-#import "FOParentNamedObject.h"
+#import "Household.h"
+#import "FOHousehold.h"
+#import "FOHouseholdQO.h"
 #import "FellowshipOneAPIClient.h"
+#import "FOPagedEntity.h"
 
 
-@implementation Address
+@implementation Household
 
 - (void)setUp {
     [FellowshipOneAPIClient createOAuthTicket:@"b019af55-6279-457e-b64d-4c74cb931253" withSecret:@"e6e78ee2-6b04-4420-9fb8-b84625c2e14d" forChurchCode:@"dc"];    
@@ -24,24 +24,22 @@
     [super tearDown];
 }
 
-- (void) testGetAddressByPerson {
+- (void) testGetHouseholdByID {
     
-    NSArray *addresses = [FOAddress getByPersonID:8266692];
-    STAssertTrue([addresses count] > 0, @"no addresses were returned,");
+    FOHousehold *household = [FOHousehold getByID:6140909];
+    STAssertNotNil(household, @"household was not returned.");
 }
 
-- (void) testGetAddressesByPersonWithCallBack {
+- (void) testGetHouseholdByIDWithCallBack {
     __block BOOL done= NO;
     int count = 0;
     
     // Testing using blocks for authentication
-    
-    [FOAddress getByPersonID:8266692 usingCallback:^(NSArray *results) {
-        
-        STAssertTrue([results count] > 0, @"no addresses returned.");
+    [FOHousehold getByID:6140909 usingCallback:^(FOHousehold *returnHousehold) {
+        STAssertNotNil(returnHousehold, @"household was not returned.");
         done = YES;
-        
     }];
+
     
     while (!done) {
         
@@ -56,25 +54,20 @@
     }
 }
 
-
-- (void) testGetAddressByID {
-    
-    FOAddress *address = [FOAddress getByID:6403168];
-    STAssertNotNil(address, @"address was not found.");
-}
-
-- (void) testGetAddressByIDWithCallBack {
+- (void) testSearchForHouseholds {
     __block BOOL done= NO;
     int count = 0;
     
-    // Testing using blocks for authentication
+    FOHouseholdQO *qo = [[FOHouseholdQO alloc] init];
+    [qo setSearchTerm:@"meyer"];
+    [qo setPageNumber:1];
+    [qo setRecordsPerPage:2];
     
-    [FOAddress getByID:6403168 usingCallback:^(FOAddress *returnAddress) {
-        
-        STAssertNotNil(returnAddress, @"address was not found.");
+    [FOHousehold searchForHouseholds:qo usingCallback:^(FOPagedEntity *returnedResult) {
+        STAssertTrue([returnedResult.results count] == 2, @"records per page is wrong");
         done = YES;
-        
     }];
+    
     
     while (!done) {
         
@@ -87,26 +80,29 @@
             STFail(@"Did not complete testGetAddressesByPersonWithCallBack");
         }
     }
+
 }
 
-- (void) testUpdateAddress {
+
+- (void) testUpdateHousehold {
     
-    NSString *street1 = [NSString stringWithString:@"123 Test Rd"];
+    NSInteger oldID = 12345;
     
     
-    FOAddress *address = [FOAddress getByID:6403168];
+    FOHousehold *household = [FOHousehold getByID:6140909];
     
-    if ([address.street1 isEqualToString:street1]) {
-        street1 = [NSString stringWithString:@"125 Test Rd."];
+    if (household.myOldId == oldID) {
+        oldID = 54321;
     }
-
-    [address setStreet1:street1];
-    [address save];
     
-    FOAddress *newAddress = [FOAddress getByID:6403168];
-    STAssertTrue([newAddress.street1 isEqualToString:street1], @"address was not updated.");
+    [household setMyOldId:oldID];
+    [household save];
+    
+    FOHousehold *newHousehold = [FOHousehold getByID:6140909];
+    STAssertTrue(newHousehold.myOldId == oldID, @"household was not updated.");
 }
 
+/*
 - (void) testUpdateAddressWithCallBack {
     __block BOOL done= NO;
     int count = 0;
@@ -114,7 +110,7 @@
     NSString *street1 = [NSString stringWithString:@"123 Test Rd"];
     
     
-    FOAddress *address = [FOAddress getByID:6403168];
+    FOAddress *address = [FOAddress getByAddressID:6403168];
     
     if ([address.street1 isEqualToString:street1]) {
         street1 = [NSString stringWithString:@"125 Test Rd."];
@@ -127,7 +123,7 @@
         STAssertTrue([returnAddress.street1 isEqualToString:street1], @"address was not updated.");
         done = YES;
     }];
-        
+    
     while (!done) {
         
         if (count < 20) {
@@ -193,5 +189,5 @@
     
     return address;
 }
-
+*/
 @end

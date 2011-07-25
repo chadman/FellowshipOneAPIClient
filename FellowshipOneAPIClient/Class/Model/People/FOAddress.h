@@ -122,13 +122,13 @@
 + (NSArray *) getByPersonID: (NSInteger) personID;
 
 /* Gets a specific address by the address ID -- this method is performed synchronously */
-+ (FOAddress *) getByAddressID: (NSInteger) addressID;
++ (FOAddress *) getByID: (NSInteger) addressID;
 
 /* Gets all the communications associated with a specific person id -- Thie method is performed asynchronously -- */
 + (void) getByPersonID: (NSInteger)personID usingCallback:(void (^)(NSArray *))results;
 
 /* Gets a specific address by the address ID -- this method is performed asynchronously */
-+ (void) getByAddressID: (NSInteger) addressID usingCallback:(void (^)(FOAddress *))returnAddress;
++ (void) getByID: (NSInteger) addressID usingCallback:(void (^)(FOAddress *))returnAddress;
 
 /* Calls the API to save the current address. If there is an ID attached to the address, the method assumes an update, if no id exists, the method assumes create */
 - (void) save;

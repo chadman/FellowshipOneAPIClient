@@ -11,6 +11,7 @@
 #import "FellowshipOneAPIClient.h"
 #import "FOPagedEntity.h"
 #import "FOAddress.h"
+#import "FOPersonQO.h"
 
 
 @implementation Person
@@ -56,9 +57,14 @@
     int count = 0;
     
     // Testing using blocks for authentication
+    FOPersonQO *qo = [[FOPersonQO alloc] init];
+    qo.searchTerm = @"sm";
+    qo.pageNumber = 1;
+    qo.recordsPerPage = 10;
     
-    [FOPerson searchForPeople:@"sm" withSearchIncludes:nil withPage:1 usingCallback:^(FOPagedEntity *pagedResults) {
+    [FOPerson searchForPeople:qo usingCallback:^(FOPagedEntity *pagedResults) {
         STAssertTrue([pagedResults.results count] > 0, @"No results were returned.");
+        [qo release];
         done = YES;
     }];
     
@@ -80,8 +86,13 @@
     int count = 0;
     
     // Testing using blocks for authentication
+    // Testing using blocks for authentication
+    FOPersonQO *qo = [[FOPersonQO alloc] init];
+    qo.searchTerm = @"asdfasdfadsfasdf";
+    qo.pageNumber = 1;
+    qo.recordsPerPage = 10;
     
-    [FOPerson searchForPeople:@"asdfasdfaasdf" withSearchIncludes:nil withPage:1 usingCallback:^(FOPagedEntity *pagedResults) {
+    [FOPerson searchForPeople:qo usingCallback:^(FOPagedEntity *pagedResults) {
         STAssertTrue([pagedResults.results count] == 0, @"results were returned.");
         done = YES;
     }];
@@ -97,6 +108,8 @@
             STFail(@"Did not complete testSearchNoResults");
         }
     }
+    
+    [qo release];
 }
 
 - (void) testSearchIncludeAddress {
@@ -105,9 +118,14 @@
     int count = 0;
     
     NSArray *includes = [[NSArray alloc] initWithObjects:[FOPerson getSearchIncludeString:PeopleSearchIncludeAddresses], nil];
-
+    // Testing using blocks for authentication
+    FOPersonQO *qo = [[FOPersonQO alloc] init];
+    qo.searchTerm = @"meyer";
+    qo.pageNumber = 1;
+    qo.recordsPerPage = 10;
+    qo.additionalData = includes;
     
-    [FOPerson searchForPeople:@"meyer,chad" withSearchIncludes:includes withPage:1 usingCallback:^(FOPagedEntity *pagedResults) {
+    [FOPerson searchForPeople:qo usingCallback:^(FOPagedEntity *pagedResults) {
         
         // Looks through the results and look for addresses
         for (FOPerson *currentPerson in pagedResults.results) {
@@ -133,6 +151,7 @@
     }
     
     [includes release];
+    [qo release];
     
     STAssertTrue(foundAddress, @"No addresses were found.");
 }
@@ -142,11 +161,16 @@
     __block BOOL done= NO;
     __block BOOL foundCommunications = NO;
     int count = 0;
-    
+
     NSArray *includes = [[NSArray alloc] initWithObjects:[FOPerson getSearchIncludeString:PeopleSearchIncludeCommunications], nil];
+    FOPersonQO *qo = [[FOPersonQO alloc] init];
+    qo.searchTerm = @"meyer";
+    qo.pageNumber = 1;
+    qo.recordsPerPage = 10;
+    qo.additionalData = includes;
     
     
-    [FOPerson searchForPeople:@"meyer,chad" withSearchIncludes:includes withPage:1 usingCallback:^(FOPagedEntity *pagedResults) {
+    [FOPerson searchForPeople:qo usingCallback:^(FOPagedEntity *pagedResults) {
         
         // Looks through the results and look for addresses
         for (FOPerson *currentPerson in pagedResults.results) {
@@ -172,6 +196,7 @@
     }
     
     [includes release];
+    [qo release];
     
     STAssertTrue(foundCommunications, @"No communications were found.");
 }

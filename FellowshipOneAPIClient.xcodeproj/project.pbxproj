@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FD0ACD4A13D5B36400945BD4 /* FOHouseholdQO.h in Headers */ = {isa = PBXBuildFile; fileRef = FD0ACD4813D5B36400945BD4 /* FOHouseholdQO.h */; };
+		FD0ACD5213D5B3D400945BD4 /* FOBaseQO.h in Headers */ = {isa = PBXBuildFile; fileRef = FD0ACD5013D5B3D400945BD4 /* FOBaseQO.h */; };
+		FD0ACD5313D5B3D400945BD4 /* FOBaseQO.m in Sources */ = {isa = PBXBuildFile; fileRef = FD0ACD5113D5B3D400945BD4 /* FOBaseQO.m */; };
 		FD0FB05813D2162900A078AC /* Person.m in Sources */ = {isa = PBXBuildFile; fileRef = FD0FB05713D2162900A078AC /* Person.m */; };
 		FD0FB05913D2169A00A078AC /* FOPerson.h in Resources */ = {isa = PBXBuildFile; fileRef = FD764D1013D07A1600BE0F4F /* FOPerson.h */; };
 		FD0FB05C13D2171600A078AC /* BaseTest.m in Sources */ = {isa = PBXBuildFile; fileRef = FD0FB05B13D2171600A078AC /* BaseTest.m */; };
@@ -14,6 +17,12 @@
 		FD0FB05E13D2263E00A078AC /* FOParentNamedObject.h in Resources */ = {isa = PBXBuildFile; fileRef = FD764C3E13D074D700BE0F4F /* FOParentNamedObject.h */; };
 		FD0FB05F13D2264100A078AC /* FOParentObject.h in Resources */ = {isa = PBXBuildFile; fileRef = FD764C4013D074D700BE0F4F /* FOParentObject.h */; };
 		FD30FA7613D342D00050C0FB /* Address.m in Sources */ = {isa = PBXBuildFile; fileRef = FD30FA7513D342D00050C0FB /* Address.m */; };
+		FD3F97C813D8681F0038DB98 /* FOHouseholdQO.m in Sources */ = {isa = PBXBuildFile; fileRef = FD3F97C713D8681F0038DB98 /* FOHouseholdQO.m */; };
+		FD3F97CB13D868400038DB98 /* FOPersonQO.h in Headers */ = {isa = PBXBuildFile; fileRef = FD3F97C913D868400038DB98 /* FOPersonQO.h */; };
+		FD3F97CC13D868400038DB98 /* FOPersonQO.m in Sources */ = {isa = PBXBuildFile; fileRef = FD3F97CA13D868400038DB98 /* FOPersonQO.m */; };
+		FD3F97CF13D8787B0038DB98 /* Household.m in Sources */ = {isa = PBXBuildFile; fileRef = FD3F97CE13D8787B0038DB98 /* Household.m */; };
+		FD3F97D013D8788D0038DB98 /* FOPersonQO.h in Resources */ = {isa = PBXBuildFile; fileRef = FD3F97C913D868400038DB98 /* FOPersonQO.h */; };
+		FD3F97D113D878950038DB98 /* FOHouseholdQO.h in Resources */ = {isa = PBXBuildFile; fileRef = FD0ACD4813D5B36400945BD4 /* FOHouseholdQO.h */; };
 		FD47128E13D2500D00FD2C26 /* FOStatus.h in Headers */ = {isa = PBXBuildFile; fileRef = FD47128C13D2500C00FD2C26 /* FOStatus.h */; };
 		FD47128F13D2500D00FD2C26 /* FOStatus.m in Sources */ = {isa = PBXBuildFile; fileRef = FD47128D13D2500C00FD2C26 /* FOStatus.m */; };
 		FD47129313D2507E00FD2C26 /* FOSubStatus.h in Headers */ = {isa = PBXBuildFile; fileRef = FD47129113D2507E00FD2C26 /* FOSubStatus.h */; };
@@ -138,12 +147,20 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		FD0ACD4813D5B36400945BD4 /* FOHouseholdQO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FOHouseholdQO.h; path = Class/QueryObject/People/FOHouseholdQO.h; sourceTree = "<group>"; };
+		FD0ACD5013D5B3D400945BD4 /* FOBaseQO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FOBaseQO.h; path = Class/QueryObject/FOBaseQO.h; sourceTree = "<group>"; };
+		FD0ACD5113D5B3D400945BD4 /* FOBaseQO.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FOBaseQO.m; path = Class/QueryObject/FOBaseQO.m; sourceTree = "<group>"; };
 		FD0FB05613D2162900A078AC /* Person.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Person.h; path = Model/Person.h; sourceTree = "<group>"; };
 		FD0FB05713D2162900A078AC /* Person.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Person.m; path = Model/Person.m; sourceTree = "<group>"; };
 		FD0FB05A13D2171600A078AC /* BaseTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseTest.h; sourceTree = "<group>"; };
 		FD0FB05B13D2171600A078AC /* BaseTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseTest.m; sourceTree = "<group>"; };
 		FD30FA7413D342D00050C0FB /* Address.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Address.h; sourceTree = "<group>"; };
 		FD30FA7513D342D00050C0FB /* Address.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Address.m; sourceTree = "<group>"; };
+		FD3F97C713D8681F0038DB98 /* FOHouseholdQO.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FOHouseholdQO.m; path = Class/QueryObject/People/FOHouseholdQO.m; sourceTree = "<group>"; };
+		FD3F97C913D868400038DB98 /* FOPersonQO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FOPersonQO.h; path = Class/QueryObject/People/FOPersonQO.h; sourceTree = "<group>"; };
+		FD3F97CA13D868400038DB98 /* FOPersonQO.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FOPersonQO.m; path = Class/QueryObject/People/FOPersonQO.m; sourceTree = "<group>"; };
+		FD3F97CD13D8787B0038DB98 /* Household.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Household.h; sourceTree = "<group>"; };
+		FD3F97CE13D8787B0038DB98 /* Household.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Household.m; sourceTree = "<group>"; };
 		FD47128C13D2500C00FD2C26 /* FOStatus.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FOStatus.h; sourceTree = "<group>"; };
 		FD47128D13D2500C00FD2C26 /* FOStatus.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FOStatus.m; sourceTree = "<group>"; };
 		FD47129113D2507E00FD2C26 /* FOSubStatus.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FOSubStatus.h; sourceTree = "<group>"; };
@@ -278,6 +295,64 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		FD0ACD4013D5B0D400945BD4 /* QueryObject */ = {
+			isa = PBXGroup;
+			children = (
+				FD0ACD4713D5B12B00945BD4 /* Groups */,
+				FD0ACD4613D5B11800945BD4 /* Giving */,
+				FD0ACD4213D5B0E200945BD4 /* People */,
+				FD0ACD5013D5B3D400945BD4 /* FOBaseQO.h */,
+				FD0ACD5113D5B3D400945BD4 /* FOBaseQO.m */,
+			);
+			name = QueryObject;
+			sourceTree = "<group>";
+		};
+		FD0ACD4213D5B0E200945BD4 /* People */ = {
+			isa = PBXGroup;
+			children = (
+				FD3F97C913D868400038DB98 /* FOPersonQO.h */,
+				FD3F97CA13D868400038DB98 /* FOPersonQO.m */,
+				FD0ACD4813D5B36400945BD4 /* FOHouseholdQO.h */,
+				FD3F97C713D8681F0038DB98 /* FOHouseholdQO.m */,
+			);
+			name = People;
+			sourceTree = "<group>";
+		};
+		FD0ACD4313D5B0EA00945BD4 /* Groups */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Groups;
+			sourceTree = "<group>";
+		};
+		FD0ACD4413D5B0F100945BD4 /* Giving */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Giving;
+			sourceTree = "<group>";
+		};
+		FD0ACD4513D5B0FD00945BD4 /* Events */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Events;
+			sourceTree = "<group>";
+		};
+		FD0ACD4613D5B11800945BD4 /* Giving */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Giving;
+			sourceTree = "<group>";
+		};
+		FD0ACD4713D5B12B00945BD4 /* Groups */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Groups;
+			sourceTree = "<group>";
+		};
 		FD0FB05513D215FA00A078AC /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -287,6 +362,8 @@
 				FD4712A513D2552600FD2C26 /* Communication.m */,
 				FD30FA7413D342D00050C0FB /* Address.h */,
 				FD30FA7513D342D00050C0FB /* Address.m */,
+				FD3F97CD13D8787B0038DB98 /* Household.h */,
+				FD3F97CE13D8787B0038DB98 /* Household.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -369,6 +446,7 @@
 		FD764C3A13D0742400BE0F4F /* Class */ = {
 			isa = PBXGroup;
 			children = (
+				FD0ACD4013D5B0D400945BD4 /* QueryObject */,
 				FD764C7013D0754A00BE0F4F /* Categories */,
 				FD764C6913D0753A00BE0F4F /* Enum */,
 				FD764C3B13D0744E00BE0F4F /* Model */,
@@ -379,6 +457,9 @@
 		FD764C3B13D0744E00BE0F4F /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				FD0ACD4513D5B0FD00945BD4 /* Events */,
+				FD0ACD4413D5B0F100945BD4 /* Giving */,
+				FD0ACD4313D5B0EA00945BD4 /* Groups */,
 				FD764C3C13D074D700BE0F4F /* FOError.h */,
 				FD764C3D13D074D700BE0F4F /* FOError.m */,
 				FD764C3E13D074D700BE0F4F /* FOParentNamedObject.h */,
@@ -603,6 +684,9 @@
 				FD47129713D250E600FD2C26 /* FOHouseholdMemberType.h in Headers */,
 				FD47129E13D252F800FD2C26 /* FOHousehold.h in Headers */,
 				FD4712A213D2549100FD2C26 /* FOCommunication.h in Headers */,
+				FD0ACD4A13D5B36400945BD4 /* FOHouseholdQO.h in Headers */,
+				FD0ACD5213D5B3D400945BD4 /* FOBaseQO.h in Headers */,
+				FD3F97CB13D868400038DB98 /* FOPersonQO.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -673,6 +757,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FD3F97D113D878950038DB98 /* FOHouseholdQO.h in Resources */,
 				FD764D2913D07E3B00BE0F4F /* FellowshipOneAPIClient.h in Resources */,
 				FD4712A713D2556900FD2C26 /* FOHousehold.h in Resources */,
 				FD4712A813D2556D00FD2C26 /* FOCommunication.h in Resources */,
@@ -680,6 +765,7 @@
 				FD47129B13D2529100FD2C26 /* FOAddress.h in Resources */,
 				FD47129913D2528500FD2C26 /* FOStatus.h in Resources */,
 				FD47129A13D2528900FD2C26 /* FOSubStatus.h in Resources */,
+				FD3F97D013D8788D0038DB98 /* FOPersonQO.h in Resources */,
 				FD0FB05913D2169A00A078AC /* FOPerson.h in Resources */,
 				FD0FB05D13D2263B00A078AC /* FOPagedEntity.h in Resources */,
 				FD0FB05E13D2263E00A078AC /* FOParentNamedObject.h in Resources */,
@@ -756,6 +842,9 @@
 				FD47129813D250E600FD2C26 /* FOHouseholdMemberType.m in Sources */,
 				FD47129F13D252F800FD2C26 /* FOHousehold.m in Sources */,
 				FD4712A313D2549100FD2C26 /* FOCommunication.m in Sources */,
+				FD0ACD5313D5B3D400945BD4 /* FOBaseQO.m in Sources */,
+				FD3F97C813D8681F0038DB98 /* FOHouseholdQO.m in Sources */,
+				FD3F97CC13D868400038DB98 /* FOPersonQO.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -768,6 +857,7 @@
 				FD0FB05C13D2171600A078AC /* BaseTest.m in Sources */,
 				FD4712A613D2552700FD2C26 /* Communication.m in Sources */,
 				FD30FA7613D342D00050C0FB /* Address.m in Sources */,
+				FD3F97CF13D8787B0038DB98 /* Household.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

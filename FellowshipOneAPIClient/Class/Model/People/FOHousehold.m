@@ -13,21 +13,18 @@
 #import "FOPagedEntity.h"
 #import "FOPerson.h"
 #import "FOHouseholdMemberType.h"
+#import "FOHouseholdQO.h"
 #import "ConsoleLog.h"
 #import "NSObject+serializeToJSON.h"
-
-@interface FOHousehold ()
-
-@property (nonatomic, retain) FTOAuth *oauth;
-
-@end
-
+#import "NSString+URLEncoding.h"
 
 @interface FOHousehold (PRIVATE)
 
 - (id)initWithDictionary:(NSDictionary *)dict;
 
 +(FOHousehold *)populateFromDictionary: (NSDictionary *)dict;
+
++ (NSString *) createQueryString: (FOHouseholdQO *)qo;
 
 @end
 
@@ -37,15 +34,6 @@
 @synthesize myId, myOldId, householdCode, url, householdName, householdSortName, householdFirstName;
 @synthesize lastSecurityAuthorization, lastActivityDate, createdDate, lastUpdatedDate;
 @synthesize allMembers;
-@synthesize oauth;
-
-- (id)delegate {
-	return _delegate;
-}
-
-- (void) setDelegate: (id)newDelegate {
-	_delegate = newDelegate;
-}
 
 - (NSDictionary *)serializationMapper {
 	
@@ -85,17 +73,6 @@
 	return _serializationMapper;
 }
 
-- (id) initWithDelegate: (id)delegate {
-	
-    self = [super init];
-    
-	if (self) {
-		self.delegate = delegate;
-		self.oauth = [[FTOAuth alloc] initWithDelegate:self];
-	}
-	return self;		
-}
-
 #pragma mark -
 #pragma mark PRIVATE methods
 - (id)initWithDictionary:(NSDictionary *)dict {
@@ -105,12 +82,9 @@
 	if (!self) {
 		return nil;
 	}
-	else {
-		self.oauth = [[FTOAuth alloc] initWithDelegate:self];
-	}
 	
 	self.myId = [[dict objectForKey:@"@id"] integerValue];
-	self.myOldId = [FellowshipOneAPIUtility convertToInt:[dict objectForKey:@"@OldID"]];
+	self.myOldId = [FellowshipOneAPIUtility convertToInt:[dict objectForKey:@"@oldID"]];
 	self.householdCode = [dict objectForKey:@"@hCode"];
 	self.url = [dict objectForKey:@"@uri"];
 	self.householdName = [dict objectForKey:@"householdName"];
@@ -122,6 +96,7 @@
 	self.lastUpdatedDate = [FellowshipOneAPIUtility convertToFullNSDate:@"lastUpdatedDate"];
     
 	NSMutableString *membersURL = [NSMutableString stringWithFormat:@"Households/%d/People.json", self.myId];
+    FTOAuth *oauth = [[FTOAuth alloc] initWithDelegate:self];
 	// Get all the members of the household
 	FTOAuthResult *ftOAuthResult = [[oauth callSyncFTAPIWithURLSuffix:membersURL forRealm:FTAPIRealmBase withHTTPMethod:HTTPMethodGET withData:nil] retain];
 	
@@ -140,8 +115,6 @@
 			}
 			
 			NSLog(@"Household Individual: %@", personResult);
-			
-			
 		}
 		
 		self.allMembers = people;
@@ -149,6 +122,7 @@
 	}
 	
 	[ftOAuthResult release];
+    [oauth release];
     
 	return self;
 }
@@ -156,6 +130,58 @@
 +(FOHousehold *)populateFromDictionary: (NSDictionary *)dict {
 	
 	return [[[FOHousehold alloc] initWithDictionary:dict] autorelease];
+}
+
++ (NSString *) createQueryString: (FOHouseholdQO *)qo {
+    NSMutableString *queryString = [NSMutableString stringWithString:@"?"];
+    BOOL firstParameter = YES;
+    
+    if (qo.searchTerm) {
+        if (!firstParameter) {
+            [queryString appendString:@"&"];
+        }
+        [queryString appendFormat:@"%@=%@", @"searchFor", [qo.searchTerm URLEncodedString]];
+        firstParameter = NO;
+    }
+    
+    if (qo.lastActivityDate) {
+        if (!firstParameter) {
+            [queryString appendString:@"&"];
+        }
+        [queryString appendFormat:@"%@=%@", @"lastActivityDate", [FellowshipOneAPIUtility convertToNSDate:qo.lastActivityDate]];
+        firstParameter = NO;
+    }
+    
+    if (qo.createdDate) {
+        if (!firstParameter) {
+            [queryString appendString:@"&"];
+        }
+        [queryString appendFormat:@"%@=%@", @"lastActivityDate", [FellowshipOneAPIUtility convertToNSDate:qo.createdDate]];
+        firstParameter = NO;
+    }
+    
+    if (qo.lastUpdatedDate) {
+        if (!firstParameter) {
+            [queryString appendString:@"&"];
+        }
+        [queryString appendFormat:@"%@=%@", @"lastActivityDate", [FellowshipOneAPIUtility convertToNSDate:qo.lastUpdatedDate]];
+        firstParameter = NO;
+    }
+    
+    // Append the page number and records per page
+    if (!firstParameter) {
+        [queryString appendString:@"&"];
+    }
+    [queryString appendFormat:@"%@=%d", @"page", qo.pageNumber];
+    firstParameter = NO;
+
+    if (!firstParameter) {
+        [queryString appendString:@"&"];
+    }
+    [queryString appendFormat:@"%@=%d", @"recordsperpage", qo.recordsPerPage];
+    firstParameter = NO;
+
+    return queryString;
 }
 
 #pragma mark -
@@ -190,18 +216,82 @@
 #pragma mark -
 #pragma mark Find
 
-- (void)getByID:(NSInteger)hsdID {
++ (FOHousehold *) getByID: (NSInteger)hsdID {
+    
+    FOHousehold *returnHousehold = [[[FOHousehold alloc] init] autorelease];
+	NSString *urlSuffix = [NSString stringWithFormat:@"Households/%d.json", hsdID];
 	
-	NSString *householdURL = [NSString stringWithFormat:@"Households/%d.json", hsdID];
-	[oauth callFTAPIWithURLSuffix:householdURL forRealm:FTAPIRealmBase withHTTPMethod:HTTPMethodGET withData:nil];
+	FTOAuth *oauth = [[FTOAuth alloc] initWithDelegate:self];
+	FTOAuthResult *ftOAuthResult = [oauth callSyncFTAPIWithURLSuffix:urlSuffix forRealm:FTAPIRealmBase withHTTPMethod:HTTPMethodGET withData:nil];
+	
+	if (ftOAuthResult.isSucceed) {
+		
+		NSDictionary *topLevel = [ftOAuthResult.returnData objectForKey:@"household"];
+		
+		if (![topLevel isEqual:[NSNull null]]) {		
+			returnHousehold = [FOHousehold populateFromDictionary:topLevel];
+		}
+	}
+	
+	[ftOAuthResult release];
+	[oauth release];
+	
+	return returnHousehold; 
 }
 
-- (void) searchForHouseholds: (NSString *)searchText householdSearchType: (HouseholdSearchType) searchType  withPage: (NSInteger)pageNumber {
-	
-	[oauth callFTAPIWithURLSuffix:[NSString stringWithFormat:@"Households/Search.json?searchFor=%@&page=%d&recordsperpage=5", searchText, pageNumber] 
-                         forRealm:FTAPIRealmBase 
-                   withHTTPMethod:HTTPMethodGET 
-                         withData:nil];
++ (void) getByID: (NSInteger)hsdID usingCallback:(void (^)(FOHousehold *))returnedHousehold {
+    
+	NSString *urlSuffix = [NSString stringWithFormat:@"Households/%d.json", hsdID];
+    FTOAuth *oauth = [[FTOAuth alloc] initWithDelegate:self];
+    __block FOHousehold *tmpHousehold = [[FOHousehold alloc] init];
+    
+    [oauth callFTAPIWithURLSuffix:urlSuffix forRealm:FTAPIRealmBase withHTTPMethod:HTTPMethodGET withData:nil usingBlock:^(id block) {
+        
+        if ([block isKindOfClass:[FTOAuthResult class]]) {
+            FTOAuthResult *result = (FTOAuthResult *)block;
+            if (result.isSucceed) {
+                tmpHousehold = [[FOHousehold alloc] initWithDictionary:[result.returnData objectForKey:@"household"]];
+            }
+        }
+        returnedHousehold(tmpHousehold);
+        [tmpHousehold release];
+        [oauth release];
+    }];
+}
+
++ (void) searchForHouseholds: (FOHouseholdQO *)qo usingCallback:(void (^)(FOPagedEntity *))pagedResults {
+    
+    NSString *urlSuffix = [NSString stringWithFormat:@"%@%@", @"households/search.json", [FOHousehold createQueryString:qo]];
+    FTOAuth *oauth = [[FTOAuth alloc] initWithDelegate:self];
+    
+    [oauth callFTAPIWithURLSuffix:urlSuffix forRealm:FTAPIRealmBase withHTTPMethod:HTTPMethodGET withData:nil usingBlock:^(id block) {
+        FOPagedEntity *resultsEntity = [[FOPagedEntity alloc] init];
+        NSMutableArray *tmpResults = [[NSMutableArray alloc] initWithObjects:nil];
+        
+        if ([block isKindOfClass:[FTOAuthResult class]]) {
+            FTOAuthResult *result = (FTOAuthResult *)block;
+            if (result.isSucceed) {
+                
+                NSDictionary *topLevel = [result.returnData objectForKey:@"results"];
+                NSArray *results = [topLevel objectForKey:@"household"];
+                
+                resultsEntity.currentCount = [FellowshipOneAPIUtility convertToInt:[topLevel objectForKey:@"@count"]];
+                resultsEntity.pageNumber = [FellowshipOneAPIUtility convertToInt:[topLevel objectForKey:@"@pageNumber"]];
+                resultsEntity.totalRecords = [FellowshipOneAPIUtility convertToInt:[topLevel objectForKey:@"@totalRecords"]];
+                resultsEntity.additionalPages = [FellowshipOneAPIUtility convertToInt:[topLevel objectForKey:@"@additionalPages"]];
+                
+                for (NSDictionary *result in results) {
+                    [tmpResults addObject:[FOHousehold populateFromDictionary:result]];
+                }
+                
+                resultsEntity.results = [tmpResults copy];
+            }
+        }
+        pagedResults(resultsEntity);
+        [resultsEntity release];
+        [tmpResults release];
+        [oauth release]; 
+    }];
 }
 
 #pragma mark -
@@ -209,14 +299,10 @@
 
 - (void) save {
 	
+	FTOAuth *oauth = [[FTOAuth alloc] initWithDelegate:self];
 	HTTPMethod method = HTTPMethodPOST;
 	
-	// There is a possibility when calling this method that the oauth object has not been initialized. If it hasn't init it here
-	if (!oauth) {
-		self.oauth = [[FTOAuth alloc] initWithDelegate:self];
-	}
-	
-	NSMutableString *urlSuffix = [NSMutableString stringWithFormat:@"households"];
+	NSMutableString *urlSuffix = [NSMutableString stringWithFormat:@"Households"];
 	
 	if (myId > 0) {
 		[urlSuffix appendFormat:@"/%d", myId];
@@ -224,34 +310,7 @@
 	}
 	
 	[urlSuffix appendString:@".json"];
-	
-	[oauth callFTAPIWithURLSuffix:urlSuffix 
-                         forRealm:FTAPIRealmBase 
-                   withHTTPMethod:method 
-                         withData:[[self serializeToJSON] dataUsingEncoding:NSUTF8StringEncoding]];
-}
-
-- (void) saveSynchronously {
-	
-	HTTPMethod method = HTTPMethodPOST;
-	
-	// There is a possibility when calling this method that the oauth object has not been initialized. If it hasn't init it here
-	if (!oauth) {
-		self.oauth = [[FTOAuth alloc] initWithDelegate:self];
-	}
-	
-	NSMutableString *urlSuffix = [NSMutableString stringWithFormat:@"households"];
-	
-	if (myId > 0) {
-		[urlSuffix appendFormat:@"/%d", myId];
-		method = HTTPMethodPUT;
-	}
-	
-	[urlSuffix appendString:@".json"];
-	
-	if (!oauth) {
-		oauth = [[FTOAuth alloc] initWithDelegate:self];
-	}
+    
 	
 	FTOAuthResult *ftOAuthResult = [oauth callSyncFTAPIWithURLSuffix:urlSuffix 
 															forRealm:FTAPIRealmBase 
@@ -266,83 +325,37 @@
 			[self initWithDictionary:topLevel];
 		}
 	}
+    
+    [ftOAuthResult release];
+    [oauth release];
 }
 
-#pragma mark -
-#pragma mark FTOauth Delegate Methods
-- (void) ftOauth: (FTOAuth *)ftOAuth didComplete: (FTOAuthResult *) result {
+- (void) saveUsingCallback:(void (^)(FOHousehold *))returnHousehold {
+    
+    FTOAuth *oauth = [[FTOAuth alloc] initWithDelegate:self];
+    __block FOHousehold *tmpHousehold = [[FOHousehold alloc] init];
+    HTTPMethod method = HTTPMethodPOST;	
+	NSMutableString *urlSuffix = [NSMutableString stringWithFormat:@"Households"];
 	
-	NSLog(@"FTOAuth returned a result.");
+	if (myId > 0) {
+		[urlSuffix appendFormat:@"/%d", myId];
+		method = HTTPMethodPUT;
+	}
 	
-	if (result.isSucceed) {
-		
-		if (result.returnData != nil) {
-			
-			NSMutableArray *searchResults = [[[NSMutableArray alloc] init] autorelease];
-			NSDictionary *topLevel = [result.returnData objectForKey:@"results"];
-			NSArray *results;
-			
-			if (topLevel) {
-				results = [topLevel objectForKey:@"household"];
-			}
-			else {
-				results = [result.returnData objectForKey:@"household"];
-			}
-			
-			FOPagedEntity *resultEntity;
-            
-			if (results) {
-				// If the results is an array then there are multiple results
-				if ([results isKindOfClass:[NSArray class]]) {
-					
-					// Create the paged entity
-					resultEntity = [[FOPagedEntity alloc] init];
-					
-					resultEntity.currentCount = [FellowshipOneAPIUtility convertToInt:[topLevel objectForKey:@"@count"]];
-					resultEntity.pageNumber = [FellowshipOneAPIUtility convertToInt:[topLevel objectForKey:@"@pageNumber"]];
-					resultEntity.totalRecords = [FellowshipOneAPIUtility convertToInt:[topLevel objectForKey:@"@totalRecords"]];
-					resultEntity.additionalPages = [FellowshipOneAPIUtility convertToInt:[topLevel objectForKey:@"@additionalPages"]];
-					
-					for (NSDictionary *result in results) {
-						[searchResults addObject:[FOHousehold populateFromDictionary:result]];
-					}
-					
-					resultEntity.results = searchResults;
-					
-					if ([self.delegate respondsToSelector:@selector(FTHouseholdsReturned:)]) {
-						[[self delegate] FTHouseholdsReturned:resultEntity];
-					}
-					else {
-						[ConsoleLog LogMessage:@"FTHouseholdsReturned delegate method not implemented."];
-					}
-					
-					[resultEntity release];
-				}
-				else {
-					if ([self.delegate respondsToSelector:@selector(FThouseholdReturned:)]) {
-						[[self delegate] FThouseholdReturned:[FOHousehold populateFromDictionary: (NSDictionary *)results]];
-					}
-					else {
-						[ConsoleLog LogMessage:@"FTHouseholdReturned delegate method not implemented."];
-					}
-				}
-			}
-			else {
-				if ([self.delegate respondsToSelector:@selector(FTHouseholdsReturned:)]) {
-					[[self delegate] FTHouseholdsReturned:nil];
-				}
-				else {
-					[ConsoleLog LogMessage:@"FTHouseholdReturned delegate method not implemented."];
-				}
-			}
-		}
-		else {
-			[[self delegate] FTHouseholdFail:nil];
-		}
-	}
-	else {
-		[[self delegate] FTHouseholdFail:nil];
-	}
+	[urlSuffix appendString:@".json"];
+    
+    [oauth callFTAPIWithURLSuffix:urlSuffix forRealm:FTAPIRealmBase withHTTPMethod:method withData:[[self serializeToJSON] dataUsingEncoding:NSUTF8StringEncoding] usingBlock:^(id block) {
+        
+        if ([block isKindOfClass:[FTOAuthResult class]]) {
+            FTOAuthResult *result = (FTOAuthResult *)block;
+            if (result.isSucceed) {
+                tmpHousehold = [[FOHousehold alloc] initWithDictionary:[result.returnData objectForKey:@"household"]];
+            }
+        }
+        returnHousehold(tmpHousehold);
+        [tmpHousehold release];
+        [oauth release];
+    }];
 }
 
 - (void) dealloc {
@@ -357,7 +370,6 @@
 	[createdDate release];
 	[lastUpdatedDate release];
 	[allMembers release];
-	if (oauth) [oauth release];
 	[_serializationMapper release];
     
 	[super dealloc];

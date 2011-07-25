@@ -64,6 +64,7 @@ typedef enum {
 @class FOPagedEntity;
 @class FTOAuthResult;
 @class FTError;
+@class FOPersonQO;
 
 @interface FOPerson : NSObject <NSCoding> {
 
@@ -123,6 +124,10 @@ typedef enum {
 // Then the property gets the last name and then if there is a suffix, appends that to the end
 @property (nonatomic, assign, readonly) NSString *casualName;
 
+// Convienence property for returning a name with the last name first, first name last
+// EX: Meyer, Chad
+@property (nonatomic, assign, readonly) NSString *lastNameFirstName;
+
 // Convienence property for returning a an age
 // Takes the date of birth and calculates the age in years, if the age is less than 1, the word "child" is returned
 @property (nonatomic, assign, readonly) NSString *age;
@@ -149,11 +154,10 @@ typedef enum {
 // @theUrl :: The url for the person that is being looked for
 + (FOPerson *) getByUrl: (NSString *)theUrl;
 
-// Search the F1 database for individual this will return 20 individuals at a time -- This method is performed asynchronously --
-// searchText: The text to search by
-// includes: an array of things to include in the search results :: See PeopleSearchInclude enum
+// Search the F1 database for people -- This method is performed asynchronously --
+// qo: The query object that tells the api what to search on
 // pageNumber: the page number the search is for
-+ (void) searchForPeople: (NSString *)searchText withSearchIncludes:(NSArray *)includes withPage: (NSInteger)pageNumber usingCallback:(void (^)(FOPagedEntity *))pagedResults;
++ (void) searchForPeople: (FOPersonQO *)qo usingCallback:(void (^)(FOPagedEntity *))pagedResults;
 
 // Returns a portait image from the F1API specified by the size S, M, or L are the options. -- This method is called asynchronously --
 // @personID :: The ID of the person that the image is for

@@ -19,10 +19,8 @@
 #import "ConsoleLog.h"
 #import "FOAddress.h"
 #import "FOCommunication.h"
-
-@interface FOPerson ()
-
-@end
+#import "FOPersonQO.h"
+#import "NSString+URLEncoding.h"
 
 @interface FOPerson (PRIVATE)
 
@@ -74,6 +72,25 @@
 	}
 	
 	return name;
+}
+
+- (NSString *)lastNameFirstName {
+    NSMutableString *name;
+	
+
+	[name appendString:self.lastName];
+    [name appendString:@", "];
+    
+    if (self.goesByName != nil) {
+		name = [NSMutableString stringWithString:self.goesByName];
+	}
+	else {
+		name = [NSMutableString stringWithString:self.firstName];
+	}
+	
+
+	return name;
+
 }
 
 - (NSString *)age {
@@ -175,73 +192,46 @@
 				self.rawImage = [self getImageData:@"S"];
 			}
 		}
+    }
 		
 		
-		self.gender = [dict objectForKey:@"gender"];
-		if ([self.gender isEqual:[NSNull null]]) {
-			self.gender = nil;
-		}
-		
-		self.title = [dict objectForKey:@"title"];
-		if ([self.title isEqual:[NSNull null]]) {
-			self.title = nil;
-		}
-		
-		self.prefix = [dict objectForKey:@"prefix"];
-		if ([self.prefix isEqual:[NSNull null]]) {
-			self.prefix = nil;
-		}
-		
-		self.salutation = [dict objectForKey:@"salutation"];
-		if ([self.salutation isEqual:[NSNull null]]) {
-			self.salutation = nil;
-		}
-		
-		NSString *tempDOB = [dict objectForKey:@"dateOfBirth"];
-		if ([tempDOB isEqual:[NSNull null]]) {
-			self.dateOfBirth = nil;
-		}
-		else {
-			self.dateOfBirth = [FellowshipOneAPIDateUtility dateFromString:tempDOB];
-		}
-		
-		self.maritalStatus = [dict objectForKey:@"maritalStatus"];
-		if ([self.maritalStatus isEqual:[NSNull null]]) {
-			self.maritalStatus = nil;
-		}
-		
-		self.formerName = [dict objectForKey:@"formerName"];
-		if ([self.formerName isEqual:[NSNull null]]) {
-			self.formerName = nil;
-		}
-		
-		NSString *tempFirstRecord = [dict objectForKey:@"firstRecord"];
-		if ([tempFirstRecord isEqual:[NSNull null]]) {
-			self.firstRecord = nil;
-		}
-		else {
-			self.firstRecord = [FellowshipOneAPIDateUtility dateFromString:tempFirstRecord];
-		}
-		
-		NSString *tempCreatedDate = [dict objectForKey:@"createdDate"];
-		if ([tempCreatedDate isEqual:[NSNull null]]) {
-			self.createdDate = nil;
-		}
-		else {
-			self.createdDate = [FellowshipOneAPIDateUtility dateFromString:tempCreatedDate];
-		}
-		
-		NSString *tempLastUpdatedDate = [dict objectForKey:@"lastUpdatedDate"];
-		if ([tempLastUpdatedDate isEqual:[NSNull null]]) {
-			self.lastUpdatedDate = nil;
-		}
-		else {
-			self.lastUpdatedDate = [FellowshipOneAPIDateUtility dateFromString:tempLastUpdatedDate];
-		}
-		
-		self.householdMemberType = [FOHouseholdMemberType populateFromDictionary:[dict objectForKey:@"householdMemberType"]];
-		self.status = [FOStatus populateFromDictionary:[dict objectForKey:@"status"]];
-	}
+    self.gender = [dict objectForKey:@"gender"];
+    if ([self.gender isEqual:[NSNull null]]) {
+        self.gender = nil;
+    }
+    
+    self.title = [dict objectForKey:@"title"];
+    if ([self.title isEqual:[NSNull null]]) {
+        self.title = nil;
+    }
+    
+    self.prefix = [dict objectForKey:@"prefix"];
+    if ([self.prefix isEqual:[NSNull null]]) {
+        self.prefix = nil;
+    }
+    
+    self.salutation = [dict objectForKey:@"salutation"];
+    if ([self.salutation isEqual:[NSNull null]]) {
+        self.salutation = nil;
+    }
+    
+    self.dateOfBirth = [FellowshipOneAPIUtility convertToFullNSDate:[dict objectForKey:@"dateOfBirth"]];
+    
+    self.maritalStatus = [dict objectForKey:@"maritalStatus"];
+    if ([self.maritalStatus isEqual:[NSNull null]]) {
+        self.maritalStatus = nil;
+    }
+    
+    self.formerName = [dict objectForKey:@"formerName"];
+    if ([self.formerName isEqual:[NSNull null]]) {
+        self.formerName = nil;
+    }
+    
+    self.firstRecord = [FellowshipOneAPIUtility convertToFullNSDate:[dict objectForKey:@"firstRecord"]];
+    self.createdDate = [FellowshipOneAPIUtility convertToFullNSDate:[dict objectForKey:@"createdDate"]];
+    self.lastUpdatedDate = [FellowshipOneAPIUtility convertToFullNSDate:[dict objectForKey:@"lastUpdatedDate"]];
+    self.householdMemberType = [FOHouseholdMemberType populateFromDictionary:[dict objectForKey:@"householdMemberType"]];
+    self.status = [FOStatus populateFromDictionary:[dict objectForKey:@"status"]];
 	
 	return self;
 }
@@ -270,7 +260,6 @@
 	}
 	@finally { }
 }
-
 
 #pragma mark -
 #pragma mark Helpers
@@ -383,29 +372,12 @@
     
 }
 
-+ (void) searchForPeople: (NSString *)searchText withSearchIncludes:(NSArray *)includes withPage: (NSInteger)pageNumber usingCallback:(void (^)(FOPagedEntity *))pagedResults {
++ (void) searchForPeople: (FOPersonQO *) qo usingCallback:(void (^)(FOPagedEntity *))pagedResults {
 	
-	NSMutableString *peopleSearchURL = [NSMutableString stringWithFormat:@"People/Search.json?searchFor=%@&page=%d&recordsperpage=20", searchText, pageNumber];
+	NSMutableString *peopleSearchURL = [NSMutableString stringWithFormat:@"People/Search.json%@", [qo createQueryString]];
 	FTOAuth *oauth = [[FTOAuth alloc] initWithDelegate:self];
     
-	// If there are includes, add them to the people search URL
-	if (includes) {
-		NSMutableString *includesString = [NSMutableString stringWithString:@""];
-		
-		// Loop through all the array objects
-		for (int i = 0; i < [includes count]; i++) {
-			
-			if ([includesString length] > 0) {
-				[includesString appendString:@","];
-			}
-			
-			[includesString appendString:[includes objectAtIndex:i]];
-		}
-		
-		[peopleSearchURL appendString:@"&include="];
-        [peopleSearchURL appendString:includesString];
-	}
-    
+	    
     [oauth callFTAPIWithURLSuffix:peopleSearchURL forRealm:FTAPIRealmBase withHTTPMethod:HTTPMethodGET withData:nil usingBlock:^(id block) {
         
         FOPagedEntity *resultsEntity = [[FOPagedEntity alloc] init];

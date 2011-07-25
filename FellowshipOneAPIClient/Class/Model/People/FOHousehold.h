@@ -54,8 +54,7 @@
 @class FOPagedEntity;
 @class FTOAuth;
 @class FTError;
-
-@protocol FTHouseholdDelegate;
+@class FOHouseholdQO;
 
 typedef enum {
 	HouseholdSearchTypeName, // Search for a household by name
@@ -76,14 +75,11 @@ typedef enum {
 	NSDate				*createdDate;
 	NSDate				*lastUpdatedDate;
 	NSArray             *allMembers;
-	id<FTHouseholdDelegate>	_delegate;
-	
-@private FTOAuth *oauth;
+
 @private NSDictionary *_serializationMapper;
 }
 
 // Delegate for the object
-@property (nonatomic,assign, )	id<FTHouseholdDelegate> delegate;
 @property (nonatomic, copy)		NSString *url; 
 @property (nonatomic, assign)	NSInteger myId; 
 @property (nonatomic, assign)	NSInteger myOldId; 
@@ -109,40 +105,30 @@ typedef enum {
 // Members of the household who are tagged as visitors
 @property (nonatomic, readonly) NSArray *visitors;
 
-// Creates and instance of FTHousehold passing in the delegate
-- (id) initWithDelegate:(id)delegate;
-
 // Get a household from the API based on the household id
-- (void) getByID: (NSInteger)hsdID;
++ (FOHousehold *) getByID: (NSInteger)hsdID;
 
-// Search the F1 database for households this will return 5 households at a time, because the method gets the individual
-// members tied to the household, 5 was considered to be an optimal number where performance was not weakened
-// searchText: The text to search by
-// householdSearchType: Determines the type of search the API is doing
-// pageNumber: the page number the search is for
-- (void) searchForHouseholds: (NSString *)searchText householdSearchType: (HouseholdSearchType)searchType withPage: (NSInteger)pageNumber;
+// Get a household from the API based on the household id ascynchornously
++ (void) getByID: (NSInteger)hsdID usingCallback:(void (^)(FOHousehold *))returnedHousehold;
 
-/* Saves an FTHousehold. If the object has an id, it assumes its an update, if no id exists, 
- it will attempt to create the object into the API */
+/* Calls the API to save the current address. If there is an ID attached to the address, the method assumes an update, if no id exists, the method assumes create */
 - (void) save;
 
-/* Saves an FTHousehold. If the object has an id, it assumes its an update, if no id exists, 
- it will attempt to create the object into the API */
-- (void) saveSynchronously;
+/* Calls the API to save the current address. If there is an ID attached to the address, the method assumes an update, if no id exists, the method assumes create */
+- (void) saveUsingCallback:(void (^)(FOHousehold *))returnHousehold;
 
-@end
+/* populates an FOHousehold object from a NSDictionary */
++ (FOHousehold *)populateFromDictionary: (NSDictionary *)dict;
 
-@protocol FTHouseholdDelegate<NSObject>
+// Search the F1 database for households and also retrieves the people for those households -- This method is performed asynchronously --
+// searchText: The text to search by
+// qo: The queryobject that holds are the search things
++ (void) searchForHouseholds: (FOHouseholdQO *)qo usingCallback:(void (^)(FOPagedEntity *))pagedResults;
 
-// This method is required to consume the delegate. If a household fails, an error will be returned
-- (void) FTHouseholdFail: (FTError *)error;
+/* Calls the API to save the current household. If there is an ID attached to the household, the method assumes an update, if no id exists, the method assumes create */
+- (void) save;
 
-@optional
-// Implement for when multiple households are returned
-- (void) FTHouseholdsReturned: (FOPagedEntity *)households;
-
-
-// Implement for when one household is returned
-- (void) FThouseholdReturned: (FOHousehold *)household;
+/* Calls the API to save the current household. If there is an ID attached to the household, the method assumes an update, if no id exists, the method assumes create */
+- (void) saveUsingCallback:(void (^)(FOHousehold *))returnHousehold;
 
 @end

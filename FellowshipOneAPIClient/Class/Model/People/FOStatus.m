@@ -26,14 +26,8 @@
 	if ([self.comment isEqual:[NSNull null]]) {
 		self.comment = nil;
 	}
-	
-	NSString *tempDate = [dict objectForKey:@"date"];
-	if ([tempDate isEqual:[NSNull null]]) {
-		self.date = nil;
-	}
-	else {
-		self.date = [FellowshipOneAPIDateUtility dateFromString:tempDate];
-	}
+    
+    self.date = [FellowshipOneAPIUtility convertToFullNSDate:[dict objectForKey:@"date"]];
 	
 	if ([dict objectForKey:@"subStatus"] != nil) {
 		NSDictionary *tempSubStatus = [dict objectForKey:@"subStatus"];
