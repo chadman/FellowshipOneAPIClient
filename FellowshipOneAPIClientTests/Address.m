@@ -147,7 +147,7 @@
     [savedAddress save];
     
     STAssertTrue(savedAddress.myId > 0, @"address not created.");
-    
+    [savedAddress delete];
     [savedAddress release];
 }
 
@@ -161,6 +161,9 @@
         STAssertTrue(returnAddress.myId > 0, @"address was not created.");
         done = YES;
         [savedAddress release];
+        
+        // Delete the address
+        [returnAddress delete];
     }];
     
     while (!done) {
@@ -172,6 +175,45 @@
         else {
             done = YES;
             STFail(@"Did not complete testCreateAddressWithCallBack");
+        }
+    }
+}
+
+- (void) testDeleteAddress {
+    
+    FOAddress *savedAddress = [self createAnAddress];
+    [savedAddress save];
+    [savedAddress delete];
+    
+    FOAddress *deletedAddress = [[FOAddress getByID:savedAddress.myId] retain];
+    
+    STAssertNil(deletedAddress, @"Address still exists.");
+    
+    [deletedAddress release];
+}
+
+- (void) testDeleteAddressWithCallBack {
+    __block BOOL done= NO;
+    int count = 0;
+    
+    FOAddress *savedAddress = [self createAnAddress];
+    [savedAddress save];
+    
+    [savedAddress deleteUsingCallback:^(BOOL successful) {
+        STAssertTrue(successful, @"address was not deleted.");
+        done = YES;
+        [savedAddress release];
+    }];
+    
+    while (!done) {
+        
+        if (count < 20) {
+            count++;
+            [self runLoop];
+        }
+        else {
+            done = YES;
+            STFail(@"Did not complete testDeleteAddressWithCallBack");
         }
     }
 }

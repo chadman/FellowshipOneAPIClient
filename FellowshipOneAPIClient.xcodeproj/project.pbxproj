@@ -132,6 +132,8 @@
 		FD764D2913D07E3B00BE0F4F /* FellowshipOneAPIClient.h in Resources */ = {isa = PBXBuildFile; fileRef = FD764D0C13D078FE00BE0F4F /* FellowshipOneAPIClient.h */; };
 		FD764D3113D0B56400BE0F4F /* FirstParty.m in Sources */ = {isa = PBXBuildFile; fileRef = FD764D3013D0B56400BE0F4F /* FirstParty.m */; };
 		FD764D3313D0B7FF00BE0F4F /* FellowshipOneAPIClient.plist in Resources */ = {isa = PBXBuildFile; fileRef = FD764D2813D07C9900BE0F4F /* FellowshipOneAPIClient.plist */; };
+		FDB5348613DDDE0F00C1B521 /* GroupMemberQO.h in Headers */ = {isa = PBXBuildFile; fileRef = FDB5348413DDDE0F00C1B521 /* GroupMemberQO.h */; };
+		FDB5348713DDDE0F00C1B521 /* GroupMemberQO.m in Sources */ = {isa = PBXBuildFile; fileRef = FDB5348513DDDE0F00C1B521 /* GroupMemberQO.m */; };
 		FDF555C513D23A4C00ED5317 /* FOAddress.h in Headers */ = {isa = PBXBuildFile; fileRef = FDF555C313D23A4C00ED5317 /* FOAddress.h */; };
 		FDF555C613D23A4C00ED5317 /* FOAddress.m in Sources */ = {isa = PBXBuildFile; fileRef = FDF555C413D23A4C00ED5317 /* FOAddress.m */; };
 /* End PBXBuildFile section */
@@ -268,6 +270,8 @@
 		FD764D2813D07C9900BE0F4F /* FellowshipOneAPIClient.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = FellowshipOneAPIClient.plist; path = ../FellowshipOneAPIClient/FellowshipOneAPIClient.plist; sourceTree = "<group>"; };
 		FD764D2F13D0B56400BE0F4F /* FirstParty.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FirstParty.h; path = Authentication/FirstParty.h; sourceTree = "<group>"; };
 		FD764D3013D0B56400BE0F4F /* FirstParty.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FirstParty.m; path = Authentication/FirstParty.m; sourceTree = "<group>"; };
+		FDB5348413DDDE0F00C1B521 /* GroupMemberQO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GroupMemberQO.h; path = Class/QueryObject/Groups/GroupMemberQO.h; sourceTree = "<group>"; };
+		FDB5348513DDDE0F00C1B521 /* GroupMemberQO.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GroupMemberQO.m; path = Class/QueryObject/Groups/GroupMemberQO.m; sourceTree = "<group>"; };
 		FDF555C313D23A4C00ED5317 /* FOAddress.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FOAddress.h; sourceTree = "<group>"; };
 		FDF555C413D23A4C00ED5317 /* FOAddress.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FOAddress.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -349,6 +353,8 @@
 		FD0ACD4713D5B12B00945BD4 /* Groups */ = {
 			isa = PBXGroup;
 			children = (
+				FDB5348413DDDE0F00C1B521 /* GroupMemberQO.h */,
+				FDB5348513DDDE0F00C1B521 /* GroupMemberQO.m */,
 			);
 			name = Groups;
 			sourceTree = "<group>";
@@ -687,6 +693,7 @@
 				FD0ACD4A13D5B36400945BD4 /* FOHouseholdQO.h in Headers */,
 				FD0ACD5213D5B3D400945BD4 /* FOBaseQO.h in Headers */,
 				FD3F97CB13D868400038DB98 /* FOPersonQO.h in Headers */,
+				FDB5348613DDDE0F00C1B521 /* GroupMemberQO.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -845,6 +852,7 @@
 				FD0ACD5313D5B3D400945BD4 /* FOBaseQO.m in Sources */,
 				FD3F97C813D8681F0038DB98 /* FOHouseholdQO.m in Sources */,
 				FD3F97CC13D868400038DB98 /* FOPersonQO.m in Sources */,
+				FDB5348713DDDE0F00C1B521 /* GroupMemberQO.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

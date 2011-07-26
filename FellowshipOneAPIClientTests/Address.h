@@ -34,5 +34,9 @@
 
 - (void) testCreateAddressWithCallBack;
 
+- (void) testDeleteAddress;
+
+- (void) testDeleteAddressWithCallBack;
+
 - (FOAddress *) createAnAddress;
 @end

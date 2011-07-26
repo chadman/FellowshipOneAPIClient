@@ -422,16 +422,14 @@ int encode(unsigned s_len, char *src, unsigned d_len, char *dst);
 	switch (method) {
 		case (int)HTTPMethodGET:
 			return @"GET";
-			break;
 		case (int)HTTPMethodPOST:
 			return @"POST";
-			break;
 		case (int)HTTPMethodPUT:
 			return @"PUT";
-			break;
+        case (int)HTTPMethodDELETE:
+            return @"DELETE";
 		default:
 			return @"GET";
-			break;
 	}
 }
 

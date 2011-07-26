@@ -307,7 +307,7 @@
 
 + (FOAddress *) getByID: (NSInteger) addressID {
 	
-	FOAddress *returnAddress = [[[FOAddress alloc] init] autorelease];
+	FOAddress *returnAddress = nil;
 	NSString *urlSuffix = [NSString stringWithFormat:@"Addresses/%d.json", addressID];
 	
 	FTOAuth *oauth = [[FTOAuth alloc] initWithDelegate:self];
@@ -330,7 +330,7 @@
 + (void) getByID: (NSInteger) addressID usingCallback:(void (^)(FOAddress *))returnAddress {
     NSString *addressUrl = [NSString stringWithFormat:@"Addresses/%d.json", addressID];
     FTOAuth *oauth = [[FTOAuth alloc] initWithDelegate:self];
-    __block FOAddress *tmpAddress = [[FOAddress alloc] init];
+    __block FOAddress *tmpAddress = nil;
     
     [oauth callFTAPIWithURLSuffix:addressUrl forRealm:FTAPIRealmBase withHTTPMethod:HTTPMethodGET withData:nil usingBlock:^(id block) {
         
@@ -402,6 +402,45 @@
         }
         returnAddress(tmpAddress);
         [tmpAddress release];
+        [oauth release];
+    }];
+}
+
+- (void) delete {
+    FTOAuth *oauth = [[FTOAuth alloc] initWithDelegate:self];
+	HTTPMethod method = HTTPMethodDELETE;
+	
+	NSMutableString *urlSuffix = [NSMutableString stringWithFormat:@"Addresses"];
+    [urlSuffix appendFormat:@"/%d.json", myId];
+	
+	FTOAuthResult *ftOAuthResult = [oauth callSyncFTAPIWithURLSuffix:urlSuffix 
+															forRealm:FTAPIRealmBase 
+													  withHTTPMethod:method 
+															withData:nil];
+	
+	if (!ftOAuthResult.isSucceed) {
+		[ConsoleLog LogMessage:[NSString stringWithFormat:@"Address %d was not deleted.", self.myId]];
+	}
+    
+    [ftOAuthResult release];
+    [oauth release];
+}
+
+- (void) deleteUsingCallback:(void (^)(BOOL))successful {
+    FTOAuth *oauth = [[FTOAuth alloc] initWithDelegate:self];
+	HTTPMethod method = HTTPMethodDELETE;
+    __block BOOL isSuccessful = NO;
+	
+	NSMutableString *urlSuffix = [NSMutableString stringWithFormat:@"Addresses"];
+    [urlSuffix appendFormat:@"/%d.json", myId];
+    
+    [oauth callFTAPIWithURLSuffix:urlSuffix forRealm:FTAPIRealmBase withHTTPMethod:method withData:nil usingBlock:^(id block) {
+        
+        if ([block isKindOfClass:[FTOAuthResult class]]) {
+            FTOAuthResult *result = (FTOAuthResult *)block;
+            isSuccessful = result.isSucceed;
+        }
+        successful(isSuccessful);
         [oauth release];
     }];
 }

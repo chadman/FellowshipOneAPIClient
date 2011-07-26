@@ -136,6 +136,12 @@
 /* Calls the API to save the current address. If there is an ID attached to the address, the method assumes an update, if no id exists, the method assumes create */
 - (void) saveUsingCallback:(void (^)(FOAddress *))returnAddress;
 
+/* Calls the API to delete the current address. */
+- (void) delete;
+
+/* Calls the API to delete the current address. */
+- (void) deleteUsingCallback:(void (^)(BOOL))successful;
+
 /* populates an FTAddress object from a NSDictionary */
 + (FOAddress *)populateFromDictionary: (NSDictionary *)dict;
 
